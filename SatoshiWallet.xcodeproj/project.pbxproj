@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		70E75521A471B49C4C704339 /* Pods_SatoshiWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B27E9FC0DC936D343DCE24 /* Pods_SatoshiWallet.framework */; };
 		A209D45928C950A800B43711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45828C950A800B43711 /* AppDelegate.swift */; };
-		A209D45D28C950A800B43711 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45C28C950A800B43711 /* ViewController.swift */; };
 		A209D46228C950AA00B43711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A209D46128C950AA00B43711 /* Assets.xcassets */; };
 		A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A209D46328C950AA00B43711 /* LaunchScreen.storyboard */; };
 		A209D47028C950AA00B43711 /* SatoshiWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D46F28C950AA00B43711 /* SatoshiWalletTests.swift */; };
 		A209D47A28C950AA00B43711 /* SatoshiWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D47928C950AA00B43711 /* SatoshiWalletUITests.swift */; };
 		A209D47C28C950AA00B43711 /* SatoshiWalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D47B28C950AA00B43711 /* SatoshiWalletUITestsLaunchTests.swift */; };
+		A209D48D28C9582500B43711 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D48C28C9582500B43711 /* Asset.swift */; };
+		A209D49228C958EC00B43711 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49028C958EC00B43711 /* ListViewController.swift */; };
+		A209D49328C958EC00B43711 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A209D49128C958EC00B43711 /* ListViewController.xib */; };
+		A209D49628C9595400B43711 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49528C9595400B43711 /* ListViewModel.swift */; };
 		BC04DD1260BDA58B169E648F /* Pods_SatoshiWallet_SatoshiWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B18D21A707CADBDD4EC1C5 /* Pods_SatoshiWallet_SatoshiWalletUITests.framework */; };
 		E3791A3283A4EC23D15FFE09 /* Pods_SatoshiWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75478356CD869106A1428847 /* Pods_SatoshiWalletTests.framework */; };
 /* End PBXBuildFile section */
@@ -46,7 +49,6 @@
 		75478356CD869106A1428847 /* Pods_SatoshiWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SatoshiWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A209D45528C950A800B43711 /* SatoshiWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SatoshiWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A209D45828C950A800B43711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A209D45C28C950A800B43711 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A209D46128C950AA00B43711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A209D46428C950AA00B43711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A209D46628C950AA00B43711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +57,10 @@
 		A209D47528C950AA00B43711 /* SatoshiWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SatoshiWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A209D47928C950AA00B43711 /* SatoshiWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatoshiWalletUITests.swift; sourceTree = "<group>"; };
 		A209D47B28C950AA00B43711 /* SatoshiWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatoshiWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A209D48C28C9582500B43711 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		A209D49028C958EC00B43711 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A209D49128C958EC00B43711 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		A209D49528C9595400B43711 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		F108202F4E068CDEA6ADA899 /* Pods-SatoshiWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWalletTests.release.xcconfig"; path = "Target Support Files/Pods-SatoshiWalletTests/Pods-SatoshiWalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF1B38197EFBE07251C057F3 /* Pods-SatoshiWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWallet.debug.xcconfig"; path = "Target Support Files/Pods-SatoshiWallet/Pods-SatoshiWallet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +143,7 @@
 			children = (
 				A209D48828C9528800B43711 /* Sources */,
 				A209D48928C953F900B43711 /* Resources */,
+				A209D48B28C9580200B43711 /* Models */,
 				A209D48A28C9543600B43711 /* Scenes */,
 				A209D46628C950AA00B43711 /* Info.plist */,
 			);
@@ -180,9 +187,27 @@
 		A209D48A28C9543600B43711 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				A209D45C28C950A800B43711 /* ViewController.swift */,
+				A209D49428C958FC00B43711 /* List */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A209D48B28C9580200B43711 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A209D48C28C9582500B43711 /* Asset.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A209D49428C958FC00B43711 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				A209D49528C9595400B43711 /* ListViewModel.swift */,
+				A209D49028C958EC00B43711 /* ListViewController.swift */,
+				A209D49128C958EC00B43711 /* ListViewController.xib */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +319,7 @@
 			files = (
 				A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */,
 				A209D46228C950AA00B43711 /* Assets.xcassets in Resources */,
+				A209D49328C958EC00B43711 /* ListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +413,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A209D45D28C950A800B43711 /* ViewController.swift in Sources */,
+				A209D48D28C9582500B43711 /* Asset.swift in Sources */,
+				A209D49228C958EC00B43711 /* ListViewController.swift in Sources */,
+				A209D49628C9595400B43711 /* ListViewModel.swift in Sources */,
 				A209D45928C950A800B43711 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
