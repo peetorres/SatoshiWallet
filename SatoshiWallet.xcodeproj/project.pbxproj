@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A209D45928C950A800B43711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45828C950A800B43711 /* AppDelegate.swift */; };
+		A209D45B28C950A800B43711 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45A28C950A800B43711 /* SceneDelegate.swift */; };
+		A209D45D28C950A800B43711 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45C28C950A800B43711 /* ViewController.swift */; };
+		A209D46028C950A800B43711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A209D45E28C950A800B43711 /* Main.storyboard */; };
+		A209D46228C950AA00B43711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A209D46128C950AA00B43711 /* Assets.xcassets */; };
+		A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A209D46328C950AA00B43711 /* LaunchScreen.storyboard */; };
+		A209D47028C950AA00B43711 /* SatoshiWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D46F28C950AA00B43711 /* SatoshiWalletTests.swift */; };
+		A209D47A28C950AA00B43711 /* SatoshiWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D47928C950AA00B43711 /* SatoshiWalletUITests.swift */; };
+		A209D47C28C950AA00B43711 /* SatoshiWalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D47B28C950AA00B43711 /* SatoshiWalletUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A209D46C28C950AA00B43711 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A209D44D28C950A800B43711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A209D45428C950A800B43711;
+			remoteInfo = SatoshiWallet;
+		};
+		A209D47628C950AA00B43711 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A209D44D28C950A800B43711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A209D45428C950A800B43711;
+			remoteInfo = SatoshiWallet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A209D45528C950A800B43711 /* SatoshiWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SatoshiWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A209D45828C950A800B43711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A209D45A28C950A800B43711 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A209D45C28C950A800B43711 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A209D45F28C950A800B43711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A209D46128C950AA00B43711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A209D46428C950AA00B43711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A209D46628C950AA00B43711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A209D46B28C950AA00B43711 /* SatoshiWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SatoshiWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A209D46F28C950AA00B43711 /* SatoshiWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatoshiWalletTests.swift; sourceTree = "<group>"; };
+		A209D47528C950AA00B43711 /* SatoshiWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SatoshiWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A209D47928C950AA00B43711 /* SatoshiWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatoshiWalletUITests.swift; sourceTree = "<group>"; };
+		A209D47B28C950AA00B43711 /* SatoshiWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatoshiWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A209D45228C950A800B43711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A209D46828C950AA00B43711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A209D47228C950AA00B43711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A209D44C28C950A800B43711 = {
+			isa = PBXGroup;
+			children = (
+				A209D45728C950A800B43711 /* SatoshiWallet */,
+				A209D46E28C950AA00B43711 /* SatoshiWalletTests */,
+				A209D47828C950AA00B43711 /* SatoshiWalletUITests */,
+				A209D45628C950A800B43711 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A209D45628C950A800B43711 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A209D45528C950A800B43711 /* SatoshiWallet.app */,
+				A209D46B28C950AA00B43711 /* SatoshiWalletTests.xctest */,
+				A209D47528C950AA00B43711 /* SatoshiWalletUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A209D45728C950A800B43711 /* SatoshiWallet */ = {
+			isa = PBXGroup;
+			children = (
+				A209D45828C950A800B43711 /* AppDelegate.swift */,
+				A209D45A28C950A800B43711 /* SceneDelegate.swift */,
+				A209D45C28C950A800B43711 /* ViewController.swift */,
+				A209D45E28C950A800B43711 /* Main.storyboard */,
+				A209D46128C950AA00B43711 /* Assets.xcassets */,
+				A209D46328C950AA00B43711 /* LaunchScreen.storyboard */,
+				A209D46628C950AA00B43711 /* Info.plist */,
+			);
+			path = SatoshiWallet;
+			sourceTree = "<group>";
+		};
+		A209D46E28C950AA00B43711 /* SatoshiWalletTests */ = {
+			isa = PBXGroup;
+			children = (
+				A209D46F28C950AA00B43711 /* SatoshiWalletTests.swift */,
+			);
+			path = SatoshiWalletTests;
+			sourceTree = "<group>";
+		};
+		A209D47828C950AA00B43711 /* SatoshiWalletUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A209D47928C950AA00B43711 /* SatoshiWalletUITests.swift */,
+				A209D47B28C950AA00B43711 /* SatoshiWalletUITestsLaunchTests.swift */,
+			);
+			path = SatoshiWalletUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A209D45428C950A800B43711 /* SatoshiWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A209D47F28C950AA00B43711 /* Build configuration list for PBXNativeTarget "SatoshiWallet" */;
+			buildPhases = (
+				A209D45128C950A800B43711 /* Sources */,
+				A209D45228C950A800B43711 /* Frameworks */,
+				A209D45328C950A800B43711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SatoshiWallet;
+			productName = SatoshiWallet;
+			productReference = A209D45528C950A800B43711 /* SatoshiWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A209D46A28C950AA00B43711 /* SatoshiWalletTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A209D48228C950AA00B43711 /* Build configuration list for PBXNativeTarget "SatoshiWalletTests" */;
+			buildPhases = (
+				A209D46728C950AA00B43711 /* Sources */,
+				A209D46828C950AA00B43711 /* Frameworks */,
+				A209D46928C950AA00B43711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A209D46D28C950AA00B43711 /* PBXTargetDependency */,
+			);
+			name = SatoshiWalletTests;
+			productName = SatoshiWalletTests;
+			productReference = A209D46B28C950AA00B43711 /* SatoshiWalletTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A209D47428C950AA00B43711 /* SatoshiWalletUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A209D48528C950AA00B43711 /* Build configuration list for PBXNativeTarget "SatoshiWalletUITests" */;
+			buildPhases = (
+				A209D47128C950AA00B43711 /* Sources */,
+				A209D47228C950AA00B43711 /* Frameworks */,
+				A209D47328C950AA00B43711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A209D47728C950AA00B43711 /* PBXTargetDependency */,
+			);
+			name = SatoshiWalletUITests;
+			productName = SatoshiWalletUITests;
+			productReference = A209D47528C950AA00B43711 /* SatoshiWalletUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A209D44D28C950A800B43711 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					A209D45428C950A800B43711 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					A209D46A28C950AA00B43711 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = A209D45428C950A800B43711;
+					};
+					A209D47428C950AA00B43711 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = A209D45428C950A800B43711;
+					};
+				};
+			};
+			buildConfigurationList = A209D45028C950A800B43711 /* Build configuration list for PBXProject "SatoshiWallet" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A209D44C28C950A800B43711;
+			productRefGroup = A209D45628C950A800B43711 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A209D45428C950A800B43711 /* SatoshiWallet */,
+				A209D46A28C950AA00B43711 /* SatoshiWalletTests */,
+				A209D47428C950AA00B43711 /* SatoshiWalletUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A209D45328C950A800B43711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */,
+				A209D46228C950AA00B43711 /* Assets.xcassets in Resources */,
+				A209D46028C950A800B43711 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A209D46928C950AA00B43711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A209D47328C950AA00B43711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A209D45128C950A800B43711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A209D45D28C950A800B43711 /* ViewController.swift in Sources */,
+				A209D45928C950A800B43711 /* AppDelegate.swift in Sources */,
+				A209D45B28C950A800B43711 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A209D46728C950AA00B43711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A209D47028C950AA00B43711 /* SatoshiWalletTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A209D47128C950AA00B43711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A209D47A28C950AA00B43711 /* SatoshiWalletUITests.swift in Sources */,
+				A209D47C28C950AA00B43711 /* SatoshiWalletUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A209D46D28C950AA00B43711 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A209D45428C950A800B43711 /* SatoshiWallet */;
+			targetProxy = A209D46C28C950AA00B43711 /* PBXContainerItemProxy */;
+		};
+		A209D47728C950AA00B43711 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A209D45428C950A800B43711 /* SatoshiWallet */;
+			targetProxy = A209D47628C950AA00B43711 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A209D45E28C950A800B43711 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A209D45F28C950A800B43711 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A209D46328C950AA00B43711 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A209D46428C950AA00B43711 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A209D47D28C950AA00B43711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A209D47E28C950AA00B43711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A209D48028C950AA00B43711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QYTBFAGYUA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SatoshiWallet/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = imagine.dev.SatoshiWallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A209D48128C950AA00B43711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QYTBFAGYUA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SatoshiWallet/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = imagine.dev.SatoshiWallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A209D48328C950AA00B43711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QYTBFAGYUA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = imagine.dev.SatoshiWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SatoshiWallet.app/SatoshiWallet";
+			};
+			name = Debug;
+		};
+		A209D48428C950AA00B43711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QYTBFAGYUA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = imagine.dev.SatoshiWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SatoshiWallet.app/SatoshiWallet";
+			};
+			name = Release;
+		};
+		A209D48628C950AA00B43711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QYTBFAGYUA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = imagine.dev.SatoshiWalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SatoshiWallet;
+			};
+			name = Debug;
+		};
+		A209D48728C950AA00B43711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QYTBFAGYUA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = imagine.dev.SatoshiWalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SatoshiWallet;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A209D45028C950A800B43711 /* Build configuration list for PBXProject "SatoshiWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A209D47D28C950AA00B43711 /* Debug */,
+				A209D47E28C950AA00B43711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A209D47F28C950AA00B43711 /* Build configuration list for PBXNativeTarget "SatoshiWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A209D48028C950AA00B43711 /* Debug */,
+				A209D48128C950AA00B43711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A209D48228C950AA00B43711 /* Build configuration list for PBXNativeTarget "SatoshiWalletTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A209D48328C950AA00B43711 /* Debug */,
+				A209D48428C950AA00B43711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A209D48528C950AA00B43711 /* Build configuration list for PBXNativeTarget "SatoshiWalletUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A209D48628C950AA00B43711 /* Debug */,
+				A209D48728C950AA00B43711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A209D44D28C950A800B43711 /* Project object */;
+}
