@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		70E75521A471B49C4C704339 /* Pods_SatoshiWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B27E9FC0DC936D343DCE24 /* Pods_SatoshiWallet.framework */; };
 		A209D45928C950A800B43711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45828C950A800B43711 /* AppDelegate.swift */; };
-		A209D45B28C950A800B43711 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45A28C950A800B43711 /* SceneDelegate.swift */; };
 		A209D45D28C950A800B43711 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45C28C950A800B43711 /* ViewController.swift */; };
-		A209D46028C950A800B43711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A209D45E28C950A800B43711 /* Main.storyboard */; };
 		A209D46228C950AA00B43711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A209D46128C950AA00B43711 /* Assets.xcassets */; };
 		A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A209D46328C950AA00B43711 /* LaunchScreen.storyboard */; };
 		A209D47028C950AA00B43711 /* SatoshiWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D46F28C950AA00B43711 /* SatoshiWalletTests.swift */; };
@@ -48,9 +46,7 @@
 		75478356CD869106A1428847 /* Pods_SatoshiWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SatoshiWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A209D45528C950A800B43711 /* SatoshiWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SatoshiWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A209D45828C950A800B43711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A209D45A28C950A800B43711 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A209D45C28C950A800B43711 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A209D45F28C950A800B43711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A209D46128C950AA00B43711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A209D46428C950AA00B43711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A209D46628C950AA00B43711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,7 +97,6 @@
 				59336A50D08B9D8CB9E2D98C /* Pods-SatoshiWalletTests.debug.xcconfig */,
 				F108202F4E068CDEA6ADA899 /* Pods-SatoshiWalletTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,12 +135,9 @@
 		A209D45728C950A800B43711 /* SatoshiWallet */ = {
 			isa = PBXGroup;
 			children = (
-				A209D45828C950A800B43711 /* AppDelegate.swift */,
-				A209D45A28C950A800B43711 /* SceneDelegate.swift */,
-				A209D45C28C950A800B43711 /* ViewController.swift */,
-				A209D45E28C950A800B43711 /* Main.storyboard */,
-				A209D46128C950AA00B43711 /* Assets.xcassets */,
-				A209D46328C950AA00B43711 /* LaunchScreen.storyboard */,
+				A209D48828C9528800B43711 /* Sources */,
+				A209D48928C953F900B43711 /* Resources */,
+				A209D48A28C9543600B43711 /* Scenes */,
 				A209D46628C950AA00B43711 /* Info.plist */,
 			);
 			path = SatoshiWallet;
@@ -166,6 +158,31 @@
 				A209D47B28C950AA00B43711 /* SatoshiWalletUITestsLaunchTests.swift */,
 			);
 			path = SatoshiWalletUITests;
+			sourceTree = "<group>";
+		};
+		A209D48828C9528800B43711 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A209D45828C950A800B43711 /* AppDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		A209D48928C953F900B43711 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A209D46128C950AA00B43711 /* Assets.xcassets */,
+				A209D46328C950AA00B43711 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A209D48A28C9543600B43711 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A209D45C28C950A800B43711 /* ViewController.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +294,6 @@
 			files = (
 				A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */,
 				A209D46228C950AA00B43711 /* Assets.xcassets in Resources */,
-				A209D46028C950A800B43711 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +389,6 @@
 			files = (
 				A209D45D28C950A800B43711 /* ViewController.swift in Sources */,
 				A209D45928C950A800B43711 /* AppDelegate.swift in Sources */,
-				A209D45B28C950A800B43711 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,14 +425,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A209D45E28C950A800B43711 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A209D45F28C950A800B43711 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A209D46328C950AA00B43711 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -556,7 +563,6 @@
 				INFOPLIST_FILE = SatoshiWallet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -585,7 +591,6 @@
 				INFOPLIST_FILE = SatoshiWallet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
