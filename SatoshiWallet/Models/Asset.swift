@@ -20,6 +20,8 @@ struct Asset: Codable {
     let supply: String
     let maxSupply: String?
     let marketCapUsd: String?
+    let volumeUsd24Hr: String?
     let priceUsd: String?
-    let changePercet24Hr: String?
+    let changePercent24Hr: String?
+    let explorer: String?
 }
