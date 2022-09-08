@@ -21,6 +21,8 @@
 		A209D49C28C95D1900B43711 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49B28C95D1900B43711 /* Network.swift */; };
 		A209D49E28C9684900B43711 /* SatoshiWalletError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49D28C9684800B43711 /* SatoshiWalletError.swift */; };
 		A209D4A028C9688400B43711 /* ListServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49F28C9688400B43711 /* ListServices.swift */; };
+		A2FBDBF628C9CF8C00AD9FE8 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBDBF428C9CF8C00AD9FE8 /* ListTableViewCell.swift */; };
+		A2FBDBF728C9CF8C00AD9FE8 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FBDBF528C9CF8C00AD9FE8 /* ListTableViewCell.xib */; };
 		BC04DD1260BDA58B169E648F /* Pods_SatoshiWallet_SatoshiWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B18D21A707CADBDD4EC1C5 /* Pods_SatoshiWallet_SatoshiWalletUITests.framework */; };
 		E3791A3283A4EC23D15FFE09 /* Pods_SatoshiWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75478356CD869106A1428847 /* Pods_SatoshiWalletTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,8 @@
 		A209D49B28C95D1900B43711 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A209D49D28C9684800B43711 /* SatoshiWalletError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatoshiWalletError.swift; sourceTree = "<group>"; };
 		A209D49F28C9688400B43711 /* ListServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServices.swift; sourceTree = "<group>"; };
+		A2FBDBF428C9CF8C00AD9FE8 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		A2FBDBF528C9CF8C00AD9FE8 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		F108202F4E068CDEA6ADA899 /* Pods-SatoshiWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWalletTests.release.xcconfig"; path = "Target Support Files/Pods-SatoshiWalletTests/Pods-SatoshiWalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF1B38197EFBE07251C057F3 /* Pods-SatoshiWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWallet.debug.xcconfig"; path = "Target Support Files/Pods-SatoshiWallet/Pods-SatoshiWallet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +214,7 @@
 		A209D49428C958FC00B43711 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				A2FBDBF228C9CF5A00AD9FE8 /* Cell */,
 				A209D49F28C9688400B43711 /* ListServices.swift */,
 				A209D49528C9595400B43711 /* ListViewModel.swift */,
 				A209D49028C958EC00B43711 /* ListViewController.swift */,
@@ -225,6 +230,15 @@
 				A209D49D28C9684800B43711 /* SatoshiWalletError.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A2FBDBF228C9CF5A00AD9FE8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A2FBDBF428C9CF8C00AD9FE8 /* ListTableViewCell.swift */,
+				A2FBDBF528C9CF8C00AD9FE8 /* ListTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */,
+				A2FBDBF728C9CF8C00AD9FE8 /* ListTableViewCell.xib in Resources */,
 				A209D46228C950AA00B43711 /* Assets.xcassets in Resources */,
 				A209D49328C958EC00B43711 /* ListViewController.xib in Resources */,
 			);
@@ -467,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A209D4A028C9688400B43711 /* ListServices.swift in Sources */,
+				A2FBDBF628C9CF8C00AD9FE8 /* ListTableViewCell.swift in Sources */,
 				A209D49C28C95D1900B43711 /* Network.swift in Sources */,
 				A209D48D28C9582500B43711 /* Asset.swift in Sources */,
 				A209D49228C958EC00B43711 /* ListViewController.swift in Sources */,

@@ -26,13 +26,16 @@ final class ListViewController: UIViewController {
     // MARK: Methods
     private func setupUI() {
         title = "Satoshi Wallet"
+
         tableView.dataSource = self
         tableView.delegate = self
+
+        let nib = UINib(nibName: ListTableViewCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: ListTableViewCell.identifier)
     }
 
     private func bindEvents() {
         viewModel.handleSuccess = { [weak self] in
-            print("success!")
             self?.tableView.reloadData()
         }
 
@@ -53,9 +56,15 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
 
-        cell.textLabel?.text = viewModel.assets?[indexPath.row].symbol
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: ListTableViewCell.identifier) as? ListTableViewCell,
+              let asset = viewModel.assets?[indexPath.row] else {
+
+            return .init(frame: .zero)
+        }
+
+        cell.configure(with: asset)
 
         return cell
     }
