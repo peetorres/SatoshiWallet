@@ -35,8 +35,8 @@ final class ListTableViewCell: UITableViewCell {
         rankingLabel.text = asset.rank
         symbolLabel.text = asset.symbol
         nameLabel.text = asset.name
-        priceLabel.text = asset.priceUsd
-        marketCapLabel.text = asset.marketCapUsd
+        priceLabel.text = asset.priceUsd?.currencyFormatting()
+        marketCapLabel.text = asset.marketCapUsd?.currencyFormatting()
     }
 
     // MARK: Private Methods

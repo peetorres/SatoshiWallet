@@ -21,6 +21,7 @@
 		A209D49C28C95D1900B43711 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49B28C95D1900B43711 /* Network.swift */; };
 		A209D49E28C9684900B43711 /* SatoshiWalletError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49D28C9684800B43711 /* SatoshiWalletError.swift */; };
 		A209D4A028C9688400B43711 /* ListServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49F28C9688400B43711 /* ListServices.swift */; };
+		A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB550728C9E293004DC74E /* String+Extensions.swift */; };
 		A2FBDBF628C9CF8C00AD9FE8 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBDBF428C9CF8C00AD9FE8 /* ListTableViewCell.swift */; };
 		A2FBDBF728C9CF8C00AD9FE8 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FBDBF528C9CF8C00AD9FE8 /* ListTableViewCell.xib */; };
 		BC04DD1260BDA58B169E648F /* Pods_SatoshiWallet_SatoshiWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B18D21A707CADBDD4EC1C5 /* Pods_SatoshiWallet_SatoshiWalletUITests.framework */; };
@@ -69,6 +70,7 @@
 		A209D49B28C95D1900B43711 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A209D49D28C9684800B43711 /* SatoshiWalletError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatoshiWalletError.swift; sourceTree = "<group>"; };
 		A209D49F28C9688400B43711 /* ListServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServices.swift; sourceTree = "<group>"; };
+		A2FB550728C9E293004DC74E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A2FBDBF428C9CF8C00AD9FE8 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		A2FBDBF528C9CF8C00AD9FE8 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		F108202F4E068CDEA6ADA899 /* Pods-SatoshiWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWalletTests.release.xcconfig"; path = "Target Support Files/Pods-SatoshiWalletTests/Pods-SatoshiWalletTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				A209D48828C9528800B43711 /* Sources */,
 				A209D48928C953F900B43711 /* Resources */,
+				A2FB550628C9E281004DC74E /* Extensions */,
 				A209D49A28C95CFD00B43711 /* Network */,
 				A209D48B28C9580200B43711 /* Models */,
 				A209D48A28C9543600B43711 /* Scenes */,
@@ -230,6 +233,14 @@
 				A209D49D28C9684800B43711 /* SatoshiWalletError.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A2FB550628C9E281004DC74E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2FB550728C9E293004DC74E /* String+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A2FBDBF228C9CF5A00AD9FE8 /* Cell */ = {
@@ -485,6 +496,7 @@
 				A2FBDBF628C9CF8C00AD9FE8 /* ListTableViewCell.swift in Sources */,
 				A209D49C28C95D1900B43711 /* Network.swift in Sources */,
 				A209D48D28C9582500B43711 /* Asset.swift in Sources */,
+				A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */,
 				A209D49228C958EC00B43711 /* ListViewController.swift in Sources */,
 				A209D49628C9595400B43711 /* ListViewModel.swift in Sources */,
 				A209D45928C950A800B43711 /* AppDelegate.swift in Sources */,
