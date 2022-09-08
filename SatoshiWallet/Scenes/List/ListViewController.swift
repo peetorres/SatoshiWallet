@@ -7,14 +7,23 @@
 
 import UIKit
 
-final class ListViewController: UIViewController {
+final class ListViewController: BaseViewController {
     // MARK: Properties
-    private let viewModel: ListViewModel = .init()
+    private let viewModel: ListViewModel
 
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Overrides
+    init(viewModel: ListViewModel = .init()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        return nil
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -39,12 +48,14 @@ final class ListViewController: UIViewController {
             self?.tableView.reloadData()
         }
 
-        viewModel.handleError = { _ in
-            print("error")
+        viewModel.handleError = { [weak self] _ in
+            self?.showNetworkError {
+                self?.viewModel.getAssetLists()
+            }
         }
 
-        viewModel.shouldProgressShow = { _ in
-            print("showing progress")
+        viewModel.shouldProgressShow = { [weak self] isShowing in
+            isShowing ? self?.showProgress() : self?.dismissProgress()
         }
     }
 }

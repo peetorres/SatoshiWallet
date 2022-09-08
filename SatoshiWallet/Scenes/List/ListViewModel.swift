@@ -26,11 +26,11 @@ final class ListViewModel {
     func getAssetLists() {
         shouldProgressShow?(true)
         service.getAssetList { [weak self] response in
+            self?.shouldProgressShow?(false)
             switch response {
                 case .success(let model):
                     self?.assets = model.data
                     self?.handleSuccess?()
-
                 case .failure(let error):
                     self?.handleError?(error.localizedDescription)
             }
