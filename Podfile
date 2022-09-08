@@ -6,6 +6,7 @@ target 'SatoshiWallet' do
   use_frameworks!
 
   # Pods for SatoshiWallet
+  pod 'Moya/RxSwift', '~> 15.0'
 
   target 'SatoshiWalletTests' do
     inherit! :search_paths

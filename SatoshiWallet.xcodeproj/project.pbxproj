@@ -18,6 +18,9 @@
 		A209D49228C958EC00B43711 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49028C958EC00B43711 /* ListViewController.swift */; };
 		A209D49328C958EC00B43711 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A209D49128C958EC00B43711 /* ListViewController.xib */; };
 		A209D49628C9595400B43711 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49528C9595400B43711 /* ListViewModel.swift */; };
+		A209D49C28C95D1900B43711 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49B28C95D1900B43711 /* Network.swift */; };
+		A209D49E28C9684900B43711 /* SatoshiWalletError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49D28C9684800B43711 /* SatoshiWalletError.swift */; };
+		A209D4A028C9688400B43711 /* ListServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49F28C9688400B43711 /* ListServices.swift */; };
 		BC04DD1260BDA58B169E648F /* Pods_SatoshiWallet_SatoshiWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B18D21A707CADBDD4EC1C5 /* Pods_SatoshiWallet_SatoshiWalletUITests.framework */; };
 		E3791A3283A4EC23D15FFE09 /* Pods_SatoshiWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75478356CD869106A1428847 /* Pods_SatoshiWalletTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +64,9 @@
 		A209D49028C958EC00B43711 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		A209D49128C958EC00B43711 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		A209D49528C9595400B43711 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		A209D49B28C95D1900B43711 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A209D49D28C9684800B43711 /* SatoshiWalletError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatoshiWalletError.swift; sourceTree = "<group>"; };
+		A209D49F28C9688400B43711 /* ListServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServices.swift; sourceTree = "<group>"; };
 		F108202F4E068CDEA6ADA899 /* Pods-SatoshiWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWalletTests.release.xcconfig"; path = "Target Support Files/Pods-SatoshiWalletTests/Pods-SatoshiWalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF1B38197EFBE07251C057F3 /* Pods-SatoshiWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWallet.debug.xcconfig"; path = "Target Support Files/Pods-SatoshiWallet/Pods-SatoshiWallet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +149,7 @@
 			children = (
 				A209D48828C9528800B43711 /* Sources */,
 				A209D48928C953F900B43711 /* Resources */,
+				A209D49A28C95CFD00B43711 /* Network */,
 				A209D48B28C9580200B43711 /* Models */,
 				A209D48A28C9543600B43711 /* Scenes */,
 				A209D46628C950AA00B43711 /* Info.plist */,
@@ -203,11 +210,21 @@
 		A209D49428C958FC00B43711 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				A209D49F28C9688400B43711 /* ListServices.swift */,
 				A209D49528C9595400B43711 /* ListViewModel.swift */,
 				A209D49028C958EC00B43711 /* ListViewController.swift */,
 				A209D49128C958EC00B43711 /* ListViewController.xib */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		A209D49A28C95CFD00B43711 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A209D49B28C95D1900B43711 /* Network.swift */,
+				A209D49D28C9684800B43711 /* SatoshiWalletError.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +238,7 @@
 				A209D45128C950A800B43711 /* Sources */,
 				A209D45228C950A800B43711 /* Frameworks */,
 				A209D45328C950A800B43711 /* Resources */,
+				D3420D08FBDDBB00D1A12AE1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,6 +276,7 @@
 				A209D47128C950AA00B43711 /* Sources */,
 				A209D47228C950AA00B43711 /* Frameworks */,
 				A209D47328C950AA00B43711 /* Resources */,
+				1E265870ED0FC37CD763B03E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -340,6 +359,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1E265870ED0FC37CD763B03E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SatoshiWallet-SatoshiWalletUITests/Pods-SatoshiWallet-SatoshiWalletUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SatoshiWallet-SatoshiWalletUITests/Pods-SatoshiWallet-SatoshiWalletUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SatoshiWallet-SatoshiWalletUITests/Pods-SatoshiWallet-SatoshiWalletUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5769C802C6158F21EE794166 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -406,6 +442,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3420D08FBDDBB00D1A12AE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SatoshiWallet/Pods-SatoshiWallet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SatoshiWallet/Pods-SatoshiWallet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SatoshiWallet/Pods-SatoshiWallet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -413,10 +466,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A209D4A028C9688400B43711 /* ListServices.swift in Sources */,
+				A209D49C28C95D1900B43711 /* Network.swift in Sources */,
 				A209D48D28C9582500B43711 /* Asset.swift in Sources */,
 				A209D49228C958EC00B43711 /* ListViewController.swift in Sources */,
 				A209D49628C9595400B43711 /* ListViewModel.swift in Sources */,
 				A209D45928C950A800B43711 /* AppDelegate.swift in Sources */,
+				A209D49E28C9684900B43711 /* SatoshiWalletError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,7 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bindEvents()
+        viewModel.getAssetLists()
     }
 
     // MARK: Methods
@@ -24,6 +25,16 @@ final class ListViewController: UIViewController {
     }
 
     private func bindEvents() {
+        viewModel.handleSuccess = {
+            print("success!")
+        }
 
+        viewModel.handleError = { _ in
+            print("error")
+        }
+
+        viewModel.shouldProgressShow = { _ in
+            print("showing progress")
+        }
     }
 }
