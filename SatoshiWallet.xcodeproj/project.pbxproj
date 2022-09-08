@@ -29,6 +29,8 @@
 		A218572928CA8AF400931B07 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218572828CA8AF400931B07 /* NetworkErrorView.swift */; };
 		A218572B28CA8AFD00931B07 /* NetworkErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A218572A28CA8AFD00931B07 /* NetworkErrorView.xib */; };
 		A218572F28CA8F6700931B07 /* Metaverse.json in Resources */ = {isa = PBXBuildFile; fileRef = A218572E28CA8F6700931B07 /* Metaverse.json */; };
+		A218573328CA929D00931B07 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218573128CA929D00931B07 /* DetailsViewController.swift */; };
+		A218573428CA929D00931B07 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A218573228CA929D00931B07 /* DetailsViewController.xib */; };
 		A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB550728C9E293004DC74E /* String+Extensions.swift */; };
 		A2FBDBF628C9CF8C00AD9FE8 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBDBF428C9CF8C00AD9FE8 /* ListTableViewCell.swift */; };
 		A2FBDBF728C9CF8C00AD9FE8 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FBDBF528C9CF8C00AD9FE8 /* ListTableViewCell.xib */; };
@@ -86,6 +88,8 @@
 		A218572828CA8AF400931B07 /* NetworkErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
 		A218572A28CA8AFD00931B07 /* NetworkErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NetworkErrorView.xib; sourceTree = "<group>"; };
 		A218572E28CA8F6700931B07 /* Metaverse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Metaverse.json; path = ../../../../../../Desktop/Metaverse.json; sourceTree = "<group>"; };
+		A218573128CA929D00931B07 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		A218573228CA929D00931B07 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		A2FB550728C9E293004DC74E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A2FBDBF428C9CF8C00AD9FE8 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		A2FBDBF528C9CF8C00AD9FE8 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				A209D49428C958FC00B43711 /* List */,
+				A218573028CA928400931B07 /* Details */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -305,6 +310,15 @@
 				A218572A28CA8AFD00931B07 /* NetworkErrorView.xib */,
 			);
 			path = NetworkError;
+			sourceTree = "<group>";
+		};
+		A218573028CA928400931B07 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				A218573128CA929D00931B07 /* DetailsViewController.swift */,
+				A218573228CA929D00931B07 /* DetailsViewController.xib */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		A2FB550628C9E281004DC74E /* Extensions */ = {
@@ -442,6 +456,7 @@
 				A209D46228C950AA00B43711 /* Assets.xcassets in Resources */,
 				A218572B28CA8AFD00931B07 /* NetworkErrorView.xib in Resources */,
 				A209D49328C958EC00B43711 /* ListViewController.xib in Resources */,
+				A218573428CA929D00931B07 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +595,7 @@
 				A209D49628C9595400B43711 /* ListViewModel.swift in Sources */,
 				A218571F28CA85AC00931B07 /* ProgressView.swift in Sources */,
 				A209D45928C950A800B43711 /* AppDelegate.swift in Sources */,
+				A218573328CA929D00931B07 /* DetailsViewController.swift in Sources */,
 				A209D49E28C9684900B43711 /* SatoshiWalletError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

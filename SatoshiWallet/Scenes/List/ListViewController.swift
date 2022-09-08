@@ -79,4 +79,11 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        guard let asset = viewModel.assets?[indexPath.row] else { return }
+        let viewController = DetailsViewController(viewModel: .init(asset: asset))
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
