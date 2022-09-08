@@ -31,6 +31,7 @@ final class ListViewController: UIViewController {
 
         let nib = UINib(nibName: ListTableViewCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ListTableViewCell.identifier)
+        tableView.rowHeight = ListTableViewCell.rowHeight
     }
 
     private func bindEvents() {
