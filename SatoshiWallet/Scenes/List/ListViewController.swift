@@ -58,6 +58,11 @@ final class ListViewController: BaseViewController {
             isShowing ? self?.showProgress() : self?.dismissProgress()
         }
     }
+
+    private func navigateToDetails(with asset: Asset) {
+        let viewController = DetailsViewController(viewModel: .init(asset: asset))
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: Extensions
@@ -83,7 +88,6 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         guard let asset = viewModel.assets?[indexPath.row] else { return }
-        let viewController = DetailsViewController(viewModel: .init(asset: asset))
-        self.navigationController?.pushViewController(viewController, animated: true)
+        navigateToDetails(with: asset)
     }
 }

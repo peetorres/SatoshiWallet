@@ -42,6 +42,8 @@ final class DetailsViewController: UIViewController {
 
     // MARK: Methods
     private func setupUI() {
+        title = viewModel.nameText()
+
         assetImageView.kf.setImage(with: viewModel.imageUrl())
         rankingLabel.text = viewModel.rankText()
         symbolLabel.text = viewModel.symbolText()
