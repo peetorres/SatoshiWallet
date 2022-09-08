@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class ListTableViewCell: UITableViewCell {
     static var identifier = "ListTableViewCell"
@@ -30,6 +31,7 @@ final class ListTableViewCell: UITableViewCell {
 
     // MARK: Public Methods
     func configure(with asset: Asset) {
+        assetImageView.kf.setImage(with: imageUrl(of: asset))
         rankingLabel.text = asset.rank
         symbolLabel.text = asset.symbol
         nameLabel.text = asset.name
@@ -40,5 +42,10 @@ final class ListTableViewCell: UITableViewCell {
     // MARK: Private Methods
     private func setupConstraints() {
 
+    }
+
+    private func imageUrl(of asset: Asset) -> URL? {
+        let symbol = asset.symbol.lowercased()
+        return URL(string: "https://assets.coincap.io/assets/icons/\(symbol)@2x.png")
     }
 }

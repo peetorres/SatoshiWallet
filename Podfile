@@ -7,6 +7,7 @@ target 'SatoshiWallet' do
 
   # Pods for SatoshiWallet
   pod 'Moya/RxSwift', '~> 15.0'
+  pod 'Kingfisher', '~> 7.0'
 
   target 'SatoshiWalletTests' do
     inherit! :search_paths

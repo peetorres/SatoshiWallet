@@ -14,7 +14,6 @@ final class ListViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
 
-
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
