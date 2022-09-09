@@ -10,7 +10,7 @@ import Kingfisher
 
 final class ListTableViewCell: UITableViewCell {
     static var identifier = "ListTableViewCell"
-    static var rowHeight: CGFloat = 60
+    static var rowHeight: CGFloat = 90
     
     // MARK: Outlets
     @IBOutlet weak var assetImageView: UIImageView!

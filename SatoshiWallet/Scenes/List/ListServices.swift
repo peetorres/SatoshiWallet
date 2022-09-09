@@ -22,7 +22,7 @@ final class ListServices: ListServicesProtocol {
             switch result {
                 case .success(let response):
                     do {
-                        print(try response.mapJSON())
+//                        print(try response.mapJSON())
                         let model = try response.map(ListResponse.self)
                         completion(.success(model))
                     } catch {
