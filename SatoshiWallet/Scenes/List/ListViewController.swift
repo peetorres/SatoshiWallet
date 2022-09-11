@@ -17,7 +17,7 @@ final class ListViewController: BaseViewController {
     // MARK: Actions
     @objc
     func switchDidChange(sender: UISwitch!) {
-        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
         keyWindow?.overrideUserInterfaceStyle = sender.isOn ? .dark : .light
     }
 
@@ -91,11 +91,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: ListTableViewCell.identifier) as? ListTableViewCell,
               let asset = viewModel.assets?[indexPath.row] else {
-
             return .init(frame: .zero)
         }
 
@@ -105,7 +103,6 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         guard let asset = viewModel.assets?[indexPath.row] else { return }
         navigateToDetails(with: asset)
     }

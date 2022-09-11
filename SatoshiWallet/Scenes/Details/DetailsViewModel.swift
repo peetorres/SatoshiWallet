@@ -19,7 +19,6 @@ final class DetailsViewModel {
 
 // MARK: ViewModel Formatting
 extension DetailsViewModel {
-
     func imageUrl() -> URL? {
         let symbol = asset.symbol.lowercased()
         return URL(string: "https://assets.coincap.io/assets/icons/\(symbol)@2x.png")

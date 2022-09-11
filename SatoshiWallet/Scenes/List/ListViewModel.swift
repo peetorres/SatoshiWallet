@@ -32,10 +32,10 @@ final class ListViewModel {
         service.getAssetList { [weak self] response in
             self?.shouldProgressShow?(false)
             switch response {
-                case .success(let model):
-                    self?.assets = model.data
-                case .failure(let error):
-                    self?.handleError?(error.localizedDescription)
+            case .success(let model):
+                self?.assets = model.data
+            case .failure(let error):
+                self?.handleError?(error.localizedDescription)
             }
         }
     }

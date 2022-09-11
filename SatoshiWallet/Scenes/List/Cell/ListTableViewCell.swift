@@ -11,7 +11,7 @@ import Kingfisher
 final class ListTableViewCell: UITableViewCell {
     static var identifier = "ListTableViewCell"
     static var rowHeight: CGFloat = 90
-    
+
     // MARK: Outlets
     @IBOutlet weak var assetImageView: UIImageView!
     @IBOutlet weak var rankingLabel: UILabel!
@@ -41,9 +41,7 @@ final class ListTableViewCell: UITableViewCell {
     }
 
     // MARK: Private Methods
-    private func setupConstraints() {
-
-    }
+    private func setupConstraints() {}
 
     private func imageUrl(of asset: Asset) -> URL? {
         let symbol = asset.symbol.lowercased()

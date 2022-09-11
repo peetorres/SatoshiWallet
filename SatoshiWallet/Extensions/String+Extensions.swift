@@ -8,7 +8,6 @@
 import Foundation
 
 extension String {
-
     func currencyFormatting() -> String {
         if let value = Double(self) {
             let formatter = NumberFormatter()

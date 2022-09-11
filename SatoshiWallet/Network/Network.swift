@@ -13,20 +13,19 @@ public enum CoinCap {
 }
 
 extension CoinCap: TargetType {
-
     public var baseURL: URL {
         return URL(string: "https://api.coincap.io/v2")!
     }
 
     public var path: String {
         switch self {
-            case .assets: return "/assets"
+        case .assets: return "/assets"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-            case .assets: return .get
+        case .assets: return .get
         }
     }
 
@@ -38,7 +37,7 @@ extension CoinCap: TargetType {
         return .requestPlain
     }
 
-    public var headers: [String : String]? {
+    public var headers: [String: String]? {
         return ["ContentType": "application/json"]
     }
 

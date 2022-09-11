@@ -20,16 +20,16 @@ final class ListServices: ListServicesProtocol {
     func getAssetList(completion: @escaping ((Result<ListResponse, SatoshiWalletError>) -> Void)) {
         provider.request(.assets) { result in
             switch result {
-                case .success(let response):
-                    do {
+            case .success(let response):
+                do {
 //                        print(try response.mapJSON())
-                        let model = try response.map(ListResponse.self)
-                        completion(.success(model))
-                    } catch {
-                        completion(.failure(.parse(response.data)))
-                    }
-                case .failure:
-                    completion(.failure(.unknown))
+                    let model = try response.map(ListResponse.self)
+                    completion(.success(model))
+                } catch {
+                    completion(.failure(.parse(response.data)))
+                }
+            case .failure:
+                completion(.failure(.unknown))
             }
         }
     }
