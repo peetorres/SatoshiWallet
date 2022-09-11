@@ -91,12 +91,12 @@ final class ListViewController: BaseViewController {
     }
 
     private func setupTableView() {
-        let nib = UINib(nibName: ListTableViewCell.identifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: ListTableViewCell.identifier)
+        let nib = UINib(nibName: ListCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: ListCell.identifier)
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = ListTableViewCell.rowHeight
+        tableView.rowHeight = ListCell.rowHeight
     }
 
     private func setupNavigationBar() {
@@ -128,7 +128,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: ListTableViewCell.identifier) as? ListTableViewCell,
+            withIdentifier: ListCell.identifier) as? ListCell,
               let asset = viewModel.mutableAssets?[indexPath.row] else {
             return .init(frame: .zero)
         }

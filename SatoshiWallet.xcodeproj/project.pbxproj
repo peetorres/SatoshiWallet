@@ -12,6 +12,7 @@
 		A207164828CDE3F2008C34DF /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164728CDE3F2008C34DF /* UIButton+Extensions.swift */; };
 		A207164B28CE17B7008C34DF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164A28CE17B7008C34DF /* UIView+Extensions.swift */; };
 		A207164D28CE8525008C34DF /* DSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164C28CE8525008C34DF /* DSColors.swift */; };
+		A207164F28CE8904008C34DF /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164E28CE8904008C34DF /* ListCellViewModel.swift */; };
 		A209D45928C950A800B43711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45828C950A800B43711 /* AppDelegate.swift */; };
 		A209D46228C950AA00B43711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A209D46128C950AA00B43711 /* Assets.xcassets */; };
 		A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A209D46328C950AA00B43711 /* LaunchScreen.storyboard */; };
@@ -38,8 +39,8 @@
 		A218573628CA998000931B07 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218573528CA998000931B07 /* DetailsViewModel.swift */; };
 		A29E775B28CB24AF007DC5A2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E775A28CB24AF007DC5A2 /* CustomView.swift */; };
 		A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB550728C9E293004DC74E /* String+Extensions.swift */; };
-		A2FBDBF628C9CF8C00AD9FE8 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBDBF428C9CF8C00AD9FE8 /* ListTableViewCell.swift */; };
-		A2FBDBF728C9CF8C00AD9FE8 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FBDBF528C9CF8C00AD9FE8 /* ListTableViewCell.xib */; };
+		A2FBDBF628C9CF8C00AD9FE8 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */; };
+		A2FBDBF728C9CF8C00AD9FE8 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FBDBF528C9CF8C00AD9FE8 /* ListCell.xib */; };
 		BC04DD1260BDA58B169E648F /* Pods_SatoshiWallet_SatoshiWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B18D21A707CADBDD4EC1C5 /* Pods_SatoshiWallet_SatoshiWalletUITests.framework */; };
 		E3791A3283A4EC23D15FFE09 /* Pods_SatoshiWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75478356CD869106A1428847 /* Pods_SatoshiWalletTests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		A207164728CDE3F2008C34DF /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		A207164A28CE17B7008C34DF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A207164C28CE8525008C34DF /* DSColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColors.swift; sourceTree = "<group>"; };
+		A207164E28CE8904008C34DF /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
 		A209D45528C950A800B43711 /* SatoshiWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SatoshiWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A209D45828C950A800B43711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A209D46128C950AA00B43711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,8 +105,8 @@
 		A218573528CA998000931B07 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		A29E775A28CB24AF007DC5A2 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A2FB550728C9E293004DC74E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		A2FBDBF428C9CF8C00AD9FE8 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
-		A2FBDBF528C9CF8C00AD9FE8 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		A2FBDBF528C9CF8C00AD9FE8 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		F108202F4E068CDEA6ADA899 /* Pods-SatoshiWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWalletTests.release.xcconfig"; path = "Target Support Files/Pods-SatoshiWalletTests/Pods-SatoshiWalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF1B38197EFBE07251C057F3 /* Pods-SatoshiWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWallet.debug.xcconfig"; path = "Target Support Files/Pods-SatoshiWallet/Pods-SatoshiWallet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -358,8 +360,9 @@
 		A2FBDBF228C9CF5A00AD9FE8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				A2FBDBF428C9CF8C00AD9FE8 /* ListTableViewCell.swift */,
-				A2FBDBF528C9CF8C00AD9FE8 /* ListTableViewCell.xib */,
+				A207164E28CE8904008C34DF /* ListCellViewModel.swift */,
+				A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */,
+				A2FBDBF528C9CF8C00AD9FE8 /* ListCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -477,7 +480,7 @@
 			files = (
 				A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */,
 				A218572F28CA8F6700931B07 /* Metaverse.json in Resources */,
-				A2FBDBF728C9CF8C00AD9FE8 /* ListTableViewCell.xib in Resources */,
+				A2FBDBF728C9CF8C00AD9FE8 /* ListCell.xib in Resources */,
 				A218572428CA86C000931B07 /* Loading.json in Resources */,
 				A218572128CA85B400931B07 /* ProgressView.xib in Resources */,
 				A209D46228C950AA00B43711 /* Assets.xcassets in Resources */,
@@ -632,9 +635,10 @@
 				A29E775B28CB24AF007DC5A2 /* CustomView.swift in Sources */,
 				A209D4A028C9688400B43711 /* ListServices.swift in Sources */,
 				A207164D28CE8525008C34DF /* DSColors.swift in Sources */,
-				A2FBDBF628C9CF8C00AD9FE8 /* ListTableViewCell.swift in Sources */,
+				A2FBDBF628C9CF8C00AD9FE8 /* ListCell.swift in Sources */,
 				A218572628CA879100931B07 /* BaseViewController.swift in Sources */,
 				A207164628CDE3B3008C34DF /* CustomButton.swift in Sources */,
+				A207164F28CE8904008C34DF /* ListCellViewModel.swift in Sources */,
 				A209D49C28C95D1900B43711 /* Network.swift in Sources */,
 				A218572928CA8AF400931B07 /* NetworkErrorView.swift in Sources */,
 				A209D48D28C9582500B43711 /* Asset.swift in Sources */,
