@@ -37,7 +37,7 @@ final class ListTableViewCell: UITableViewCell {
     }
 
     // MARK: Public Methods
-    func configure(with asset: Asset) {
+    func configure(with asset: Asset, isSearching: Bool) {
         assetImageView.kf.setImage(with: imageUrl(of: asset))
         rankingLabel.text = asset.rank
         symbolLabel.text = asset.symbol
@@ -45,7 +45,9 @@ final class ListTableViewCell: UITableViewCell {
         priceLabel.text = asset.priceUsd?.currencyFormatting()
         marketCapLabel.text = asset.marketCapUsd?.currencyFormatting()
 
-        animateLabelsUpdate()
+        if !isSearching {
+            animateLabelsUpdate()
+        }
     }
 
     private func animateLabelsUpdate() {

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,6 +13,7 @@
             <connections>
                 <outlet property="tableView" destination="Qdf-HZ-PC5" id="owq-Pb-j2x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewBackgroundFetchError" destination="OtM-2d-v66" id="T14-D3-pba"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,23 +21,67 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qdf-HZ-PC5">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WW7-ZS-1Wc">
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OtM-2d-v66">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WtU-JN-zYL" customClass="CustomView" customModule="SatoshiWallet" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="0.0" width="382" height="60"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Was not possible to fetch an updated crypto data, your price could be wrong." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yk9-Op-Rax">
+                                            <rect key="frame" x="12" y="12" width="358" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="yk9-Op-Rax" firstAttribute="top" secondItem="WtU-JN-zYL" secondAttribute="top" constant="12" id="PpJ-fI-mFD"/>
+                                        <constraint firstItem="yk9-Op-Rax" firstAttribute="leading" secondItem="WtU-JN-zYL" secondAttribute="leading" constant="12" id="Yyg-wP-Xcu"/>
+                                        <constraint firstAttribute="trailing" secondItem="yk9-Op-Rax" secondAttribute="trailing" constant="12" id="rd6-Ak-C4K"/>
+                                        <constraint firstAttribute="bottom" secondItem="yk9-Op-Rax" secondAttribute="bottom" constant="12" id="snl-Te-IZk"/>
+                                        <constraint firstAttribute="height" constant="60" id="yRR-Va-Uxq"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="WtU-JN-zYL" firstAttribute="leading" secondItem="OtM-2d-v66" secondAttribute="leading" constant="16" id="HaX-x2-wqW"/>
+                                <constraint firstAttribute="trailing" secondItem="WtU-JN-zYL" secondAttribute="trailing" constant="16" id="Qq2-fl-Htg"/>
+                                <constraint firstItem="WtU-JN-zYL" firstAttribute="top" secondItem="OtM-2d-v66" secondAttribute="top" id="oxV-Xe-3po"/>
+                                <constraint firstAttribute="bottom" secondItem="WtU-JN-zYL" secondAttribute="bottom" constant="8" id="vi0-Gb-gJC"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qdf-HZ-PC5">
+                            <rect key="frame" x="0.0" y="68" width="414" height="784"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qdf-HZ-PC5" secondAttribute="trailing" id="7iQ-OC-G5s"/>
-                <constraint firstAttribute="bottom" secondItem="Qdf-HZ-PC5" secondAttribute="bottom" id="Dbb-AV-QFy"/>
-                <constraint firstItem="Qdf-HZ-PC5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aQi-fG-xeA"/>
-                <constraint firstItem="Qdf-HZ-PC5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rBf-eO-qM5"/>
+                <constraint firstItem="WW7-ZS-1Wc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0K2-Ao-hRC"/>
+                <constraint firstAttribute="bottom" secondItem="WW7-ZS-1Wc" secondAttribute="bottom" id="X5b-H2-jcF"/>
+                <constraint firstItem="WW7-ZS-1Wc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="azr-9a-Q8I"/>
+                <constraint firstItem="WW7-ZS-1Wc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="gNO-Uy-l0S"/>
             </constraints>
             <point key="canvasLocation" x="132" y="85"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

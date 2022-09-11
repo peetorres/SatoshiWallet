@@ -13,6 +13,7 @@ final class ListViewController: BaseViewController {
 
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewBackgroundFetchError: UIView!
 
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -54,6 +55,7 @@ final class ListViewController: BaseViewController {
 
     // MARK: Methods
     private func setupUI() {
+        viewBackgroundFetchError.isHidden = true
         setupTableView()
         setupNavigationBar()
     }
@@ -61,12 +63,12 @@ final class ListViewController: BaseViewController {
     private func bindEvents() {
         viewModel.handleSuccess = { [weak self] in
             self?.tableView.reloadData()
+            self?.viewBackgroundFetchError.isHidden = true
         }
 
         viewModel.handleError = { [weak self] isBackgroundFetch, _ in
             if isBackgroundFetch {
-                print("Should show toast.")
-                print("Was not possible to fetch info, your price could be wrong.")
+                self?.viewBackgroundFetchError.isHidden = false
             } else {
                 self?.showNetworkError {
                     self?.viewModel.getAssetLists(isBackgroundFetch: isBackgroundFetch)
@@ -131,7 +133,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             return .init(frame: .zero)
         }
 
-        cell.configure(with: asset)
+        cell.configure(with: asset, isSearching: !viewModel.searchText.isEmpty)
 
         return cell
     }
