@@ -15,10 +15,8 @@ final class DetailsViewModel {
     init(asset: Asset) {
         self.asset = asset
     }
-}
 
-// MARK: ViewModel Formatting
-extension DetailsViewModel {
+    // MARK: ViewModel Formatting
     func imageUrl() -> URL? {
         let symbol = asset.symbol.lowercased()
         return URL(string: "https://assets.coincap.io/assets/icons/\(symbol)@2x.png")
