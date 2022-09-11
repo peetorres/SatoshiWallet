@@ -19,7 +19,12 @@ final class ListViewModel {
 
     var mutableAssets: [Asset]? {
         guard !searchText.isEmpty else { return assets }
-        return assets?.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+
+        return assets?.filter { asset in
+            let nameHasText = asset.name.lowercased().contains(searchText.lowercased())
+            let symbolHasText = asset.symbol.lowercased().contains(searchText.lowercased())
+            return nameHasText || symbolHasText
+        }
     }
 
     var searchText: String = "" {
