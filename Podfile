@@ -9,6 +9,7 @@ target 'SatoshiWallet' do
   pod 'Moya/RxSwift', '~> 15.0'
   pod 'Kingfisher', '~> 7.0'
   pod 'lottie-ios'
+  pod 'SwiftLint'
 
   target 'SatoshiWalletTests' do
     inherit! :search_paths

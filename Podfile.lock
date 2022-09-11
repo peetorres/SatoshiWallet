@@ -8,11 +8,13 @@ PODS:
     - Moya/Core
     - RxSwift (~> 6.0)
   - RxSwift (6.5.0)
+  - SwiftLint (0.46.1)
 
 DEPENDENCIES:
   - Kingfisher (~> 7.0)
   - lottie-ios
   - Moya/RxSwift (~> 15.0)
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
@@ -21,6 +23,7 @@ SPEC REPOS:
     - lottie-ios
     - Moya
     - RxSwift
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
@@ -28,7 +31,8 @@ SPEC CHECKSUMS:
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SwiftLint: aaa29a9f649316095a9079595cb60906bd899353
 
-PODFILE CHECKSUM: 51e573c79c28faad34205571647c084ffc52557d
+PODFILE CHECKSUM: 5c828629f5f7b43c945aefb74a30e9d8221ba8c7
 
 COCOAPODS: 1.11.3
