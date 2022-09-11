@@ -34,7 +34,7 @@ final class ListViewModel {
         }
     }
 
-    public var handleSuccess: ((Bool) -> Void)?
+    public var handleSuccess: (() -> Void)?
     public var shouldReloadData: (() -> Void)?
     public var handleError: ((Bool, String) -> Void)?
     public var shouldProgressShow: ((Bool) -> Void)?
@@ -71,7 +71,7 @@ final class ListViewModel {
             switch response {
             case .success(let model):
                 self.assets = model.data
-                self.handleSuccess?(isBackgroundFetch)
+                self.handleSuccess?()
                 !isBackgroundFetch ? self.serverAssetLists() : nil
             case .failure(let error):
                 self.handleError?(isBackgroundFetch, error.localizedDescription)

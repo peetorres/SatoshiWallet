@@ -10,6 +10,7 @@
 		70E75521A471B49C4C704339 /* Pods_SatoshiWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B27E9FC0DC936D343DCE24 /* Pods_SatoshiWallet.framework */; };
 		A207164628CDE3B3008C34DF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164528CDE3B3008C34DF /* CustomButton.swift */; };
 		A207164828CDE3F2008C34DF /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164728CDE3F2008C34DF /* UIButton+Extensions.swift */; };
+		A207164B28CE17B7008C34DF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164A28CE17B7008C34DF /* UIView+Extensions.swift */; };
 		A209D45928C950A800B43711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45828C950A800B43711 /* AppDelegate.swift */; };
 		A209D46228C950AA00B43711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A209D46128C950AA00B43711 /* Assets.xcassets */; };
 		A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A209D46328C950AA00B43711 /* LaunchScreen.storyboard */; };
@@ -69,6 +70,7 @@
 		75478356CD869106A1428847 /* Pods_SatoshiWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SatoshiWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A207164528CDE3B3008C34DF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A207164728CDE3F2008C34DF /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		A207164A28CE17B7008C34DF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A209D45528C950A800B43711 /* SatoshiWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SatoshiWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A209D45828C950A800B43711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A209D46128C950AA00B43711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				A2FB550728C9E293004DC74E /* String+Extensions.swift */,
+				A207164A28CE17B7008C34DF /* UIView+Extensions.swift */,
 				A207164728CDE3F2008C34DF /* UIButton+Extensions.swift */,
 			);
 			path = Extensions;
@@ -635,6 +638,7 @@
 				A209D49228C958EC00B43711 /* ListViewController.swift in Sources */,
 				A209D49628C9595400B43711 /* ListViewModel.swift in Sources */,
 				A207164828CDE3F2008C34DF /* UIButton+Extensions.swift in Sources */,
+				A207164B28CE17B7008C34DF /* UIView+Extensions.swift in Sources */,
 				A218571F28CA85AC00931B07 /* ProgressView.swift in Sources */,
 				A209D45928C950A800B43711 /* AppDelegate.swift in Sources */,
 				A218573628CA998000931B07 /* DetailsViewModel.swift in Sources */,

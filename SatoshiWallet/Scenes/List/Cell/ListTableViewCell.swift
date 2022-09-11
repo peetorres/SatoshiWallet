@@ -9,6 +9,12 @@ import UIKit
 import Kingfisher
 
 final class ListTableViewCell: UITableViewCell {
+    // MARK: Constants
+    private enum Constants {
+        static let alphaOut: CGFloat = 0.4
+    }
+
+    // MARK: Properties
     static var identifier = "ListTableViewCell"
     static var rowHeight: CGFloat = 90
 
@@ -38,6 +44,15 @@ final class ListTableViewCell: UITableViewCell {
         nameLabel.text = asset.name
         priceLabel.text = asset.priceUsd?.currencyFormatting()
         marketCapLabel.text = asset.marketCapUsd?.currencyFormatting()
+
+        animateLabelsUpdate()
+    }
+
+    private func animateLabelsUpdate() {
+        priceLabel.alpha = Constants.alphaOut
+        priceLabel.fadeIn()
+        marketCapLabel.alpha = Constants.alphaOut
+        marketCapLabel.fadeIn()
     }
 
     // MARK: Private Methods

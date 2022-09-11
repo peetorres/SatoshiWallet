@@ -59,10 +59,7 @@ final class ListViewController: BaseViewController {
     }
 
     private func bindEvents() {
-        viewModel.handleSuccess = { [weak self] isBackgroundFetch in
-            if isBackgroundFetch {
-                print("Should show success toast.")
-            }
+        viewModel.handleSuccess = { [weak self] in
             self?.tableView.reloadData()
         }
 
