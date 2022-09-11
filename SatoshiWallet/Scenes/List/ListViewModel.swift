@@ -8,15 +8,15 @@
 import Foundation
 
 final class ListViewModel {
+    // MARK: Constants and Enums
+    private enum Constants {
+        static var timeIntervalFetchInSeconds: TimeInterval = 5
+    }
+
     // MARK: Properties
     private var refreshTimer: Timer?
     private let service: ListServicesProtocol
-
-    private var assets: [Asset]? {
-        didSet {
-            handleSuccess?()
-        }
-    }
+    private var assets: [Asset]?
 
     var mutableAssets: [Asset]? {
         guard !searchText.isEmpty else { return assets }
@@ -34,7 +34,7 @@ final class ListViewModel {
         }
     }
 
-    public var handleSuccess: (() -> Void)?
+    public var handleSuccess: ((Bool) -> Void)?
     public var shouldReloadData: (() -> Void)?
     public var handleError: ((Bool, String) -> Void)?
     public var shouldProgressShow: ((Bool) -> Void)?
@@ -45,23 +45,11 @@ final class ListViewModel {
     }
 
     // MARK: Services
-    func getAssetLists(isBackgroundFetch: Bool) {
-        isBackgroundFetch ? nil : shouldProgressShow?(true)
-        service.getAssetList { [weak self] response in
-            isBackgroundFetch ? nil : self?.shouldProgressShow?(false)
-            switch response {
-            case .success(let model):
-                self?.assets = model.data
-            case .failure(let error):
-                self?.handleError?(isBackgroundFetch, error.localizedDescription)
-            }
-        }
-    }
-
     func serverAssetLists() {
         guard refreshTimer == nil else { return }
-        refreshTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
-            print("Background Request.")
+
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: Constants.timeIntervalFetchInSeconds,
+                                            repeats: true) { [weak self] _ in
             self?.getAssetLists(isBackgroundFetch: true)
         }
         refreshTimer!.fire()
@@ -70,5 +58,24 @@ final class ListViewModel {
     func stopServerAssetLists() {
         refreshTimer?.invalidate()
         refreshTimer = nil
+    }
+
+    func getAssetLists(isBackgroundFetch: Bool) {
+        isBackgroundFetch ? nil : shouldProgressShow?(true)
+
+        service.getAssetList { [weak self] response in
+            guard let self = self else { return }
+
+            isBackgroundFetch ? nil : self.shouldProgressShow?(false)
+
+            switch response {
+            case .success(let model):
+                self.assets = model.data
+                self.handleSuccess?(isBackgroundFetch)
+                !isBackgroundFetch ? self.serverAssetLists() : nil
+            case .failure(let error):
+                self.handleError?(isBackgroundFetch, error.localizedDescription)
+            }
+        }
     }
 }

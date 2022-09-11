@@ -59,9 +59,11 @@ final class ListViewController: BaseViewController {
     }
 
     private func bindEvents() {
-        viewModel.handleSuccess = { [weak self] in
+        viewModel.handleSuccess = { [weak self] isBackgroundFetch in
+            if isBackgroundFetch {
+                print("Should show success toast.")
+            }
             self?.tableView.reloadData()
-            self?.viewModel.serverAssetLists()
         }
 
         viewModel.handleError = { [weak self] isBackgroundFetch, _ in
@@ -70,7 +72,7 @@ final class ListViewController: BaseViewController {
                 print("Was not possible to fetch info, your price could be wrong.")
             } else {
                 self?.showNetworkError {
-                    self?.viewModel.getAssetLists(isBackgroundFetch: false)
+                    self?.viewModel.getAssetLists(isBackgroundFetch: isBackgroundFetch)
                 }
             }
         }

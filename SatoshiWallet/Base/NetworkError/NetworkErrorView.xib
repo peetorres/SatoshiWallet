@@ -15,11 +15,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="UhO-Aa-DWE">
-                    <rect key="frame" x="52" y="197.5" width="310.5" height="501.5"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="UhO-Aa-DWE">
+                    <rect key="frame" x="52" y="69" width="310.5" height="563"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0B-gO-RQq">
+                            <rect key="frame" x="0.0" y="0.0" width="310.5" height="26.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96q-Tf-URC" customClass="AnimationView" customModule="Lottie">
-                            <rect key="frame" x="0.0" y="0.0" width="310.5" height="310.5"/>
+                            <rect key="frame" x="0.0" y="71.5" width="310.5" height="310.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="96q-Tf-URC" secondAttribute="height" multiplier="24:24" id="sNf-7G-Isp"/>
@@ -29,13 +35,13 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep calm! Your request is comming from another metaverse." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJh-C7-Z4z">
-                            <rect key="frame" x="0.0" y="360.5" width="310.5" height="41"/>
+                            <rect key="frame" x="0.0" y="427" width="310.5" height="41"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuF-KP-r4j" customClass="CustomButton" customModule="SatoshiWallet" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="451.5" width="310.5" height="50"/>
+                            <rect key="frame" x="0.0" y="513" width="310.5" height="50"/>
                             <color key="backgroundColor" systemColor="systemCyanColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="vWR-wt-jav"/>
@@ -59,8 +65,8 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="UhO-Aa-DWE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="R9F-hg-T2e"/>
                 <constraint firstItem="UhO-Aa-DWE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aAJ-jl-UTt"/>
-                <constraint firstItem="UhO-Aa-DWE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="lRI-yg-JVj"/>
                 <constraint firstItem="UhO-Aa-DWE" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="pFi-y7-uCR"/>
             </constraints>
             <connections>
