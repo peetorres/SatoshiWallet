@@ -14,6 +14,15 @@ final class ListViewController: BaseViewController {
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
 
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search for Crypto"
+        searchController.hidesNavigationBarDuringPresentation = false
+        return searchController
+    }()
+
     // MARK: Actions
     @objc
     func switchDidChange(sender: UISwitch!) {
@@ -40,9 +49,8 @@ final class ListViewController: BaseViewController {
 
     // MARK: Methods
     private func setupUI() {
-        title = "Satoshi Wallet"
         setupTableView()
-        setupNavigationBarSwitch()
+        setupNavigationBar()
     }
 
     private func bindEvents() {
@@ -54,6 +62,10 @@ final class ListViewController: BaseViewController {
             self?.showNetworkError {
                 self?.viewModel.getAssetLists()
             }
+        }
+
+        viewModel.shouldReloadData = { [weak self] in
+            self?.tableView.reloadData()
         }
 
         viewModel.shouldProgressShow = { [weak self] isShowing in
@@ -75,6 +87,14 @@ final class ListViewController: BaseViewController {
         tableView.rowHeight = ListTableViewCell.rowHeight
     }
 
+    private func setupNavigationBar() {
+        title = "Satoshi Wallet"
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationController?.navigationBar.prefersLargeTitles = false
+        setupNavigationBarSwitch()
+    }
+
     private func setupNavigationBarSwitch() {
         let switchControl = UISwitch()
         let isDarkMode = traitCollection.userInterfaceStyle != .light
@@ -82,18 +102,22 @@ final class ListViewController: BaseViewController {
         switchControl.addTarget(self, action: #selector(switchDidChange(sender:)), for: .valueChanged)
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: switchControl)
     }
+
+    private func search(for text: String) {
+        viewModel.searchText = text
+    }
 }
 
 // MARK: Extensions
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.assets?.count ?? 0
+        return viewModel.mutableAssets?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: ListTableViewCell.identifier) as? ListTableViewCell,
-              let asset = viewModel.assets?[indexPath.row] else {
+              let asset = viewModel.mutableAssets?[indexPath.row] else {
             return .init(frame: .zero)
         }
 
@@ -103,7 +127,14 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let asset = viewModel.assets?[indexPath.row] else { return }
+        guard let asset = viewModel.mutableAssets?[indexPath.row] else { return }
         navigateToDetails(with: asset)
+    }
+}
+
+extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else { return }
+        search(for: searchText)
     }
 }

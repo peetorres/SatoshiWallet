@@ -11,13 +11,25 @@ final class ListViewModel {
     // MARK: Properties
     private let service: ListServicesProtocol
 
-    private(set) var assets: [Asset]? {
+    private var assets: [Asset]? {
         didSet {
             handleSuccess?()
         }
     }
 
+    var mutableAssets: [Asset]? {
+        guard !searchText.isEmpty else { return assets }
+        return assets?.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+    }
+
+    var searchText: String = "" {
+        didSet {
+            self.shouldReloadData?()
+        }
+    }
+
     public var handleSuccess: (() -> Void)?
+    public var shouldReloadData: (() -> Void)?
     public var handleError: ((String) -> Void)?
     public var shouldProgressShow: ((Bool) -> Void)?
 
