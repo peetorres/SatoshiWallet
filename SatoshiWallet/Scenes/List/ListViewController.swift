@@ -133,7 +133,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             return .init(frame: .zero)
         }
 
-        cell.configure(with: asset, isSearching: !viewModel.searchText.isEmpty)
+        let shouldAnimateLabels = searchController.isActive == false
+        cell.configure(with: asset, shouldAnimateLabels: shouldAnimateLabels)
 
         return cell
     }
