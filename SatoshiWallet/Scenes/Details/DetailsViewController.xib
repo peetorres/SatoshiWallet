@@ -130,15 +130,20 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wX6-FX-j6p">
-                    <rect key="frame" x="41.5" y="576.5" width="331" height="60"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wX6-FX-j6p" customClass="CustomButton" customModule="SatoshiWallet" customModuleProvider="target">
+                    <rect key="frame" x="41.5" y="576.5" width="331" height="50"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="xDr-yf-Ghx"/>
+                        <constraint firstAttribute="height" constant="50" id="xDr-yf-Ghx"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Go to Explorer"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
