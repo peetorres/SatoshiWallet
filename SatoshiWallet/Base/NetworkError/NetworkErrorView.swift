@@ -14,20 +14,22 @@ final class NetworkErrorView: UIView {
 
     // MARK: Outlets
     @IBOutlet weak var animationView: AnimationView!
-    @IBOutlet private weak var buttonTryAgain: UIButton!
-
-    // MARK: Actions
-    @IBAction func pressedTryAgain(_ sender: Any) {
-        pressedTryAgain?()
-    }
+    @IBOutlet weak var tryAgainButton: PrimaryButton!
 
     // MARK: Overrides
     override func awakeFromNib() {
         super.awakeFromNib()
+        bindEvents()
         setupLottie()
     }
 
     // MARK: Methods
+    private func bindEvents() {
+        tryAgainButton.handlerButton = { [weak self] in
+            self?.pressedTryAgain?()
+        }
+    }
+
     private func setupLottie() {
         animationView.contentMode = .scaleAspectFill
         animationView.loopMode = .loop
