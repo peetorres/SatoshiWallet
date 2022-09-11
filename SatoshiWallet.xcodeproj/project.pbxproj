@@ -11,6 +11,7 @@
 		A207164628CDE3B3008C34DF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164528CDE3B3008C34DF /* CustomButton.swift */; };
 		A207164828CDE3F2008C34DF /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164728CDE3F2008C34DF /* UIButton+Extensions.swift */; };
 		A207164B28CE17B7008C34DF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164A28CE17B7008C34DF /* UIView+Extensions.swift */; };
+		A207164D28CE8525008C34DF /* DSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164C28CE8525008C34DF /* DSColors.swift */; };
 		A209D45928C950A800B43711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45828C950A800B43711 /* AppDelegate.swift */; };
 		A209D46228C950AA00B43711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A209D46128C950AA00B43711 /* Assets.xcassets */; };
 		A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A209D46328C950AA00B43711 /* LaunchScreen.storyboard */; };
@@ -71,6 +72,7 @@
 		A207164528CDE3B3008C34DF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A207164728CDE3F2008C34DF /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		A207164A28CE17B7008C34DF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A207164C28CE8525008C34DF /* DSColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColors.swift; sourceTree = "<group>"; };
 		A209D45528C950A800B43711 /* SatoshiWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SatoshiWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A209D45828C950A800B43711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A209D46128C950AA00B43711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				A209D46128C950AA00B43711 /* Assets.xcassets */,
 				A209D46328C950AA00B43711 /* LaunchScreen.storyboard */,
 				A29E775928CB2489007DC5A2 /* CustomDesignableUI */,
+				A207164C28CE8525008C34DF /* DSColors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 			files = (
 				A29E775B28CB24AF007DC5A2 /* CustomView.swift in Sources */,
 				A209D4A028C9688400B43711 /* ListServices.swift in Sources */,
+				A207164D28CE8525008C34DF /* DSColors.swift in Sources */,
 				A2FBDBF628C9CF8C00AD9FE8 /* ListTableViewCell.swift in Sources */,
 				A218572628CA879100931B07 /* BaseViewController.swift in Sources */,
 				A207164628CDE3B3008C34DF /* CustomButton.swift in Sources */,
