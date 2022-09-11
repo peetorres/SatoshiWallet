@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="UhO-Aa-DWE">
-                    <rect key="frame" x="52" y="190" width="310.5" height="516.5"/>
+                    <rect key="frame" x="52" y="197.5" width="310.5" height="501.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96q-Tf-URC" customClass="AnimationView" customModule="Lottie">
                             <rect key="frame" x="0.0" y="0.0" width="310.5" height="310.5"/>
@@ -33,15 +34,21 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuF-KP-r4j">
-                            <rect key="frame" x="0.0" y="451.5" width="310.5" height="65"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuF-KP-r4j" customClass="CustomButton" customModule="SatoshiWallet" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="451.5" width="310.5" height="50"/>
                             <color key="backgroundColor" systemColor="systemCyanColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="65" id="vWR-wt-jav"/>
+                                <constraint firstAttribute="height" constant="50" id="vWR-wt-jav"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Try again"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="hasTouchEventsHandler" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="pressedTryAgain:" destination="iN0-l3-epB" eventType="touchUpInside" id="DyO-EU-mwe"/>
                             </connections>
