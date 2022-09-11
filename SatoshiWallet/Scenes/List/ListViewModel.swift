@@ -9,6 +9,7 @@ import Foundation
 
 final class ListViewModel {
     // MARK: Properties
+    private var refreshTimer: Timer?
     private let service: ListServicesProtocol
 
     private var assets: [Asset]? {
@@ -35,7 +36,7 @@ final class ListViewModel {
 
     public var handleSuccess: (() -> Void)?
     public var shouldReloadData: (() -> Void)?
-    public var handleError: ((String) -> Void)?
+    public var handleError: ((Bool, String) -> Void)?
     public var shouldProgressShow: ((Bool) -> Void)?
 
     // MARK: Initializer
@@ -44,16 +45,30 @@ final class ListViewModel {
     }
 
     // MARK: Services
-    func getAssetLists() {
-        shouldProgressShow?(true)
+    func getAssetLists(isBackgroundFetch: Bool) {
+        isBackgroundFetch ? nil : shouldProgressShow?(true)
         service.getAssetList { [weak self] response in
-            self?.shouldProgressShow?(false)
+            isBackgroundFetch ? nil : self?.shouldProgressShow?(false)
             switch response {
             case .success(let model):
                 self?.assets = model.data
             case .failure(let error):
-                self?.handleError?(error.localizedDescription)
+                self?.handleError?(isBackgroundFetch, error.localizedDescription)
             }
         }
+    }
+
+    func serverAssetLists() {
+        guard refreshTimer == nil else { return }
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
+            print("Background Request.")
+            self?.getAssetLists(isBackgroundFetch: true)
+        }
+        refreshTimer!.fire()
+    }
+
+    func stopServerAssetLists() {
+        refreshTimer?.invalidate()
+        refreshTimer = nil
     }
 }

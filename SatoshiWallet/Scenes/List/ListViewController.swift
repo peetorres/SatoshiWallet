@@ -30,7 +30,11 @@ final class ListViewController: BaseViewController {
         keyWindow?.overrideUserInterfaceStyle = sender.isOn ? .dark : .light
     }
 
-    // MARK: Overrides
+    // MARK: Initializers
+    deinit {
+        self.viewModel.stopServerAssetLists()
+    }
+
     init(viewModel: ListViewModel = .init()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -40,11 +44,12 @@ final class ListViewController: BaseViewController {
         return nil
     }
 
+    // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         bindEvents()
-        viewModel.getAssetLists()
+        viewModel.getAssetLists(isBackgroundFetch: false)
     }
 
     // MARK: Methods
@@ -56,11 +61,17 @@ final class ListViewController: BaseViewController {
     private func bindEvents() {
         viewModel.handleSuccess = { [weak self] in
             self?.tableView.reloadData()
+            self?.viewModel.serverAssetLists()
         }
 
-        viewModel.handleError = { [weak self] _ in
-            self?.showNetworkError {
-                self?.viewModel.getAssetLists()
+        viewModel.handleError = { [weak self] isBackgroundFetch, _ in
+            if isBackgroundFetch {
+                print("Should show toast.")
+                print("Was not possible to fetch info, your price could be wrong.")
+            } else {
+                self?.showNetworkError {
+                    self?.viewModel.getAssetLists(isBackgroundFetch: false)
+                }
             }
         }
 
