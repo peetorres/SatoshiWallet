@@ -1,6 +1,0 @@
-framework module Pods_SatoshiWallet {
-  umbrella header "Pods-SatoshiWallet-umbrella.h"
-
-  export *
-  module * { export * }
-}
