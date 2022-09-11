@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 protocol ListServicesProtocol {
-    func getAssetList(completion: @escaping ((Result<ListResponse, SatoshiWalletError>) -> Void))
+    func getAssetList(completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void))
 }
 
 final class ListServices: ListServicesProtocol {
@@ -17,12 +17,11 @@ final class ListServices: ListServicesProtocol {
     private let provider = MoyaProvider<CoinCap>()
 
     // MARK: Methods
-    func getAssetList(completion: @escaping ((Result<ListResponse, SatoshiWalletError>) -> Void)) {
+    func getAssetList(completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void)) {
         provider.request(.assets) { result in
             switch result {
             case .success(let response):
                 do {
-//                        print(try response.mapJSON())
                     let model = try response.map(ListResponse.self)
                     completion(.success(model))
                 } catch {

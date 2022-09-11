@@ -1,5 +1,5 @@
 //
-//  SatoshiWalletError.swift
+//  NetworkLayerError.swift
 //  SatoshiWallet
 //
 //  Created by Pedro Gabriel on 08/09/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SatoshiWalletError: Error {
+public enum NetworkLayerError: Error {
     case parse(Data?)
     case client(_ data: Data?, _ error: Error?, _ statusCode: Int)
     case server(_ data: Data?, _ error: Error?, _ statusCode: Int)

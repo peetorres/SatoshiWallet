@@ -28,7 +28,7 @@
 		A209D49328C958EC00B43711 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A209D49128C958EC00B43711 /* ListViewController.xib */; };
 		A209D49628C9595400B43711 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49528C9595400B43711 /* ListViewModel.swift */; };
 		A209D49C28C95D1900B43711 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49B28C95D1900B43711 /* Network.swift */; };
-		A209D49E28C9684900B43711 /* SatoshiWalletError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49D28C9684800B43711 /* SatoshiWalletError.swift */; };
+		A209D49E28C9684900B43711 /* NetworkLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49D28C9684800B43711 /* NetworkLayerError.swift */; };
 		A209D4A028C9688400B43711 /* ListServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49F28C9688400B43711 /* ListServices.swift */; };
 		A218571728CA81A200931B07 /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218571628CA81A200931B07 /* ListViewControllerTests.swift */; };
 		A218571A28CA82FB00931B07 /* XCTestCase+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218571928CA82FB00931B07 /* XCTestCase+Helpers.swift */; };
@@ -99,7 +99,7 @@
 		A209D49128C958EC00B43711 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		A209D49528C9595400B43711 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		A209D49B28C95D1900B43711 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		A209D49D28C9684800B43711 /* SatoshiWalletError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatoshiWalletError.swift; sourceTree = "<group>"; };
+		A209D49D28C9684800B43711 /* NetworkLayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayerError.swift; sourceTree = "<group>"; };
 		A209D49F28C9688400B43711 /* ListServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServices.swift; sourceTree = "<group>"; };
 		A218571628CA81A200931B07 /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
 		A218571928CA82FB00931B07 /* XCTestCase+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helpers.swift"; sourceTree = "<group>"; };
@@ -275,9 +275,9 @@
 		A209D48928C953F900B43711 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A207164C28CE8525008C34DF /* DSColors.swift */,
-				A218572228CA86B600931B07 /* Lotties */,
 				A209D46128C950AA00B43711 /* Assets.xcassets */,
+				A218572228CA86B600931B07 /* Lotties */,
+				A207164C28CE8525008C34DF /* DSColors.swift */,
 				A209D46328C950AA00B43711 /* LaunchScreen.storyboard */,
 				A29E775928CB2489007DC5A2 /* CustomDesignableUI */,
 			);
@@ -317,7 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				A209D49B28C95D1900B43711 /* Network.swift */,
-				A209D49D28C9684800B43711 /* SatoshiWalletError.swift */,
+				A209D49D28C9684800B43711 /* NetworkLayerError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -703,7 +703,7 @@
 				A209D45928C950A800B43711 /* AppDelegate.swift in Sources */,
 				A218573628CA998000931B07 /* DetailsViewModel.swift in Sources */,
 				A218573328CA929D00931B07 /* DetailsViewController.swift in Sources */,
-				A209D49E28C9684900B43711 /* SatoshiWalletError.swift in Sources */,
+				A209D49E28C9684900B43711 /* NetworkLayerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
