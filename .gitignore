@@ -1,0 +1,8 @@
+## User settings
+xcuserdata/
+
+# CocoaPods
+Pods/
+
+*.xcworkspace
+*.xcuserstate
