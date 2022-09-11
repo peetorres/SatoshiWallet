@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,7 +13,9 @@
             <connections>
                 <outlet property="assetImageView" destination="HA6-L7-o2j" id="0hp-ke-9Ra"/>
                 <outlet property="circulatingSupplyLabel" destination="bEv-AX-G1L" id="cyH-Nm-8Xr"/>
+                <outlet property="explorerButton" destination="2Wg-ly-T2j" id="qXV-Kq-fJA"/>
                 <outlet property="explorerLabel" destination="MHh-xR-Jfb" id="kea-7a-cDy"/>
+                <outlet property="learnMoreButton" destination="4h2-Zf-tln" id="WLD-IF-SJ2"/>
                 <outlet property="marketCapLabel" destination="8Op-2b-o7K" id="Mex-Hm-vdI"/>
                 <outlet property="maxSupplyLabel" destination="f61-hh-zbI" id="dMG-9X-hOA"/>
                 <outlet property="nameLabel" destination="VCB-eo-wDP" id="HTI-Vv-nZF"/>
@@ -131,47 +133,48 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wX6-FX-j6p" customClass="CustomButton" customModule="SatoshiWallet" customModuleProvider="target">
-                    <rect key="frame" x="41.5" y="576.5" width="331" height="50"/>
-                    <color key="backgroundColor" systemColor="linkColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="xDr-yf-Ghx"/>
-                    </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Go to Explorer"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="12"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="hasTouchEventsHandler" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="v4M-hK-Mbw">
+                    <rect key="frame" x="16" y="551.5" width="382" height="112"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-ly-T2j" customClass="PrimaryButton" customModule="SatoshiWallet" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="BFk-hK-ISe"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Go to Explorer"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4h2-Zf-tln" customClass="SecondaryButton" customModule="SatoshiWallet" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="62" width="382" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="cFE-2d-eNG"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Learn more"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="AppBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v4M-hK-Mbw" secondAttribute="trailing" constant="16" id="FdK-k0-LqJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HPU-QV-chn" secondAttribute="trailing" constant="16" id="FjC-M9-IEt"/>
-                <constraint firstItem="wX6-FX-j6p" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="Ggx-yA-dJ3"/>
-                <constraint firstItem="wX6-FX-j6p" firstAttribute="top" secondItem="HPU-QV-chn" secondAttribute="bottom" constant="50" id="Tz3-90-t0a"/>
-                <constraint firstItem="wX6-FX-j6p" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="bPN-FF-xw9"/>
                 <constraint firstItem="HPU-QV-chn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="dU2-qn-EyU"/>
+                <constraint firstItem="v4M-hK-Mbw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="hcd-cB-w6s"/>
                 <constraint firstItem="HPU-QV-chn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="qWh-2k-aQ9"/>
+                <constraint firstItem="v4M-hK-Mbw" firstAttribute="top" secondItem="HPU-QV-chn" secondAttribute="bottom" constant="25" id="zNy-XW-JEA"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="84.375"/>
         </view>
     </objects>
-    <designables>
-        <designable name="wX6-FX-j6p">
-            <size key="intrinsicContentSize" width="116.5" height="31"/>
-        </designable>
-    </designables>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="AppBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

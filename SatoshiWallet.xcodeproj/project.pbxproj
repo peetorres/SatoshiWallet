@@ -13,6 +13,11 @@
 		A207164B28CE17B7008C34DF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164A28CE17B7008C34DF /* UIView+Extensions.swift */; };
 		A207164D28CE8525008C34DF /* DSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164C28CE8525008C34DF /* DSColors.swift */; };
 		A207164F28CE8904008C34DF /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164E28CE8904008C34DF /* ListCellViewModel.swift */; };
+		A207165328CE8B9F008C34DF /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207165228CE8B9F008C34DF /* LoadableView.swift */; };
+		A207165528CE8BC0008C34DF /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207165428CE8BC0008C34DF /* PrimaryButton.swift */; };
+		A207165728CE8BCE008C34DF /* PrimaryButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = A207165628CE8BCE008C34DF /* PrimaryButton.xib */; };
+		A207165C28CE90CB008C34DF /* SecondaryButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = A207165A28CE90CB008C34DF /* SecondaryButton.xib */; };
+		A207165D28CE90CB008C34DF /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207165B28CE90CB008C34DF /* SecondaryButton.swift */; };
 		A209D45928C950A800B43711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D45828C950A800B43711 /* AppDelegate.swift */; };
 		A209D46228C950AA00B43711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A209D46128C950AA00B43711 /* Assets.xcassets */; };
 		A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A209D46328C950AA00B43711 /* LaunchScreen.storyboard */; };
@@ -75,6 +80,11 @@
 		A207164A28CE17B7008C34DF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A207164C28CE8525008C34DF /* DSColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColors.swift; sourceTree = "<group>"; };
 		A207164E28CE8904008C34DF /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
+		A207165228CE8B9F008C34DF /* LoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
+		A207165428CE8BC0008C34DF /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		A207165628CE8BCE008C34DF /* PrimaryButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrimaryButton.xib; sourceTree = "<group>"; };
+		A207165A28CE90CB008C34DF /* SecondaryButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondaryButton.xib; sourceTree = "<group>"; };
+		A207165B28CE90CB008C34DF /* SecondaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		A209D45528C950A800B43711 /* SatoshiWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SatoshiWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A209D45828C950A800B43711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A209D46128C950AA00B43711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +172,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A207165028CE8B4A008C34DF /* DSComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A207165228CE8B9F008C34DF /* LoadableView.swift */,
+				A207165828CE90B5008C34DF /* Buttons */,
+			);
+			path = DSComponents;
+			sourceTree = "<group>";
+		};
+		A207165128CE8B6E008C34DF /* PrimaryButton */ = {
+			isa = PBXGroup;
+			children = (
+				A207165428CE8BC0008C34DF /* PrimaryButton.swift */,
+				A207165628CE8BCE008C34DF /* PrimaryButton.xib */,
+			);
+			path = PrimaryButton;
+			sourceTree = "<group>";
+		};
+		A207165828CE90B5008C34DF /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A207165128CE8B6E008C34DF /* PrimaryButton */,
+				A207165928CE90CB008C34DF /* SecondaryButton */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		A207165928CE90CB008C34DF /* SecondaryButton */ = {
+			isa = PBXGroup;
+			children = (
+				A207165B28CE90CB008C34DF /* SecondaryButton.swift */,
+				A207165A28CE90CB008C34DF /* SecondaryButton.xib */,
+			);
+			path = SecondaryButton;
+			sourceTree = "<group>";
+		};
 		A209D44C28C950A800B43711 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +240,7 @@
 				A209D48B28C9580200B43711 /* Models */,
 				A218571B28CA856000931B07 /* Base */,
 				A209D48A28C9543600B43711 /* Scenes */,
+				A207165028CE8B4A008C34DF /* DSComponents */,
 				A209D46628C950AA00B43711 /* Info.plist */,
 			);
 			path = SatoshiWallet;
@@ -228,11 +275,11 @@
 		A209D48928C953F900B43711 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A207164C28CE8525008C34DF /* DSColors.swift */,
 				A218572228CA86B600931B07 /* Lotties */,
 				A209D46128C950AA00B43711 /* Assets.xcassets */,
 				A209D46328C950AA00B43711 /* LaunchScreen.storyboard */,
 				A29E775928CB2489007DC5A2 /* CustomDesignableUI */,
-				A207164C28CE8525008C34DF /* DSColors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -482,8 +529,10 @@
 				A218572F28CA8F6700931B07 /* Metaverse.json in Resources */,
 				A2FBDBF728C9CF8C00AD9FE8 /* ListCell.xib in Resources */,
 				A218572428CA86C000931B07 /* Loading.json in Resources */,
+				A207165728CE8BCE008C34DF /* PrimaryButton.xib in Resources */,
 				A218572128CA85B400931B07 /* ProgressView.xib in Resources */,
 				A209D46228C950AA00B43711 /* Assets.xcassets in Resources */,
+				A207165C28CE90CB008C34DF /* SecondaryButton.xib in Resources */,
 				A218572B28CA8AFD00931B07 /* NetworkErrorView.xib in Resources */,
 				A209D49328C958EC00B43711 /* ListViewController.xib in Resources */,
 				A218573428CA929D00931B07 /* DetailsViewController.xib in Resources */,
@@ -636,6 +685,7 @@
 				A209D4A028C9688400B43711 /* ListServices.swift in Sources */,
 				A207164D28CE8525008C34DF /* DSColors.swift in Sources */,
 				A2FBDBF628C9CF8C00AD9FE8 /* ListCell.swift in Sources */,
+				A207165D28CE90CB008C34DF /* SecondaryButton.swift in Sources */,
 				A218572628CA879100931B07 /* BaseViewController.swift in Sources */,
 				A207164628CDE3B3008C34DF /* CustomButton.swift in Sources */,
 				A207164F28CE8904008C34DF /* ListCellViewModel.swift in Sources */,
@@ -644,6 +694,8 @@
 				A209D48D28C9582500B43711 /* Asset.swift in Sources */,
 				A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */,
 				A209D49228C958EC00B43711 /* ListViewController.swift in Sources */,
+				A207165528CE8BC0008C34DF /* PrimaryButton.swift in Sources */,
+				A207165328CE8B9F008C34DF /* LoadableView.swift in Sources */,
 				A209D49628C9595400B43711 /* ListViewModel.swift in Sources */,
 				A207164828CDE3F2008C34DF /* UIButton+Extensions.swift in Sources */,
 				A207164B28CE17B7008C34DF /* UIView+Extensions.swift in Sources */,

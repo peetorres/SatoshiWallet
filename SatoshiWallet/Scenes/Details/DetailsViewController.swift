@@ -25,6 +25,9 @@ final class DetailsViewController: UIViewController {
     @IBOutlet weak var circulatingSupplyLabel: UILabel!
     @IBOutlet weak var explorerLabel: UILabel!
 
+    @IBOutlet weak var explorerButton: PrimaryButton!
+    @IBOutlet weak var learnMoreButton: SecondaryButton!
+
     // MARK: Overrides
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
@@ -38,6 +41,7 @@ final class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bindEvents()
     }
 
     // MARK: Methods
@@ -50,12 +54,22 @@ final class DetailsViewController: UIViewController {
         nameLabel.text = viewModel.nameText()
         priceLabel.text = viewModel.priceText()
         variationLabel.text = viewModel.variationText()
-        variationLabel.textColor = viewModel.isChangePercentPositive() ? .green : .red
+        variationLabel.textColor = viewModel.isChangePercentPositive() ? .appGreen : .appRed
 
         marketCapLabel.text = viewModel.marketcapText()
         volumeDayLabel.text = viewModel.volumeDayText()
         maxSupplyLabel.text = viewModel.maxSupplyText()
         circulatingSupplyLabel.text = viewModel.circulatingSupplyText()
         explorerLabel.text = viewModel.explorerText()
+    }
+
+    func bindEvents() {
+        explorerButton.handlerButton = {
+            print("Do some exploration!")
+        }
+
+        learnMoreButton.handlerButton = {
+            print("Have a good learn!")
+        }
     }
 }
