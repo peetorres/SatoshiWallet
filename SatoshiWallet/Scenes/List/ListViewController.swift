@@ -14,6 +14,13 @@ final class ListViewController: BaseViewController {
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
 
+    // MARK: Actions
+    @objc
+    func switchDidChange(sender: UISwitch!) {
+        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        keyWindow?.overrideUserInterfaceStyle = sender.isOn ? .dark : .light
+    }
+
     // MARK: Overrides
     init(viewModel: ListViewModel = .init()) {
         self.viewModel = viewModel
@@ -34,13 +41,8 @@ final class ListViewController: BaseViewController {
     // MARK: Methods
     private func setupUI() {
         title = "Satoshi Wallet"
-
-        tableView.dataSource = self
-        tableView.delegate = self
-
-        let nib = UINib(nibName: ListTableViewCell.identifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: ListTableViewCell.identifier)
-        tableView.rowHeight = ListTableViewCell.rowHeight
+        setupTableView()
+        setupNavigationBarSwitch()
     }
 
     private func bindEvents() {
@@ -62,6 +64,23 @@ final class ListViewController: BaseViewController {
     private func navigateToDetails(with asset: Asset) {
         let viewController = DetailsViewController(viewModel: .init(asset: asset))
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    private func setupTableView() {
+        let nib = UINib(nibName: ListTableViewCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: ListTableViewCell.identifier)
+
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = ListTableViewCell.rowHeight
+    }
+
+    private func setupNavigationBarSwitch() {
+        let switchControl = UISwitch()
+        let isDarkMode = traitCollection.userInterfaceStyle != .light
+        switchControl.setOn(isDarkMode, animated: false)
+        switchControl.addTarget(self, action: #selector(switchDidChange(sender:)), for: .valueChanged)
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: switchControl)
     }
 }
 
