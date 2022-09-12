@@ -10,6 +10,7 @@ import Foundation
 class ListViewModel {
     // MARK: Constants and Enums
     private enum Constants {
+        static var cryptoLimit = 500
         static var timeIntervalFetchInSeconds: TimeInterval = 5
     }
 
@@ -62,7 +63,7 @@ class ListViewModel {
     func getCryptoList(isBackgroundFetch: Bool) {
         isBackgroundFetch ? nil : shouldProgressShow?(true)
 
-        service.getCryptoList { [weak self] response in
+        service.getCryptoList(limit: Constants.cryptoLimit) { [weak self] response in
             guard let self = self else { return }
             isBackgroundFetch ? nil : self.shouldProgressShow?(false)
 

@@ -9,19 +9,19 @@ import Foundation
 import Moya
 
 protocol ListServicesProtocol {
-    func getCryptoList(completion: @escaping ((Result<[Crypto], NetworkLayerError>) -> Void))
-    func getAssetList(completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void))
+    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkLayerError>) -> Void))
+    func getAssetList(limit: Int, completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void))
     func getTickerList(tickers: [String], completion: @escaping ((Result<[Ticker], NetworkLayerError>) -> Void))
 }
 
 final class ListServices: ListServicesProtocol {
     // MARK: Properties
     private let coinCapProvider = MoyaProvider<CoinCapAPI>()
-    private let bitfinexProvider = MoyaProvider<BitfinexAPI>(plugins: [VerbosePlugin(verbose: true)])
+    private let bitfinexProvider = MoyaProvider<BitfinexAPI>()
 
     // MARK: Services
-    func getCryptoList(completion: @escaping ((Result<[Crypto], NetworkLayerError>) -> Void)) {
-        getAssetList { [weak self] response in
+    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkLayerError>) -> Void)) {
+        getAssetList(limit: limit) { [weak self] response in
             guard let self = self else { return }
 
             switch response {
@@ -48,8 +48,8 @@ final class ListServices: ListServicesProtocol {
         }
     }
 
-    func getAssetList(completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void)) {
-        coinCapProvider.request(.assets) { result in
+    func getAssetList(limit: Int, completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void)) {
+        coinCapProvider.request(.assets(limit: limit)) { result in
             switch result {
             case .success(let response):
                 do {

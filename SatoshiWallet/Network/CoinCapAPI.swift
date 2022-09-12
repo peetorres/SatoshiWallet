@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 public enum CoinCapAPI {
-    case assets
+    case assets(limit: Int = 100)
 }
 
 extension CoinCapAPI: TargetType {
@@ -34,7 +34,10 @@ extension CoinCapAPI: TargetType {
     }
 
     public var task: Task {
-        return .requestPlain
+        switch self {
+        case .assets(let limit):
+            return .requestParameters(parameters: ["limit": limit], encoding: URLEncoding.queryString)
+        }
     }
 
     public var headers: [String: String]? {

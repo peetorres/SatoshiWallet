@@ -9,7 +9,7 @@ import Foundation
 
 final class CryptoMapper {
     // MARK: Properties
-    static let twoDotsTickerList = ["CHSB", "AAVE"]
+    static let twoDotsTickerList = ["CHSB", "AAVE", "LINK", "MATIC"]
 
     // MARK: Methods
     static func formattedTicker(of symbol: String) -> String {
