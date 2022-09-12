@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ListViewModel {
+class ListViewModel {
     // MARK: Constants and Enums
     private enum Constants {
         static var timeIntervalFetchInSeconds: TimeInterval = 5

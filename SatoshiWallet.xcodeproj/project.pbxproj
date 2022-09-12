@@ -43,6 +43,7 @@
 		A218573428CA929D00931B07 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A218573228CA929D00931B07 /* DetailsViewController.xib */; };
 		A218573628CA998000931B07 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218573528CA998000931B07 /* DetailsViewModel.swift */; };
 		A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */; };
+		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A29E775B28CB24AF007DC5A2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E775A28CB24AF007DC5A2 /* CustomView.swift */; };
 		A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB550728C9E293004DC74E /* String+Extensions.swift */; };
 		A2FBDBF628C9CF8C00AD9FE8 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */; };
@@ -115,6 +116,7 @@
 		A218573228CA929D00931B07 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		A218573528CA998000931B07 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A29E775A28CB24AF007DC5A2 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A2FB550728C9E293004DC74E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				A209D45828C950A800B43711 /* AppDelegate.swift */,
+				A270A53528CF92D7006AA6CF /* MainCoordinator.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				A218572628CA879100931B07 /* BaseViewController.swift in Sources */,
 				A207164628CDE3B3008C34DF /* CustomButton.swift in Sources */,
 				A207164F28CE8904008C34DF /* ListCellViewModel.swift in Sources */,
+				A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */,
 				A209D49C28C95D1900B43711 /* Network.swift in Sources */,
 				A218572928CA8AF400931B07 /* NetworkErrorView.swift in Sources */,
 				A209D48D28C9582500B43711 /* Asset.swift in Sources */,

@@ -9,6 +9,7 @@ import UIKit
 
 final class ListViewController: BaseViewController {
     // MARK: Properties
+    var coordinator: MainCoordinator?
     private let viewModel: ListViewModel
 
     // MARK: Outlets
@@ -85,11 +86,6 @@ final class ListViewController: BaseViewController {
         }
     }
 
-    private func navigateToDetails(with asset: Asset) {
-        let viewController = DetailsViewController(viewModel: .init(asset: asset))
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-
     private func setupTableView() {
         let nib = UINib(nibName: ListCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ListCell.identifier)
@@ -141,7 +137,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let asset = viewModel.mutableAssets?[indexPath.row] else { return }
-        navigateToDetails(with: asset)
+        coordinator?.navigateToDetails(with: asset)
     }
 }
 

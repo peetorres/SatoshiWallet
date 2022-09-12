@@ -9,15 +9,19 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    // MARK: Properties
     var window: UIWindow?
+    var coordinator: MainCoordinator?
 
+    // MARK: App Lifecycle
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let navigationController = UINavigationController(rootViewController: ListViewController())
+        coordinator = MainCoordinator()
+        coordinator?.start()
 
-        window?.rootViewController = navigationController
+        window?.rootViewController = coordinator?.navigationController
         window?.makeKeyAndVisible()
 
         AppDelegate.setupNavigationBar()
@@ -25,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    // MARK: Custom Methods
     static func setupNavigationBar() {
         UINavigationBar.appearance().shadowImage = UIImage()
 
