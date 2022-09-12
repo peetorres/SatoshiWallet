@@ -9,8 +9,8 @@ import UIKit
 
 final class ListViewController: BaseViewController {
     // MARK: Properties
-    var coordinator: MainCoordinator?
     private let viewModel: ListViewModel
+    var handleAssetSelection: ((Asset) -> Void)?
 
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -137,7 +137,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let asset = viewModel.mutableAssets?[indexPath.row] else { return }
-        coordinator?.navigateToDetails(with: asset)
+        handleAssetSelection?(asset)
     }
 }
 
