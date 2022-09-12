@@ -44,19 +44,19 @@ final class DetailsViewController: UIViewController {
 
     // MARK: Methods
     private func setupUI() {
-        title = viewModel.nameText()
+        title = viewModel.name()
 
         assetImageView.kf.setImage(with: viewModel.imageUrl())
-        rankingLabel.text = viewModel.rankText()
-        symbolLabel.text = viewModel.symbolText()
-        nameLabel.text = viewModel.nameText()
-        priceLabel.text = viewModel.priceText()
-        variationLabel.text = viewModel.variationText()
+        rankingLabel.text = viewModel.rank()
+        symbolLabel.text = viewModel.symbol()
+        nameLabel.text = viewModel.name()
+        priceLabel.text = viewModel.price()
+        variationLabel.text = viewModel.variation()
         variationLabel.textColor = viewModel.isChangePercentPositive() ? .appGreen : .appRed
 
-        maxSupplyLabel.text = viewModel.maxSupplyText()
-        circulatingSupplyLabel.text = viewModel.circulatingSupplyText()
-        explorerLabel.text = viewModel.explorerText()
+        maxSupplyLabel.text = viewModel.maxSupply()
+        circulatingSupplyLabel.text = viewModel.circulatingSupply()
+        explorerLabel.text = viewModel.explorer()
     }
 
     func bindEvents() {

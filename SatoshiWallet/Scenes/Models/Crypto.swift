@@ -30,3 +30,36 @@ struct Crypto {
         self.explorer = asset.explorer
     }
 }
+
+extension Crypto {
+    func imageUrl() -> URL? {
+        let symbol = symbol.lowercased()
+        return URL(string: "https://assets.coincap.io/assets/icons/\(symbol)@2x.png")
+    }
+
+    func priceFormatted() -> String? {
+        "$" + String(price)
+    }
+
+    private func changePercentFormatted() -> Float? {
+        changePercentDaily
+    }
+
+    func isChangePercentPositive() -> Bool {
+        changePercentDaily >= 0
+    }
+
+    func variationFormatted() -> String? {
+        guard let changePercent = changePercentFormatted() else { return nil }
+        return String(format: "%.2f%%", changePercent)
+    }
+
+    func maxSupplyFormatted() -> String? {
+        guard let maxSupply = maxSupply else { return nil }
+        return String(format: "%.2f%", maxSupply)
+    }
+
+    func circulatingSupplyFormatted() -> String? {
+        return String(format: "%.2f%", supply)
+    }
+}

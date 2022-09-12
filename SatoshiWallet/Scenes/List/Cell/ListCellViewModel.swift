@@ -18,8 +18,7 @@ final class ListCellViewModel {
 
     // MARK: View Formatting
     func imageUrl() -> URL? {
-        let symbol = crypto.symbol.lowercased()
-        return URL(string: "https://assets.coincap.io/assets/icons/\(symbol)@2x.png")
+        crypto.imageUrl()
     }
 
     func rank() -> String {
@@ -35,19 +34,14 @@ final class ListCellViewModel {
     }
 
     func price() -> String? {
-        String(crypto.price)
-    }
-
-    func changePercent() -> Float? {
-        crypto.changePercentDaily
+        crypto.priceFormatted()
     }
 
     func isChangePercentPositive() -> Bool {
-        return crypto.changePercentDaily >= 0
+        crypto.isChangePercentPositive()
     }
 
     func variation() -> String? {
-        guard let changePercent = changePercent() else { return nil }
-        return String(format: "%.2f%%", changePercent)
+        crypto.variationFormatted()
     }
 }

@@ -16,53 +16,50 @@ final class DetailsViewModel {
         self.crypto = crypto
     }
 
-    // MARK: ViewModel Formatting
+    // MARK: View Formatting
     func imageUrl() -> URL? {
-        let symbol = crypto.symbol.lowercased()
-        return URL(string: "https://assets.coincap.io/assets/icons/\(symbol)@2x.png")
+        crypto.imageUrl()
     }
 
-    func rankText() -> String {
+    func rank() -> String {
         "#" + crypto.rank
     }
 
-    func symbolText() -> String {
+    func symbol() -> String {
         crypto.symbol
     }
 
-    func nameText() -> String {
+    func name() -> String {
         crypto.name
     }
 
-    func priceText() -> String? {
-        String(crypto.price)
-    }
-
-    func changePercent() -> Float? {
-        crypto.changePercentDaily
+    func price() -> String? {
+        crypto.priceFormatted()
     }
 
     func isChangePercentPositive() -> Bool {
-        return crypto.changePercentDaily >= 0
+        crypto.isChangePercentPositive()
     }
 
-    func variationText() -> String? {
-        guard let changePercent = changePercent() else { return nil }
-        return String(format: "%.2f%%", changePercent)
+    func variation() -> String? {
+        crypto.variationFormatted()
     }
 
-    func maxSupplyText() -> String? {
-        guard let maxSupply = crypto.maxSupply else {
+    func maxSupply() -> String? {
+        guard let maxSupply = crypto.maxSupplyFormatted() else {
             return nil
         }
         return "Max Supply: " + maxSupply
     }
 
-    func circulatingSupplyText() -> String? {
-        "Circulating Supply: " + crypto.supply
+    func circulatingSupply() -> String? {
+        guard let circulatingSupply = crypto.circulatingSupplyFormatted() else {
+            return nil
+        }
+        return "Circulating Supply: " + circulatingSupply
     }
 
-    func explorerText() -> String? {
+    func explorer() -> String? {
         guard let explorer = crypto.explorer else {
             return nil
         }
