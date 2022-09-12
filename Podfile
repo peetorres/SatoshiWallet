@@ -16,8 +16,4 @@ target 'SatoshiWallet' do
     # Pods for testing
   end
 
-  target 'SatoshiWalletUITests' do
-    # Pods for testing
-  end
-
 end

@@ -37,22 +37,6 @@ class ListViewControllerTests: XCTestCase {
     func testNavigationTitle() {
         XCTAssertEqual(sut.title, "Satoshi Wallet")
     }
-
-    // MARK: Test UseCases
-    func testHandleSuccess() {
-        sut = ListViewController(viewModel: .init(service: ListServicesSuccessStub()))
-        _ = sut.view
-
-        let navigationControllerSpy = NavigationControllerSpy(rootViewController: sut)
-
-        sut.tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .top)
-
-        guard navigationControllerSpy.pushedViewController is DetailsViewController else {
-            let nameOfScene: String = navigationControllerSpy.pushedViewController?.description ?? ""
-            XCTFail("Not instanced DetailsViewController, instanced \(nameOfScene) instead")
-            return
-        }
-    }
 }
 
 class ListServicesSuccessStub: ListServicesProtocol {
