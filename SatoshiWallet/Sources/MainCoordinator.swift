@@ -32,16 +32,16 @@ final class MainCoordinator: Coordinator {
     func instanceListViewController() {
         let viewController = ListViewController()
 
-        viewController.handleAssetSelection = { [weak self] asset in
-            self?.navigateToDetails(with: asset)
+        viewController.handleSelection = { [weak self] crypto in
+            self?.navigateToDetails(with: crypto)
         }
 
         rootViewController = viewController
         navigationController.pushViewController(viewController, animated: false)
     }
 
-    func navigateToDetails(with asset: Asset) {
-        let viewController = DetailsViewController(viewModel: .init(asset: asset))
+    func navigateToDetails(with crypto: Crypto) {
+        let viewController = DetailsViewController(viewModel: .init(crypto: crypto))
         self.navigationController.pushViewController(viewController, animated: true)
     }
 }

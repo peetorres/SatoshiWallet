@@ -9,49 +9,41 @@ import Foundation
 
 final class DetailsViewModel {
     // MARK: Properties
-    var asset: Asset
+    var crypto: Crypto
 
     // MARK: Initializer
-    init(asset: Asset) {
-        self.asset = asset
+    init(crypto: Crypto) {
+        self.crypto = crypto
     }
 
     // MARK: ViewModel Formatting
     func imageUrl() -> URL? {
-        let symbol = asset.symbol.lowercased()
+        let symbol = crypto.symbol.lowercased()
         return URL(string: "https://assets.coincap.io/assets/icons/\(symbol)@2x.png")
     }
 
     func rankText() -> String {
-        "#" + asset.rank
+        "#" + crypto.rank
     }
 
     func symbolText() -> String {
-        asset.symbol
+        crypto.symbol
     }
 
     func nameText() -> String {
-        asset.name
+        crypto.name
     }
 
     func priceText() -> String? {
-        asset.priceUsd?.currencyFormatting()
+        String(crypto.price)
     }
 
-    func changePercent() -> Double? {
-        guard let changePercentString = asset.changePercent24Hr,
-              let changePercent = Double(changePercentString) else {
-            return nil
-        }
-        return changePercent
+    func changePercent() -> Float? {
+        crypto.changePercentDaily
     }
 
     func isChangePercentPositive() -> Bool {
-        guard let changePercentString = asset.changePercent24Hr,
-              let changePercent = Double(changePercentString) else {
-            return false
-        }
-        return changePercent >= 0
+        return crypto.changePercentDaily >= 0
     }
 
     func variationText() -> String? {
@@ -60,32 +52,26 @@ final class DetailsViewModel {
     }
 
     func marketcapText() -> String? {
-        guard let marketcap = asset.marketCapUsd?.currencyFormatting() else {
-            return nil
-        }
-        return "Marketcap: " + marketcap
+        nil
     }
 
     func volumeDayText() -> String? {
-        guard let volumeUsd24Hr = asset.volumeUsd24Hr?.currencyFormatting() else {
-            return nil
-        }
-        return "Volume 24h: " + volumeUsd24Hr
+        nil
     }
 
     func maxSupplyText() -> String? {
-        guard let maxSupply = asset.maxSupply else {
+        guard let maxSupply = crypto.maxSupply else {
             return nil
         }
         return "Max Supply: " + maxSupply
     }
 
     func circulatingSupplyText() -> String? {
-        "Circulating Supply: " + asset.supply
+        "Circulating Supply: " + crypto.supply
     }
 
     func explorerText() -> String? {
-        guard let explorer = asset.explorer else {
+        guard let explorer = crypto.explorer else {
             return nil
         }
         return "Explorer: " + explorer

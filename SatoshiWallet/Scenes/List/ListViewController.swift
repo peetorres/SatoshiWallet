@@ -10,7 +10,7 @@ import UIKit
 final class ListViewController: BaseViewController {
     // MARK: Properties
     private let viewModel: ListViewModel
-    var handleAssetSelection: ((Asset) -> Void)?
+    var handleSelection: ((Crypto) -> Void)?
 
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -34,7 +34,7 @@ final class ListViewController: BaseViewController {
 
     // MARK: Initializers
     deinit {
-        self.viewModel.stopServerAssetLists()
+        self.viewModel.stopServerCryptoList()
     }
 
     init(viewModel: ListViewModel = .init()) {
@@ -51,7 +51,7 @@ final class ListViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         bindEvents()
-        viewModel.getAssetLists(isBackgroundFetch: false)
+        viewModel.getCryptoList(isBackgroundFetch: false)
     }
 
     // MARK: Methods
@@ -72,7 +72,7 @@ final class ListViewController: BaseViewController {
                 self?.viewBackgroundFetchError.isHidden = false
             } else {
                 self?.showNetworkError {
-                    self?.viewModel.getAssetLists(isBackgroundFetch: isBackgroundFetch)
+                    self?.viewModel.getCryptoList(isBackgroundFetch: isBackgroundFetch)
                 }
             }
         }
@@ -119,25 +119,25 @@ final class ListViewController: BaseViewController {
 // MARK: Extensions
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.mutableAssets?.count ?? 0
+        return viewModel.mutableCryptos?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: ListCell.identifier) as? ListCell,
-              let asset = viewModel.mutableAssets?[indexPath.row] else {
+              let crypto = viewModel.mutableCryptos?[indexPath.row] else {
             return .init(frame: .zero)
         }
 
         let shouldAnimateLabels = searchController.isActive == false
-        cell.configure(with: asset, shouldAnimateLabels: shouldAnimateLabels)
+        cell.configure(with: crypto, shouldAnimateLabels: shouldAnimateLabels)
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let asset = viewModel.mutableAssets?[indexPath.row] else { return }
-        handleAssetSelection?(asset)
+        guard let crypto = viewModel.mutableCryptos?[indexPath.row] else { return }
+        handleSelection?(crypto)
     }
 }
 

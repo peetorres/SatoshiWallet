@@ -9,49 +9,41 @@ import Foundation
 
 final class ListCellViewModel {
     // MARK: Properties
-    let asset: Asset
+    let crypto: Crypto
 
     // MARK: Initializer
-    init(asset: Asset) {
-        self.asset = asset
+    init(crypto: Crypto) {
+        self.crypto = crypto
     }
 
     // MARK: View Formatting
     func imageUrl() -> URL? {
-        let symbol = asset.symbol.lowercased()
+        let symbol = crypto.symbol.lowercased()
         return URL(string: "https://assets.coincap.io/assets/icons/\(symbol)@2x.png")
     }
 
     func rank() -> String {
-        asset.rank
+        crypto.rank
     }
 
     func symbol() -> String {
-        asset.symbol
+        crypto.symbol
     }
 
     func name() -> String {
-        asset.name
+        crypto.name
     }
 
     func price() -> String? {
-        asset.priceUsd?.currencyFormatting()
+        String(crypto.price)
     }
 
-    func changePercent() -> Double? {
-        guard let changePercentString = asset.changePercent24Hr,
-              let changePercent = Double(changePercentString) else {
-            return nil
-        }
-        return changePercent
+    func changePercent() -> Float? {
+        crypto.changePercentDaily
     }
 
     func isChangePercentPositive() -> Bool {
-        guard let changePercentString = asset.changePercent24Hr,
-              let changePercent = Double(changePercentString) else {
-            return false
-        }
-        return changePercent >= 0
+        return crypto.changePercentDaily >= 0
     }
 
     func variation() -> String? {

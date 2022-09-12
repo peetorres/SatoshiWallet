@@ -36,8 +36,8 @@ final class ListCell: UITableViewCell {
     }
 
     // MARK: Public Methods
-    func configure(with asset: Asset, shouldAnimateLabels: Bool) {
-        let viewModel = ListCellViewModel(asset: asset)
+    func configure(with crypto: Crypto, shouldAnimateLabels: Bool) {
+        let viewModel = ListCellViewModel(crypto: crypto)
 
         assetImageView.kf.setImage(with: viewModel.imageUrl())
         rankingLabel.text = viewModel.rank()

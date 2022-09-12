@@ -16,15 +16,13 @@ class ListViewModel {
     // MARK: Properties
     private var refreshTimer: Timer?
     private let service: ListServicesProtocol
-    private var assets: [Asset]?
-    private var tickers: [Ticker]?
 
-    var mutableAssets: [Asset]? {
-        guard !searchText.isEmpty else { return assets }
-
-        return assets?.filter { asset in
-            let nameHasText = asset.name.lowercased().contains(searchText.lowercased())
-            let symbolHasText = asset.symbol.lowercased().contains(searchText.lowercased())
+    var cryptos: [Crypto]?
+    var mutableCryptos: [Crypto]? {
+        guard !searchText.isEmpty else { return cryptos }
+        return cryptos?.filter { crypto in
+            let nameHasText = crypto.name.lowercased().contains(searchText.lowercased())
+            let symbolHasText = crypto.symbol.lowercased().contains(searchText.lowercased())
             return nameHasText || symbolHasText
         }
     }
@@ -46,48 +44,35 @@ class ListViewModel {
     }
 
     // MARK: Services
-    func serverAssetLists() {
+    func serverCryptoList() {
         guard refreshTimer == nil else { return }
 
         refreshTimer = Timer.scheduledTimer(withTimeInterval: Constants.timeIntervalFetchInSeconds,
                                             repeats: true) { [weak self] _ in
-            self?.getAssetLists(isBackgroundFetch: true)
+            self?.getCryptoList(isBackgroundFetch: true)
         }
         refreshTimer!.fire()
     }
 
-    func stopServerAssetLists() {
+    func stopServerCryptoList() {
         refreshTimer?.invalidate()
         refreshTimer = nil
     }
 
-    func getAssetLists(isBackgroundFetch: Bool) {
+    func getCryptoList(isBackgroundFetch: Bool) {
         isBackgroundFetch ? nil : shouldProgressShow?(true)
 
-        service.getAssetList { [weak self] response in
+        service.getCryptoList { [weak self] response in
             guard let self = self else { return }
-
             isBackgroundFetch ? nil : self.shouldProgressShow?(false)
 
             switch response {
             case .success(let model):
-                self.assets = model.data
+                self.cryptos = model
                 self.handleSuccess?()
-                !isBackgroundFetch ? self.serverAssetLists() : nil
+                !isBackgroundFetch ? self.serverCryptoList() : nil
             case .failure(let error):
                 self.handleError?(isBackgroundFetch, error.localizedDescription)
-            }
-        }
-    }
-
-    func getTickers() {
-        service.getTickerList(tickers: ["ALL"]) { [weak self] response in
-            guard let self = self else { return }
-            switch response {
-            case .success(let model):
-                self.tickers = model
-            case .failure(let error):
-                self.handleError?(false, error.localizedDescription)
             }
         }
     }
