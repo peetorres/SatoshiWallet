@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 public enum BitfinexAPI {
-    case tickers(String)
+    case tickers(symbols: [String])
 }
 
 extension BitfinexAPI: TargetType {
@@ -19,7 +19,7 @@ extension BitfinexAPI: TargetType {
 
     public var path: String {
         switch self {
-        case .tickers(let symbols): return "/tickers?\(symbols)"
+        case .tickers: return "/tickers"
         }
     }
 
@@ -34,7 +34,11 @@ extension BitfinexAPI: TargetType {
     }
 
     public var task: Task {
-        return .requestPlain
+        switch self {
+        case .tickers(let symbols):
+            let parameters = symbols.joined(separator: ",")
+            return .requestParameters(parameters: ["symbols": parameters], encoding: URLEncoding.queryString)
+        }
     }
 
     public var headers: [String: String]? {

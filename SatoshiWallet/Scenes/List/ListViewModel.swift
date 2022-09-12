@@ -17,6 +17,7 @@ class ListViewModel {
     private var refreshTimer: Timer?
     private let service: ListServicesProtocol
     private var assets: [Asset]?
+    private var tickers: [Ticker]?
 
     var mutableAssets: [Asset]? {
         guard !searchText.isEmpty else { return assets }
@@ -75,6 +76,18 @@ class ListViewModel {
                 !isBackgroundFetch ? self.serverAssetLists() : nil
             case .failure(let error):
                 self.handleError?(isBackgroundFetch, error.localizedDescription)
+            }
+        }
+    }
+
+    func getTickers() {
+        service.getTickerList(tickers: ["ALL"]) { [weak self] response in
+            guard let self = self else { return }
+            switch response {
+            case .success(let model):
+                self.tickers = model
+            case .failure(let error):
+                self.handleError?(false, error.localizedDescription)
             }
         }
     }

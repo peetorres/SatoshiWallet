@@ -44,6 +44,7 @@
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
 		A270A53A28CFB27E006AA6CF /* Tickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53928CFB27E006AA6CF /* Tickers.swift */; };
+		A270A53C28CFBED7006AA6CF /* VerbosePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */; };
 		A29E775B28CB24AF007DC5A2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E775A28CB24AF007DC5A2 /* CustomView.swift */; };
 		A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB550728C9E293004DC74E /* String+Extensions.swift */; };
 		A2FBDBF628C9CF8C00AD9FE8 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */; };
@@ -108,6 +109,7 @@
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
 		A270A53928CFB27E006AA6CF /* Tickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickers.swift; sourceTree = "<group>"; };
+		A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbosePlugin.swift; sourceTree = "<group>"; };
 		A29E775A28CB24AF007DC5A2 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A2FB550728C9E293004DC74E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			children = (
 				A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */,
 				A209D49B28C95D1900B43711 /* CoinCapAPI.swift */,
+				A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */,
 				A209D49D28C9684800B43711 /* NetworkLayerError.swift */,
 			);
 			path = Network;
@@ -607,6 +610,7 @@
 				A207164628CDE3B3008C34DF /* CustomButton.swift in Sources */,
 				A270A53A28CFB27E006AA6CF /* Tickers.swift in Sources */,
 				A207164F28CE8904008C34DF /* ListCellViewModel.swift in Sources */,
+				A270A53C28CFBED7006AA6CF /* VerbosePlugin.swift in Sources */,
 				A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */,
 				A209D49C28C95D1900B43711 /* CoinCapAPI.swift in Sources */,
 				A218572928CA8AF400931B07 /* NetworkErrorView.swift in Sources */,

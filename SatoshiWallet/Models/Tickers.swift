@@ -7,12 +7,26 @@
 
 import Foundation
 
-struct Ticker: Codable {
+struct Ticker: Decodable {
+    // MARK: Properties
     let symbol: String
-    let dailyChange: Double
-    let dailyChangeRelative: Double
-    let lastPrice: Double
-    let dailyVolume: Double
-    let dailyHigh: Double
-    let dailyLow: Double
+    let dailyChange: Float
+    let dailyChangeRelative: Float
+    let lastPrice: Float
+    let dailyVolume: Float?
+    let dailyHigh: Float?
+    let dailyLow: Float?
+
+    // MARK: Initializer
+    init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+
+        symbol = try container.decode(String.self)
+        dailyChange = try container.decode(Float.self)
+        dailyChangeRelative = try container.decode(Float.self)
+        lastPrice = try container.decode(Float.self)
+        dailyVolume = try container.decode(Float.self)
+        dailyHigh = try container.decode(Float.self)
+        dailyLow = try container.decode(Float.self)
+    }
 }

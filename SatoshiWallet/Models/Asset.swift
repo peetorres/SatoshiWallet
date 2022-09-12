@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct ListResponse: Codable {
+struct ListResponse: Decodable {
     let data: [Asset]
     let timestamp: Int
 }
 
-struct Asset: Codable {
+struct Asset: Decodable {
     let id: String
     let rank: String
     let symbol: String
