@@ -14,7 +14,7 @@ protocol ListServicesProtocol {
 
 final class ListServices: ListServicesProtocol {
     // MARK: Properties
-    private let provider = MoyaProvider<CoinCap>()
+    private let provider = MoyaProvider<CoinCapAPI>()
 
     // MARK: Methods
     func getAssetList(completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void)) {

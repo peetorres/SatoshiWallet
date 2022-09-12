@@ -25,7 +25,7 @@
 		A209D49228C958EC00B43711 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49028C958EC00B43711 /* ListViewController.swift */; };
 		A209D49328C958EC00B43711 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A209D49128C958EC00B43711 /* ListViewController.xib */; };
 		A209D49628C9595400B43711 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49528C9595400B43711 /* ListViewModel.swift */; };
-		A209D49C28C95D1900B43711 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49B28C95D1900B43711 /* Network.swift */; };
+		A209D49C28C95D1900B43711 /* CoinCapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49B28C95D1900B43711 /* CoinCapAPI.swift */; };
 		A209D49E28C9684900B43711 /* NetworkLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49D28C9684800B43711 /* NetworkLayerError.swift */; };
 		A209D4A028C9688400B43711 /* ListServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D49F28C9688400B43711 /* ListServices.swift */; };
 		A218571728CA81A200931B07 /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218571628CA81A200931B07 /* ListViewControllerTests.swift */; };
@@ -42,6 +42,8 @@
 		A218573628CA998000931B07 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218573528CA998000931B07 /* DetailsViewModel.swift */; };
 		A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */; };
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
+		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
+		A270A53A28CFB27E006AA6CF /* Tickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53928CFB27E006AA6CF /* Tickers.swift */; };
 		A29E775B28CB24AF007DC5A2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E775A28CB24AF007DC5A2 /* CustomView.swift */; };
 		A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB550728C9E293004DC74E /* String+Extensions.swift */; };
 		A2FBDBF628C9CF8C00AD9FE8 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */; };
@@ -87,7 +89,7 @@
 		A209D49028C958EC00B43711 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		A209D49128C958EC00B43711 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		A209D49528C9595400B43711 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		A209D49B28C95D1900B43711 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A209D49B28C95D1900B43711 /* CoinCapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCapAPI.swift; sourceTree = "<group>"; };
 		A209D49D28C9684800B43711 /* NetworkLayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayerError.swift; sourceTree = "<group>"; };
 		A209D49F28C9688400B43711 /* ListServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServices.swift; sourceTree = "<group>"; };
 		A218571628CA81A200931B07 /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
@@ -104,6 +106,8 @@
 		A218573528CA998000931B07 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
+		A270A53928CFB27E006AA6CF /* Tickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickers.swift; sourceTree = "<group>"; };
 		A29E775A28CB24AF007DC5A2 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A2FB550728C9E293004DC74E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
@@ -270,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				A209D48C28C9582500B43711 /* Asset.swift */,
+				A270A53928CFB27E006AA6CF /* Tickers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,7 +294,8 @@
 		A209D49A28C95CFD00B43711 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A209D49B28C95D1900B43711 /* Network.swift */,
+				A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */,
+				A209D49B28C95D1900B43711 /* CoinCapAPI.swift */,
 				A209D49D28C9684800B43711 /* NetworkLayerError.swift */,
 			);
 			path = Network;
@@ -599,9 +605,10 @@
 				A207165D28CE90CB008C34DF /* SecondaryButton.swift in Sources */,
 				A218572628CA879100931B07 /* BaseViewController.swift in Sources */,
 				A207164628CDE3B3008C34DF /* CustomButton.swift in Sources */,
+				A270A53A28CFB27E006AA6CF /* Tickers.swift in Sources */,
 				A207164F28CE8904008C34DF /* ListCellViewModel.swift in Sources */,
 				A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */,
-				A209D49C28C95D1900B43711 /* Network.swift in Sources */,
+				A209D49C28C95D1900B43711 /* CoinCapAPI.swift in Sources */,
 				A218572928CA8AF400931B07 /* NetworkErrorView.swift in Sources */,
 				A209D48D28C9582500B43711 /* Asset.swift in Sources */,
 				A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */,
@@ -614,6 +621,7 @@
 				A218571F28CA85AC00931B07 /* ProgressView.swift in Sources */,
 				A209D45928C950A800B43711 /* AppDelegate.swift in Sources */,
 				A218573628CA998000931B07 /* DetailsViewModel.swift in Sources */,
+				A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */,
 				A218573328CA929D00931B07 /* DetailsViewController.swift in Sources */,
 				A209D49E28C9684900B43711 /* NetworkLayerError.swift in Sources */,
 			);

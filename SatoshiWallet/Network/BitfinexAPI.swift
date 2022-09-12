@@ -1,31 +1,31 @@
 //
-//  Network.swift
+//  BitfinexAPI.swift
 //  SatoshiWallet
 //
-//  Created by Pedro Gabriel on 08/09/22.
+//  Created by Pedro Gabriel on 12/09/22.
 //
 
 import Foundation
 import Moya
 
-public enum CoinCap {
-    case assets
+public enum BitfinexAPI {
+    case tickers(String)
 }
 
-extension CoinCap: TargetType {
+extension BitfinexAPI: TargetType {
     public var baseURL: URL {
-        return URL(string: "https://api.coincap.io/v2")!
+        return URL(string: "https://api-pub.bitfinex.com/v2")!
     }
 
     public var path: String {
         switch self {
-        case .assets: return "/assets"
+        case .tickers(let symbols): return "/tickers?\(symbols)"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .assets: return .get
+        case .tickers: return .get
         }
     }
 
