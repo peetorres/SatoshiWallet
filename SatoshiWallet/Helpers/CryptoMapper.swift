@@ -8,8 +8,17 @@
 import Foundation
 
 final class CryptoMapper {
+    // MARK: Properties
+    static let twoDotsTickerList = ["CHSB", "AAVE"]
+
+    // MARK: Methods
     static func formattedTicker(of symbol: String) -> String {
-        "t\(symbol.uppercased())USD"
+        var ticker = "t\(symbol.uppercased())"
+        if twoDotsTickerList.contains(symbol) {
+            ticker += ":"
+        }
+        ticker += "USD"
+        return ticker
     }
 
     static func tickerArray(from assets: [Asset]) -> [String] {
