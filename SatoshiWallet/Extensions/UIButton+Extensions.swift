@@ -18,16 +18,10 @@ extension UIButton {
     }
 
     public func setupTouchEventsHandler() {
-        self.addTarget(self, action: #selector(touchUpInsideEvent), for: .touchUpInside)
-        self.addTarget(self, action: #selector(touchDownEventAction), for: .touchDown)
-        self.addTarget(self, action: #selector(touchDragInsideEventAction), for: .touchDragInside)
-        self.addTarget(self, action: #selector(touchUpOutsideEvent), for: .touchDragOutside)
-        self.addTarget(self, action: #selector(touchUpOutsideEvent), for: .touchCancel)
-        self.addTarget(self, action: #selector(touchUpOutsideEvent), for: .touchDragExit)
+        addTarget(self, action: #selector(touchUpInsideEvent), for: .touchUpInside)
     }
 
-    // MARK: - Transform at events
-
+    // MARK: Transform at events
     private func perform(state: ButtonState) {
         let scale: CGFloat = state == .normal ? 1 : 0.9
         UIView.animate(
@@ -40,47 +34,7 @@ extension UIButton {
     }
 
     @objc
-    private func touchDownEventAction() {
-        self.perform(state: .highlighted)
-    }
-
-    @objc
-    private func touchDragInsideEventAction() {
-        self.perform(state: .highlighted)
-    }
-
-    @objc
     private func touchUpInsideEvent() {
-        self.perform(state: .normal)
-    }
-
-    @objc
-    private func touchUpOutsideEvent() {
-        self.perform(state: .normal)
-    }
-
-    func addLeftImage(image: UIImage, offset: CGFloat) {
-        setImage(image, for: .normal)
-        imageView?.translatesAutoresizingMaskIntoConstraints = false
-        imageView?.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        imageView?.leadingAnchor.constraint(equalTo: leadingAnchor, constant: offset).isActive = true
-    }
-
-    func changeButtonAnimated(image: UIImage?) {
-        guard let imageView = self.imageView, let currentImage = imageView.image, let newImage = image else {
-            return
-        }
-        CATransaction.begin()
-        CATransaction.setCompletionBlock {
-            self.setImage(newImage, for: UIControl.State.normal)
-        }
-        let crossFade: CABasicAnimation = CABasicAnimation(keyPath: "contents")
-        crossFade.duration = 0.3
-        crossFade.fromValue = currentImage.cgImage
-        crossFade.toValue = newImage.cgImage
-        crossFade.isRemovedOnCompletion = false
-        crossFade.fillMode = CAMediaTimingFillMode.forwards
-        imageView.layer.add(crossFade, forKey: "animateContents")
-        CATransaction.commit()
+        perform(state: .normal)
     }
 }

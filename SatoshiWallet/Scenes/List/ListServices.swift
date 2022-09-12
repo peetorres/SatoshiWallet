@@ -9,9 +9,7 @@ import Foundation
 import Moya
 
 protocol ListServicesProtocol {
-    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkLayerError>) -> Void))
-    func getAssetList(limit: Int, completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void))
-    func getTickerList(tickers: [String], completion: @escaping ((Result<[Ticker], NetworkLayerError>) -> Void))
+    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], MoyaError>) -> Void))
 }
 
 final class ListServices: ListServicesProtocol {
@@ -20,7 +18,7 @@ final class ListServices: ListServicesProtocol {
     private let bitfinexProvider = MoyaProvider<BitfinexAPI>()
 
     // MARK: Services
-    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkLayerError>) -> Void)) {
+    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], MoyaError>) -> Void)) {
         getAssetList(limit: limit) { [weak self] response in
             guard let self = self else { return }
 
@@ -37,18 +35,18 @@ final class ListServices: ListServicesProtocol {
                         let cryptoList = CryptoMapper.cryptoArray(assets: assets, tickers: tickers)
                         completion(.success(cryptoList))
 
-                    case .failure:
-                        completion(.failure(.unknown))
+                    case .failure(let error):
+                        completion(.failure(error))
                     }
                 }
 
-            case .failure:
-                completion(.failure(.unknown))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }
 
-    func getAssetList(limit: Int, completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void)) {
+    func getAssetList(limit: Int, completion: @escaping ((Result<ListResponse, MoyaError>) -> Void)) {
         coinCapProvider.request(.assets(limit: limit)) { result in
             switch result {
             case .success(let response):
@@ -56,15 +54,15 @@ final class ListServices: ListServicesProtocol {
                     let model = try response.map(ListResponse.self)
                     completion(.success(model))
                 } catch {
-                    completion(.failure(.parse(response.data)))
+                    completion(.failure(.objectMapping(error, response)))
                 }
-            case .failure:
-                completion(.failure(.unknown))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }
 
-    func getTickerList(tickers: [String], completion: @escaping ((Result<[Ticker], NetworkLayerError>) -> Void)) {
+    func getTickerList(tickers: [String], completion: @escaping ((Result<[Ticker], MoyaError>) -> Void)) {
         bitfinexProvider.request(.tickers(symbols: tickers)) { result in
             switch result {
             case .success(let response):
@@ -72,10 +70,10 @@ final class ListServices: ListServicesProtocol {
                     let model = try response.map([Ticker].self)
                     completion(.success(model))
                 } catch {
-                    completion(.failure(.parse(response.data)))
+                    completion(.failure(.objectMapping(error, response)))
                 }
-            case .failure:
-                completion(.failure(.unknown))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }
