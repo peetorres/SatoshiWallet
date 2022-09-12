@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Custom Methods
     static func setupNavigationBar() {
         UINavigationBar.appearance().shadowImage = UIImage()
-
+        UINavigationBar.appearance().tintColor = .appGreen
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(
             UIOffset(horizontal: -1000.0,
                      vertical: 0.0),
