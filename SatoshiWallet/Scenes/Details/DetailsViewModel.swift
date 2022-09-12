@@ -51,14 +51,6 @@ final class DetailsViewModel {
         return String(format: "%.2f%%", changePercent)
     }
 
-    func marketcapText() -> String? {
-        nil
-    }
-
-    func volumeDayText() -> String? {
-        nil
-    }
-
     func maxSupplyText() -> String? {
         guard let maxSupply = crypto.maxSupply else {
             return nil

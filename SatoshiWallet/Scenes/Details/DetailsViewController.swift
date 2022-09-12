@@ -19,8 +19,6 @@ final class DetailsViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var variationLabel: UILabel!
 
-    @IBOutlet weak var marketCapLabel: UILabel!
-    @IBOutlet weak var volumeDayLabel: UILabel!
     @IBOutlet weak var maxSupplyLabel: UILabel!
     @IBOutlet weak var circulatingSupplyLabel: UILabel!
     @IBOutlet weak var explorerLabel: UILabel!
@@ -56,8 +54,6 @@ final class DetailsViewController: UIViewController {
         variationLabel.text = viewModel.variationText()
         variationLabel.textColor = viewModel.isChangePercentPositive() ? .appGreen : .appRed
 
-        marketCapLabel.text = viewModel.marketcapText()
-        volumeDayLabel.text = viewModel.volumeDayText()
         maxSupplyLabel.text = viewModel.maxSupplyText()
         circulatingSupplyLabel.text = viewModel.circulatingSupplyText()
         explorerLabel.text = viewModel.explorerText()
