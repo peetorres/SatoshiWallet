@@ -45,6 +45,8 @@
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
 		A270A53A28CFB27E006AA6CF /* Tickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53928CFB27E006AA6CF /* Tickers.swift */; };
 		A270A53C28CFBED7006AA6CF /* VerbosePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */; };
+		A270A53F28CFD5D4006AA6CF /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53E28CFD5D4006AA6CF /* Crypto.swift */; };
+		A270A54228CFD7EE006AA6CF /* CryptoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A54128CFD7EE006AA6CF /* CryptoMapper.swift */; };
 		A29E775B28CB24AF007DC5A2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E775A28CB24AF007DC5A2 /* CustomView.swift */; };
 		A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB550728C9E293004DC74E /* String+Extensions.swift */; };
 		A2FBDBF628C9CF8C00AD9FE8 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */; };
@@ -110,6 +112,8 @@
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
 		A270A53928CFB27E006AA6CF /* Tickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickers.swift; sourceTree = "<group>"; };
 		A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbosePlugin.swift; sourceTree = "<group>"; };
+		A270A53E28CFD5D4006AA6CF /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		A270A54128CFD7EE006AA6CF /* CryptoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMapper.swift; sourceTree = "<group>"; };
 		A29E775A28CB24AF007DC5A2 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A2FB550728C9E293004DC74E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
@@ -222,9 +226,9 @@
 			children = (
 				A209D48828C9528800B43711 /* Sources */,
 				A209D48928C953F900B43711 /* Resources */,
+				A270A54028CFD701006AA6CF /* Helpers */,
 				A2FB550628C9E281004DC74E /* Extensions */,
 				A209D49A28C95CFD00B43711 /* Network */,
-				A209D48B28C9580200B43711 /* Models */,
 				A218571B28CA856000931B07 /* Base */,
 				A209D48A28C9543600B43711 /* Scenes */,
 				A207165028CE8B4A008C34DF /* DSComponents */,
@@ -266,6 +270,7 @@
 		A209D48A28C9543600B43711 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A270A53D28CFD5C2006AA6CF /* Models */,
 				A209D49428C958FC00B43711 /* List */,
 				A218573028CA928400931B07 /* Details */,
 			);
@@ -296,6 +301,7 @@
 		A209D49A28C95CFD00B43711 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A209D48B28C9580200B43711 /* Models */,
 				A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */,
 				A209D49B28C95D1900B43711 /* CoinCapAPI.swift */,
 				A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */,
@@ -374,6 +380,22 @@
 				A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		A270A53D28CFD5C2006AA6CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A270A53E28CFD5D4006AA6CF /* Crypto.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A270A54028CFD701006AA6CF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A270A54128CFD7EE006AA6CF /* CryptoMapper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		A29E775928CB2489007DC5A2 /* CustomDesignableUI */ = {
@@ -613,6 +635,7 @@
 				A270A53C28CFBED7006AA6CF /* VerbosePlugin.swift in Sources */,
 				A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */,
 				A209D49C28C95D1900B43711 /* CoinCapAPI.swift in Sources */,
+				A270A53F28CFD5D4006AA6CF /* Crypto.swift in Sources */,
 				A218572928CA8AF400931B07 /* NetworkErrorView.swift in Sources */,
 				A209D48D28C9582500B43711 /* Asset.swift in Sources */,
 				A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */,
@@ -620,6 +643,7 @@
 				A207165528CE8BC0008C34DF /* PrimaryButton.swift in Sources */,
 				A207165328CE8B9F008C34DF /* LoadableView.swift in Sources */,
 				A209D49628C9595400B43711 /* ListViewModel.swift in Sources */,
+				A270A54228CFD7EE006AA6CF /* CryptoMapper.swift in Sources */,
 				A207164828CDE3F2008C34DF /* UIButton+Extensions.swift in Sources */,
 				A207164B28CE17B7008C34DF /* UIView+Extensions.swift in Sources */,
 				A218571F28CA85AC00931B07 /* ProgressView.swift in Sources */,
