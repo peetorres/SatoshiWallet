@@ -6,7 +6,7 @@ target 'SatoshiWallet' do
   use_frameworks!
 
   # Pods for SatoshiWallet
-  pod 'Moya/RxSwift', '~> 15.0'
+  pod 'Moya', '~> 15.0'
   pod 'Kingfisher', '~> 7.0'
   pod 'lottie-ios'
   pod 'SwiftLint'
