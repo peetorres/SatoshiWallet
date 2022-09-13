@@ -50,6 +50,7 @@
 		A24E73CE28D1225800464112 /* ListServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73CD28D1225800464112 /* ListServicesTests.swift */; };
 		A24E73D028D12ABB00464112 /* ListServiceProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73CF28D12ABB00464112 /* ListServiceProtocolTests.swift */; };
 		A24E73D528D1348C00464112 /* ListCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73D428D1348C00464112 /* ListCellViewModelTests.swift */; };
+		A24E73D828D13B9D00464112 /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73D728D13B9D00464112 /* DetailsViewModelTests.swift */; };
 		A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */; };
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
@@ -129,6 +130,7 @@
 		A24E73CD28D1225800464112 /* ListServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicesTests.swift; sourceTree = "<group>"; };
 		A24E73CF28D12ABB00464112 /* ListServiceProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceProtocolTests.swift; sourceTree = "<group>"; };
 		A24E73D428D1348C00464112 /* ListCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModelTests.swift; sourceTree = "<group>"; };
+		A24E73D728D13B9D00464112 /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				A21ABDD028D06A1000D3E4A7 /* Models */,
 				A270A53228CF87D6006AA6CF /* List */,
+				A24E73D628D13B6A00464112 /* Details */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -435,6 +438,14 @@
 				A24E73D428D1348C00464112 /* ListCellViewModelTests.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		A24E73D628D13B6A00464112 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				A24E73D728D13B9D00464112 /* DetailsViewModelTests.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		A270A53228CF87D6006AA6CF /* List */ = {
@@ -754,6 +765,7 @@
 				A218571728CA81A200931B07 /* ListViewControllerTests.swift in Sources */,
 				A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */,
 				A24E73C428D0B73200464112 /* ListServicesFailureStub.swift in Sources */,
+				A24E73D828D13B9D00464112 /* DetailsViewModelTests.swift in Sources */,
 				A24E73C728D116CA00464112 /* ListServicesEmptySuccessStub.swift in Sources */,
 				A28C254028D007FC0032380A /* CryptoMapperTests.swift in Sources */,
 				A24E73BE28D08FC400464112 /* ListServicesSuccessStub.swift in Sources */,

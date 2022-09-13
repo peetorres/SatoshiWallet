@@ -53,10 +53,7 @@ final class DetailsViewModel {
     }
 
     func circulatingSupply() -> String? {
-        guard let circulatingSupply = crypto.circulatingSupplyFormatted() else {
-            return nil
-        }
-        return "Circulating Supply: " + circulatingSupply
+        return "Circulating Supply: " + crypto.circulatingSupplyFormatted()
     }
 
     func explorer() -> String? {

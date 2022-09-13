@@ -54,7 +54,7 @@ extension Crypto {
         "$" + String(format: "%.2f%", price)
     }
 
-    private func changePercentFormatted() -> Float? {
+    private func changePercentFormatted() -> Float {
         changePercentDaily * 100
     }
 
@@ -62,9 +62,8 @@ extension Crypto {
         changePercentDaily >= 0
     }
 
-    func variationFormatted() -> String? {
-        guard let changePercent = changePercentFormatted() else { return nil }
-        return String(format: "%.2f%%", changePercent)
+    func variationFormatted() -> String {
+        return String(format: "%.2f%%", changePercentFormatted())
     }
 
     func maxSupplyFormatted() -> String? {
@@ -73,8 +72,7 @@ extension Crypto {
         return decimalMaxSupply.description
     }
 
-    func circulatingSupplyFormatted() -> String? {
-        guard let decimalSupply = Decimal(string: supply) else { return nil }
-        return decimalSupply.description
+    func circulatingSupplyFormatted() -> String {
+        return Decimal(string: supply)?.description ?? "-"
     }
 }
