@@ -45,6 +45,7 @@
 		A24E73C228D0904E00464112 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73C128D0904E00464112 /* NetworkError.swift */; };
 		A24E73C428D0B73200464112 /* ListServicesFailureStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73C328D0B73200464112 /* ListServicesFailureStub.swift */; };
 		A24E73C728D116CA00464112 /* ListServicesEmptySuccessStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73C628D116CA00464112 /* ListServicesEmptySuccessStub.swift */; };
+		A24E73CA28D1174B00464112 /* MainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73C928D1174B00464112 /* MainCoordinatorTests.swift */; };
 		A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */; };
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
@@ -119,6 +120,7 @@
 		A24E73C128D0904E00464112 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A24E73C328D0B73200464112 /* ListServicesFailureStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicesFailureStub.swift; sourceTree = "<group>"; };
 		A24E73C628D116CA00464112 /* ListServicesEmptySuccessStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicesEmptySuccessStub.swift; sourceTree = "<group>"; };
+		A24E73C928D1174B00464112 /* MainCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTests.swift; sourceTree = "<group>"; };
 		A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		A209D46E28C950AA00B43711 /* SatoshiWalletTests */ = {
 			isa = PBXGroup;
 			children = (
+				A24E73C828D1173900464112 /* Sources */,
 				A28C253E28D007E50032380A /* Helpers */,
 				A28C254228D012330032380A /* Extensions */,
 				A218571528CA814F00931B07 /* Scenes */,
@@ -407,6 +410,14 @@
 				A24E73C328D0B73200464112 /* ListServicesFailureStub.swift */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		A24E73C828D1173900464112 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A24E73C928D1174B00464112 /* MainCoordinatorTests.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		A270A53228CF87D6006AA6CF /* List */ = {
@@ -713,6 +724,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A24E73BC28D08F9700464112 /* Factories.swift in Sources */,
+				A24E73CA28D1174B00464112 /* MainCoordinatorTests.swift in Sources */,
 				A28C254428D012460032380A /* String+ExtensionsTests.swift in Sources */,
 				A21ABDD228D06A2600D3E4A7 /* CryptoFormattingTests.swift in Sources */,
 				A218571A28CA82FB00931B07 /* XCTestCase+Helpers.swift in Sources */,
