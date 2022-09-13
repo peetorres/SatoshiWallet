@@ -11,8 +11,10 @@ final class ListViewController: BaseViewController {
     // MARK: Properties
     private let viewModel: ListViewModel
     var handleSelection: ((Crypto) -> Void)?
+    var didChangeInterfaceStyle: (() -> Void)?
 
     // MARK: Outlets
+    let switchControl = UISwitch()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewBackgroundFetchError: UIView!
 
@@ -30,6 +32,7 @@ final class ListViewController: BaseViewController {
     func switchDidChange(sender: UISwitch!) {
         let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
         keyWindow?.overrideUserInterfaceStyle = sender.isOn ? .dark : .light
+        didChangeInterfaceStyle?()
     }
 
     // MARK: Initializers
@@ -104,7 +107,6 @@ final class ListViewController: BaseViewController {
     }
 
     private func setupNavigationBarSwitch() {
-        let switchControl = UISwitch()
         let isDarkMode = traitCollection.userInterfaceStyle != .light
         switchControl.setOn(isDarkMode, animated: false)
         switchControl.addTarget(self, action: #selector(switchDidChange(sender:)), for: .valueChanged)
