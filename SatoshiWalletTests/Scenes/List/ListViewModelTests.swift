@@ -153,7 +153,7 @@ class ListViewModelTests: XCTestCase {
             XCTAssertEqual(successHandlers.count, 2)
         }
 
-        wait(for: [expectation], timeout: timeInterval)
+        wait(for: [expectation], timeout: timeInterval + 1)
     }
 
     func testHandlingProgressTwice() {
