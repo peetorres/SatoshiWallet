@@ -13,4 +13,14 @@ class ListServicesFailureStub: ListServicesProtocol {
                        completion: @escaping ((Result<[Crypto], NetworkError>) -> Void)) {
         completion(.failure(.unknown))
     }
+
+    func getAssetList(limit: Int,
+                      completion: @escaping ((Result<ListResponse, NetworkError>) -> Void)) {
+        completion(.failure(.unknown))
+    }
+
+    func getTickerList(tickers: [String],
+                       completion: @escaping ((Result<[Ticker], NetworkError>) -> Void)) {
+        completion(.failure(.unknown))
+    }
 }

@@ -38,24 +38,3 @@ class ListViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.title, "Satoshi Wallet")
     }
 }
-
-// class ListServicesSuccessStub: ListServicesProtocol {
-//    func getAssetList(completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void)) {
-//        let response: ListResponse = .init(data: [makeAsset(), makeAsset(), makeAsset()], timestamp: 123)
-//        completion(.success(response))
-//    }
-//
-//    func makeAsset() -> Asset {
-//        .init(id: "bitcoin",
-//              rank: "1",
-//              symbol: "BTC",
-//              name: "Bitcoin",
-//              supply: "21",
-//              maxSupply: "21",
-//              marketCapUsd: "123",
-//              volumeUsd24Hr: "12",
-//              priceUsd: "123456",
-//              changePercent24Hr: "1",
-//              explorer: "asd.info")
-//    }
-// }

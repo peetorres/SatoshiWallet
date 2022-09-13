@@ -29,6 +29,12 @@ public enum NetworkError: Error {
     }
 }
 
+extension Error {
+    func mapToNetworkError(with data: Data?) -> NetworkError {
+        return .parse(data)
+    }
+}
+
 extension MoyaError {
     func mapToNetworkError() -> NetworkError {
         let response = self.response?.response
