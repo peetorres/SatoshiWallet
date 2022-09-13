@@ -9,13 +9,13 @@ import Foundation
 
 class ListViewModel {
     // MARK: Constants and Enums
-    private enum Constants {
-        static var cryptoLimit = 500
+    enum Constants {
+        static var cryptoLimit = 200
         static var timeIntervalFetchInSeconds: TimeInterval = 5
     }
 
     // MARK: Properties
-    private var refreshTimer: Timer?
+    private(set) var refreshTimer: Timer?
     private let service: ListServicesProtocol
 
     var cryptos: [Crypto]?
@@ -44,15 +44,24 @@ class ListViewModel {
         self.service = service
     }
 
+    deinit {
+        stopServerCryptoList()
+    }
+
     // MARK: Services
     func serverCryptoList() {
         guard refreshTimer == nil else { return }
 
-        refreshTimer = Timer.scheduledTimer(withTimeInterval: Constants.timeIntervalFetchInSeconds,
-                                            repeats: true) { [weak self] _ in
-            self?.getCryptoList(isBackgroundFetch: true)
+        let dispatchTime: DispatchTime = .now() + Constants.timeIntervalFetchInSeconds
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: .nan, repeats: false, block: { _ in })
+
+        DispatchQueue.main.asyncAfter(deadline: dispatchTime) { [weak self] in
+            self?.refreshTimer = Timer.scheduledTimer(withTimeInterval: Constants.timeIntervalFetchInSeconds,
+                                                      repeats: true) { [weak self] _ in
+                self?.getCryptoList(isBackgroundFetch: true)
+            }
+            self?.refreshTimer!.fire()
         }
-        refreshTimer!.fire()
     }
 
     func stopServerCryptoList() {
@@ -71,7 +80,7 @@ class ListViewModel {
             case .success(let model):
                 self.cryptos = model
                 self.handleSuccess?()
-                !isBackgroundFetch ? self.serverCryptoList() : nil
+                self.serverCryptoList()
             case .failure(let error):
                 self.handleError?(isBackgroundFetch, error.localizedDescription)
             }
