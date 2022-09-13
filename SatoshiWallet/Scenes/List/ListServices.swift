@@ -28,7 +28,9 @@ final class ListServices: ListServicesProtocol {
                 let assets = assetList.data
                 let searchTickers = CryptoMapper.tickerArray(from: assets)
 
-                self.getTickerList(tickers: searchTickers) { response in
+                self.getTickerList(tickers: searchTickers) { [weak self] response in
+                    guard self != nil else { return }
+
                     switch response {
                     case .success(let tickers):
 
@@ -47,7 +49,9 @@ final class ListServices: ListServicesProtocol {
     }
 
     func getAssetList(limit: Int, completion: @escaping ((Result<ListResponse, MoyaError>) -> Void)) {
-        coinCapProvider.request(.assets(limit: limit)) { result in
+        coinCapProvider.request(.assets(limit: limit)) { [weak self] result in
+            guard self != nil else { return }
+
             switch result {
             case .success(let response):
                 do {
@@ -63,7 +67,9 @@ final class ListServices: ListServicesProtocol {
     }
 
     func getTickerList(tickers: [String], completion: @escaping ((Result<[Ticker], MoyaError>) -> Void)) {
-        bitfinexProvider.request(.tickers(symbols: tickers)) { result in
+        bitfinexProvider.request(.tickers(symbols: tickers)) { [weak self] result in
+            guard self != nil else { return }
+
             switch result {
             case .success(let response):
                 do {
