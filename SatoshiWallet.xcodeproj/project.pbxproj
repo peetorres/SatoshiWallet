@@ -39,6 +39,7 @@
 		A218573328CA929D00931B07 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218573128CA929D00931B07 /* DetailsViewController.swift */; };
 		A218573428CA929D00931B07 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A218573228CA929D00931B07 /* DetailsViewController.xib */; };
 		A218573628CA998000931B07 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218573528CA998000931B07 /* DetailsViewModel.swift */; };
+		A21ABDD228D06A2600D3E4A7 /* CryptoFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21ABDD128D06A2600D3E4A7 /* CryptoFormattingTests.swift */; };
 		A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */; };
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
@@ -107,6 +108,7 @@
 		A218573128CA929D00931B07 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A218573228CA929D00931B07 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		A218573528CA998000931B07 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		A21ABDD128D06A2600D3E4A7 /* CryptoFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoFormattingTests.swift; sourceTree = "<group>"; };
 		A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		A218571528CA814F00931B07 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A21ABDD028D06A1000D3E4A7 /* Models */,
 				A270A53228CF87D6006AA6CF /* List */,
 			);
 			path = Scenes;
@@ -374,6 +377,14 @@
 				A218573228CA929D00931B07 /* DetailsViewController.xib */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		A21ABDD028D06A1000D3E4A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A21ABDD128D06A2600D3E4A7 /* CryptoFormattingTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A270A53228CF87D6006AA6CF /* List */ = {
@@ -678,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A28C254428D012460032380A /* String+ExtensionsTests.swift in Sources */,
+				A21ABDD228D06A2600D3E4A7 /* CryptoFormattingTests.swift in Sources */,
 				A218571A28CA82FB00931B07 /* XCTestCase+Helpers.swift in Sources */,
 				A218571728CA81A200931B07 /* ListViewControllerTests.swift in Sources */,
 				A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */,
