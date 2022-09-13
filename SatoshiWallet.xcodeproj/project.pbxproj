@@ -46,6 +46,7 @@
 		A270A53C28CFBED7006AA6CF /* VerbosePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */; };
 		A270A53F28CFD5D4006AA6CF /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53E28CFD5D4006AA6CF /* Crypto.swift */; };
 		A270A54228CFD7EE006AA6CF /* CryptoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A54128CFD7EE006AA6CF /* CryptoMapper.swift */; };
+		A28C254028D007FC0032380A /* CryptoMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28C253F28D007FB0032380A /* CryptoMapperTests.swift */; };
 		A29E775B28CB24AF007DC5A2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E775A28CB24AF007DC5A2 /* CustomView.swift */; };
 		A2FB550828C9E293004DC74E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB550728C9E293004DC74E /* String+Extensions.swift */; };
 		A2FBDBF628C9CF8C00AD9FE8 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */; };
@@ -112,6 +113,7 @@
 		A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbosePlugin.swift; sourceTree = "<group>"; };
 		A270A53E28CFD5D4006AA6CF /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		A270A54128CFD7EE006AA6CF /* CryptoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMapper.swift; sourceTree = "<group>"; };
+		A28C253F28D007FB0032380A /* CryptoMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMapperTests.swift; sourceTree = "<group>"; };
 		A29E775A28CB24AF007DC5A2 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A2FB550728C9E293004DC74E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
@@ -238,8 +240,9 @@
 		A209D46E28C950AA00B43711 /* SatoshiWalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				A218571828CA82D700931B07 /* Helpers */,
+				A28C253E28D007E50032380A /* Helpers */,
 				A218571528CA814F00931B07 /* Scenes */,
+				A218571828CA82D700931B07 /* TestHelpers */,
 			);
 			path = SatoshiWalletTests;
 			sourceTree = "<group>";
@@ -315,12 +318,12 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		A218571828CA82D700931B07 /* Helpers */ = {
+		A218571828CA82D700931B07 /* TestHelpers */ = {
 			isa = PBXGroup;
 			children = (
 				A218571928CA82FB00931B07 /* XCTestCase+Helpers.swift */,
 			);
-			path = Helpers;
+			path = TestHelpers;
 			sourceTree = "<group>";
 		};
 		A218571B28CA856000931B07 /* Base */ = {
@@ -391,6 +394,14 @@
 			isa = PBXGroup;
 			children = (
 				A270A54128CFD7EE006AA6CF /* CryptoMapper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A28C253E28D007E50032380A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A28C253F28D007FB0032380A /* CryptoMapperTests.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -658,6 +669,7 @@
 				A218571A28CA82FB00931B07 /* XCTestCase+Helpers.swift in Sources */,
 				A218571728CA81A200931B07 /* ListViewControllerTests.swift in Sources */,
 				A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */,
+				A28C254028D007FC0032380A /* CryptoMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
