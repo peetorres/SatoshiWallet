@@ -23,7 +23,7 @@ class ListViewModelTests: XCTestCase {
 
         sut.getCryptoList(isBackgroundFetch: false)
 
-        XCTAssertEqual(sut.cryptos?.count, 4)
+        XCTAssertEqual(sut.cryptos?.count, 5)
     }
 
     func testServiceSuccessHandlerMutableCryptosWithoutSearch() {
@@ -31,7 +31,7 @@ class ListViewModelTests: XCTestCase {
 
         sut.getCryptoList(isBackgroundFetch: false)
 
-        XCTAssertEqual(sut.mutableCryptos?.count, 4)
+        XCTAssertEqual(sut.mutableCryptos?.count, 5)
     }
 
     func testServiceSuccessHandlerMutableCryptosWithSearch() {
@@ -40,7 +40,34 @@ class ListViewModelTests: XCTestCase {
 
         sut.searchText = "T"
 
-        XCTAssertEqual(sut.mutableCryptos?.count, 2)
+        XCTAssertEqual(sut.mutableCryptos?.count, 3)
+    }
+
+    func testSearchingForName() {
+        sut = ListViewModel(service: ListServicesSuccessStub())
+        sut.getCryptoList(isBackgroundFetch: false)
+
+        sut.searchText = "Ethereum"
+
+        XCTAssertEqual(sut.mutableCryptos?.count, 1)
+    }
+
+    func testSearchingForSymbol() {
+        sut = ListViewModel(service: ListServicesSuccessStub())
+        sut.getCryptoList(isBackgroundFetch: false)
+
+        sut.searchText = "BT"
+
+        XCTAssertEqual(sut.mutableCryptos?.count, 1)
+    }
+
+    func testSearchingMixedCharacters() {
+        sut = ListViewModel(service: ListServicesSuccessStub())
+        sut.getCryptoList(isBackgroundFetch: false)
+
+        sut.searchText = "H"
+
+        XCTAssertEqual(sut.mutableCryptos?.count, 3)
     }
 
     func testCryptoListCalledOnlyOnceImediatelly() {
