@@ -15,27 +15,23 @@ class ListViewModelTests: XCTestCase {
     // MARK: Setup
     override func setUpWithError() throws {
         try super.setUpWithError()
+        sut = ListViewModel(service: ListServicesSuccessStub())
     }
 
     // MARK: Test Methods
     func testServiceSuccessHandlerCryptosCounting() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
-
         sut.getCryptoList(isBackgroundFetch: false)
 
         XCTAssertEqual(sut.cryptos?.count, 5)
     }
 
     func testServiceSuccessHandlerMutableCryptosWithoutSearch() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
-
         sut.getCryptoList(isBackgroundFetch: false)
 
         XCTAssertEqual(sut.mutableCryptos?.count, 5)
     }
 
     func testServiceSuccessHandlerMutableCryptosWithSearch() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
         sut.getCryptoList(isBackgroundFetch: false)
 
         sut.searchText = "T"
@@ -44,7 +40,6 @@ class ListViewModelTests: XCTestCase {
     }
 
     func testCryptoDontChangeWhenSearch() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
         sut.getCryptoList(isBackgroundFetch: false)
 
         sut.searchText = "T"
@@ -53,7 +48,6 @@ class ListViewModelTests: XCTestCase {
     }
 
     func testSearchingForName() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
         sut.getCryptoList(isBackgroundFetch: false)
 
         sut.searchText = "Ethereum"
@@ -62,7 +56,6 @@ class ListViewModelTests: XCTestCase {
     }
 
     func testSearchingForSymbol() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
         sut.getCryptoList(isBackgroundFetch: false)
 
         sut.searchText = "BT"
@@ -71,7 +64,6 @@ class ListViewModelTests: XCTestCase {
     }
 
     func testSearchingMixedCharacters() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
         sut.getCryptoList(isBackgroundFetch: false)
 
         sut.searchText = "H"
@@ -80,26 +72,27 @@ class ListViewModelTests: XCTestCase {
     }
 
     func testSearchingReloadingDataHandlingOnce() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
-        sut.getCryptoList(isBackgroundFetch: false)
         var reloadingDataHandlers: [(() -> Void)?] = []
 
         sut.shouldReloadData = { [weak self] in
             reloadingDataHandlers.append(self?.sut.shouldReloadData)
         }
+
+        sut.getCryptoList(isBackgroundFetch: false)
         sut.searchText = "ETH"
 
         XCTAssertEqual(reloadingDataHandlers.count, 1)
     }
 
     func testSearchingReloadingDataHandlingMultipleTimes() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
-        sut.getCryptoList(isBackgroundFetch: false)
         var reloadingDataHandlers: [(() -> Void)?] = []
 
         sut.shouldReloadData = { [weak self] in
             reloadingDataHandlers.append(self?.sut.shouldReloadData)
         }
+
+        sut.getCryptoList(isBackgroundFetch: false)
+
         sut.searchText = "E"
         sut.searchText = "T"
         sut.searchText = "H"
@@ -108,7 +101,6 @@ class ListViewModelTests: XCTestCase {
     }
 
     func testCryptoListCalledOnlyOnceImediatelly() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
         var successHandlers: [(() -> Void)?] = []
 
         sut.handleSuccess = { [weak self] in
@@ -121,16 +113,12 @@ class ListViewModelTests: XCTestCase {
     }
 
     func testCryptoListServerStarted() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
-
         sut.getCryptoList(isBackgroundFetch: false)
 
         XCTAssertNotNil(sut.refreshTimer)
     }
 
     func testCryptoListServerStopped() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
-
         sut.getCryptoList(isBackgroundFetch: false)
         sut.stopServerCryptoList()
 
@@ -138,7 +126,6 @@ class ListViewModelTests: XCTestCase {
     }
 
     func testCryptoListCalledAgainWhenServerStart() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
         var successHandlers: [(() -> Void)?] = []
         let expectation = expectation(description: "Waiting Timer Fire!")
         let timeInterval = ListViewModel.Constants.timeIntervalFetchInSeconds
@@ -146,6 +133,7 @@ class ListViewModelTests: XCTestCase {
         sut.handleSuccess = { [weak self] in
             successHandlers.append(self?.sut.handleSuccess)
         }
+
         sut.getCryptoList(isBackgroundFetch: false)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval) {
@@ -156,14 +144,50 @@ class ListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: timeInterval + 1)
     }
 
-    func testHandlingProgressTwice() {
-        sut = ListViewModel(service: ListServicesSuccessStub())
+    func testHandlingProgressTwiceSuccessStub() {
         var shouldProgressShowHandlers: [(() -> Void)?] = []
 
         sut.shouldProgressShow = { [weak self] isShowing in
             guard let self = self else { return }
             shouldProgressShowHandlers.append({ self.sut.shouldProgressShow?(isShowing) })
         }
+
+        sut.getCryptoList(isBackgroundFetch: false)
+
+        XCTAssertEqual(shouldProgressShowHandlers.count, 2)
+    }
+
+    func testServiceFailureFirstTimeCryptosNil() {
+        sut = ListViewModel(service: ListServicesFailureStub())
+
+        sut.getCryptoList(isBackgroundFetch: false)
+
+        XCTAssertNil(sut.cryptos)
+    }
+
+    func testServiceFailureErrorHandler() {
+        sut = ListViewModel(service: ListServicesFailureStub())
+        var errorHandlers: [((Bool, String) -> Void)?] = []
+
+        sut.handleError = { [weak self] _, _ in
+            guard let self = self else { return }
+            errorHandlers.append({ _, _ in self.sut.handleError?(false, "") })
+        }
+
+        sut.getCryptoList(isBackgroundFetch: false)
+
+        XCTAssertEqual(errorHandlers.count, 1)
+    }
+
+    func testHandlingProgressTwiceFailureStub() {
+        sut = ListViewModel(service: ListServicesFailureStub())
+        var shouldProgressShowHandlers: [(() -> Void)?] = []
+
+        sut.shouldProgressShow = { [weak self] isShowing in
+            guard let self = self else { return }
+            shouldProgressShowHandlers.append({ self.sut.shouldProgressShow?(isShowing) })
+        }
+
         sut.getCryptoList(isBackgroundFetch: false)
 
         XCTAssertEqual(shouldProgressShowHandlers.count, 2)
