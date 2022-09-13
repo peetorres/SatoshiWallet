@@ -53,7 +53,7 @@ class ListViewModel {
         guard refreshTimer == nil else { return }
 
         let dispatchTime: DispatchTime = .now() + Constants.timeIntervalFetchInSeconds
-        refreshTimer = Timer.scheduledTimer(withTimeInterval: .nan, repeats: false, block: { _ in })
+        refreshTimer = Timer.scheduledTimer(timeInterval: .nan, invocation: .init(), repeats: false)
 
         DispatchQueue.main.asyncAfter(deadline: dispatchTime) { [weak self] in
             self?.refreshTimer = Timer.scheduledTimer(withTimeInterval: Constants.timeIntervalFetchInSeconds,
