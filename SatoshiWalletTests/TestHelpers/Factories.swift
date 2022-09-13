@@ -47,7 +47,7 @@ extension Crypto {
         .makeCrypto(rank: "100000",
                     symbol: "DUMMY",
                     name: "DUMMY TEST",
-                    supply: "1000000000000000000.0000000000000000",
+                    supply: "oi",
                     maxSupply: nil,
                     explorer: nil,
                     dailyChangeRelative: 0.0000010,

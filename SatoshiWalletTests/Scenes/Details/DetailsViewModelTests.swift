@@ -75,7 +75,7 @@ class DetailsViewModelTests: XCTestCase {
         XCTAssertEqual(sut.isChangePercentPositive(), true)
         XCTAssertEqual(sut.variation(), "0.00%")
         XCTAssertEqual(sut.maxSupply(), nil)
-        XCTAssertEqual(sut.circulatingSupply(), "Circulating Supply: 1000000000000000000")
+        XCTAssertEqual(sut.circulatingSupply(), "Circulating Supply: -")
         XCTAssertEqual(sut.explorer(), nil)
     }
 }
