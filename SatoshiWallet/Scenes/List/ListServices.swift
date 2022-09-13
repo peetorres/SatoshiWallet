@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 protocol ListServicesProtocol {
-    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], MoyaError>) -> Void))
+    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkError>) -> Void))
 }
 
 final class ListServices: ListServicesProtocol {
@@ -18,7 +18,7 @@ final class ListServices: ListServicesProtocol {
     private let bitfinexProvider = MoyaProvider<BitfinexAPI>()
 
     // MARK: Services
-    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], MoyaError>) -> Void)) {
+    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkError>) -> Void)) {
         getAssetList(limit: limit) { [weak self] response in
             guard let self = self else { return }
 
@@ -36,12 +36,12 @@ final class ListServices: ListServicesProtocol {
                         completion(.success(cryptoList))
 
                     case .failure(let error):
-                        completion(.failure(error))
+                        completion(.failure(error.mapToNetworkError()))
                     }
                 }
 
             case .failure(let error):
-                completion(.failure(error))
+                    completion(.failure(error.mapToNetworkError()))
             }
         }
     }
