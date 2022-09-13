@@ -28,7 +28,8 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       enableThreadSanitizer = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
       <AdditionalOptions>
          <AdditionalOption
             key = "NSZombieEnabled"
@@ -36,6 +37,22 @@
             isEnabled = "YES">
          </AdditionalOption>
       </AdditionalOptions>
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A209D45428C950A800B43711"
+            BuildableName = "SatoshiWallet.app"
+            BlueprintName = "SatoshiWallet"
+            ReferencedContainer = "container:SatoshiWallet.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A209D46A28C950AA00B43711"
+            BuildableName = "SatoshiWalletTests.xctest"
+            BlueprintName = "SatoshiWalletTests"
+            ReferencedContainer = "container:SatoshiWallet.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
