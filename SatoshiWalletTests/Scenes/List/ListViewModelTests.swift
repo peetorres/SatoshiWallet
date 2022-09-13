@@ -43,6 +43,15 @@ class ListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.mutableCryptos?.count, 3)
     }
 
+    func testCryptoDontChangeWhenSearch() {
+        sut = ListViewModel(service: ListServicesSuccessStub())
+        sut.getCryptoList(isBackgroundFetch: false)
+
+        sut.searchText = "T"
+
+        XCTAssertEqual(sut.cryptos?.count, 5)
+    }
+
     func testSearchingForName() {
         sut = ListViewModel(service: ListServicesSuccessStub())
         sut.getCryptoList(isBackgroundFetch: false)
