@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Crypto {
+struct Crypto: Equatable {
     let id: String
     let name: String
     let rank: String
@@ -28,6 +28,20 @@ struct Crypto {
         self.price = ticker.lastPrice
         self.changePercentDaily = ticker.dailyChangeRelative
         self.explorer = asset.explorer
+    }
+}
+
+extension Crypto {
+    static func ==(lhs: Crypto, rhs: Crypto) -> Bool {
+        return  lhs.id == rhs.id
+                && lhs.name == rhs.name
+                && lhs.rank == rhs.rank
+                && lhs.symbol == rhs.symbol
+                && lhs.supply == rhs.supply
+                && lhs.maxSupply == rhs.maxSupply
+                && lhs.price == rhs.price
+                && lhs.changePercentDaily == rhs.changePercentDaily
+                && lhs.explorer == rhs.explorer
     }
 }
 
