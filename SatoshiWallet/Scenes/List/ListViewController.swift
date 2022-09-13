@@ -138,14 +138,16 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let crypto = viewModel.mutableCryptos?[indexPath.row] else { return }
-        handleSelection?(crypto)
+        if let crypto = viewModel.mutableCryptos?[indexPath.row] {
+            handleSelection?(crypto)
+        }
     }
 }
 
 extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let searchText = searchController.searchBar.text else { return }
-        search(for: searchText)
+        if let searchText = searchController.searchBar.text {
+            search(for: searchText)
+        }
     }
 }
