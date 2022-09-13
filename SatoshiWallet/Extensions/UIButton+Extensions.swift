@@ -18,7 +18,8 @@ extension UIButton {
     }
 
     public func setupTouchEventsHandler() {
-        addTarget(self, action: #selector(touchUpInsideEvent), for: .touchUpInside)
+        self.addTarget(self, action: #selector(touchUpInsideEvent), for: .touchUpInside)
+        self.addTarget(self, action: #selector(touchDownEventAction), for: .touchDown)
     }
 
     // MARK: Transform at events
@@ -34,7 +35,12 @@ extension UIButton {
     }
 
     @objc
+    private func touchDownEventAction() {
+        self.perform(state: .highlighted)
+    }
+
+    @objc
     private func touchUpInsideEvent() {
-        perform(state: .normal)
+        self.perform(state: .normal)
     }
 }
