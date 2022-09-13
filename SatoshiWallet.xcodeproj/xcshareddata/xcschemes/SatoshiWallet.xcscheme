@@ -56,11 +56,6 @@
                BlueprintName = "SatoshiWalletTests"
                ReferencedContainer = "container:SatoshiWallet.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "ListViewModelTests/testCryptoListCalledAgainWhenServerStart()">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
