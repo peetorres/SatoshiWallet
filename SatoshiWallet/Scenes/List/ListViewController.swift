@@ -9,7 +9,7 @@ import UIKit
 
 final class ListViewController: BaseViewController {
     // MARK: Properties
-    private let viewModel: ListViewModel
+    let viewModel: ListViewModel
     var handleSelection: ((Crypto) -> Void)?
     var didChangeInterfaceStyle: (() -> Void)?
 

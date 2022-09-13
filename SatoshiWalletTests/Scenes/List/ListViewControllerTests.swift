@@ -117,7 +117,7 @@ class ListViewControllerTests: XCTestCase {
         XCTAssertFalse(sut.view.subviews.last is NetworkErrorView)
     }
 
-    func testINeworkErrorViewButtonIsEnabled() throws {
+    func testNeworkErrorViewButtonIsEnabled() throws {
         sut = makeSut(with: ListServicesFailureStub())
 
         let networkErrorView = try XCTUnwrap(sut.view.subviews.last) as? NetworkErrorView
@@ -153,6 +153,21 @@ class ListViewControllerTests: XCTestCase {
         sut.switchControl.sendActions(for: .valueChanged)
 
         XCTAssertEqual(didChangeInterfaceStyleHandlers.count, 2)
+    }
+
+    func testNeworkErrorTryAgainAction() throws {
+        sut = makeSut(with: ListServicesFailureStub())
+
+        var shouldProgressShow: [(() -> Void)?] = []
+        sut.viewModel.shouldProgressShow = { _ in
+            shouldProgressShow.append({})
+        }
+
+        let networkErrorView = try XCTUnwrap(sut.view.subviews.last) as? NetworkErrorView
+        let buttonTryAgain = try XCTUnwrap(networkErrorView?.tryAgainButton.button)
+        buttonTryAgain.sendActions(for: .touchUpInside)
+
+        XCTAssertEqual(shouldProgressShow.count, 2)
     }
 }
 
