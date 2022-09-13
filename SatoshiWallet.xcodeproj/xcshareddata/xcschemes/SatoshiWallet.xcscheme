@@ -58,9 +58,6 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "ListServicesIntegrationTests">
-               </Test>
-               <Test
                   Identifier = "ListViewModelTests/testCryptoListCalledAgainWhenServerStart()">
                </Test>
             </SkippedTests>

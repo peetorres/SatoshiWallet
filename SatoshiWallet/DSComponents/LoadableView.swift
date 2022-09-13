@@ -19,10 +19,11 @@ extension LoadableView {
         let nib = UINib(nibName: nibName, bundle: bundle)
         let nibView = nib.instantiate(withOwner: self, options: nil).first as? UIView
 
-        guard let view = nibView else { return }
-        view.frame = bounds
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(view)
-        contentView = view
+        if let view = nibView {
+            view.frame = bounds
+            view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            addSubview(view)
+            contentView = view
+        }
     }
 }
