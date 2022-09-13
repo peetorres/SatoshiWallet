@@ -26,7 +26,7 @@ struct Crypto {
         self.supply = asset.supply
         self.maxSupply = asset.maxSupply
         self.price = ticker.lastPrice
-        self.changePercentDaily = ticker.dailyChange
+        self.changePercentDaily = ticker.dailyChangeRelative
         self.explorer = asset.explorer
     }
 }
@@ -38,11 +38,11 @@ extension Crypto {
     }
 
     func priceFormatted() -> String? {
-        "$" + String(price)
+        "$" + String(format: "%.2f%", price)
     }
 
     private func changePercentFormatted() -> Float? {
-        changePercentDaily
+        changePercentDaily * 100
     }
 
     func isChangePercentPositive() -> Bool {
@@ -55,11 +55,13 @@ extension Crypto {
     }
 
     func maxSupplyFormatted() -> String? {
-        guard let maxSupply = maxSupply else { return nil }
-        return String(format: "%.2f%", maxSupply)
+        guard let maxSupply = maxSupply,
+              let decimalMaxSupply = Decimal(string: maxSupply) else { return nil }
+        return decimalMaxSupply.description
     }
 
     func circulatingSupplyFormatted() -> String? {
-        return String(format: "%.2f%", supply)
+        guard let decimalSupply = Decimal(string: supply) else { return nil }
+        return decimalSupply.description
     }
 }
