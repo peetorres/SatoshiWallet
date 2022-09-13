@@ -39,7 +39,7 @@ class ListViewControllerTests: XCTestCase {
     }
 }
 
-//class ListServicesSuccessStub: ListServicesProtocol {
+// class ListServicesSuccessStub: ListServicesProtocol {
 //    func getAssetList(completion: @escaping ((Result<ListResponse, NetworkLayerError>) -> Void)) {
 //        let response: ListResponse = .init(data: [makeAsset(), makeAsset(), makeAsset()], timestamp: 123)
 //        completion(.success(response))
@@ -58,4 +58,4 @@ class ListViewControllerTests: XCTestCase {
 //              changePercent24Hr: "1",
 //              explorer: "asd.info")
 //    }
-//}
+// }

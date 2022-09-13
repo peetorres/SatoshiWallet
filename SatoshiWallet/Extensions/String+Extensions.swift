@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    func currencyFormatting() -> String {
+    func currencyFormatting() -> String? {
         if let value = Double(self) {
             let formatter = NumberFormatter()
             formatter.locale = Locale(identifier: "en_US")
@@ -19,6 +19,6 @@ extension String {
                 return str
             }
         }
-        return ""
+        return nil
     }
 }

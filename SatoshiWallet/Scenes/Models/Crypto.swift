@@ -32,7 +32,7 @@ struct Crypto: Equatable {
 }
 
 extension Crypto {
-    static func ==(lhs: Crypto, rhs: Crypto) -> Bool {
+    static func == (lhs: Crypto, rhs: Crypto) -> Bool {
         return  lhs.id == rhs.id
                 && lhs.name == rhs.name
                 && lhs.rank == rhs.rank
