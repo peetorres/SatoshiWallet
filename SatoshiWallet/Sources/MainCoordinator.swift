@@ -11,7 +11,7 @@ protocol Coordinator {
     var navigationController: UINavigationController { get set }
     var rootViewController: UIViewController? { get set }
 
-    func start()
+    func start(with viewController: UIViewController)
 }
 
 final class MainCoordinator: Coordinator {
@@ -20,28 +20,24 @@ final class MainCoordinator: Coordinator {
     var rootViewController: UIViewController?
 
     // MARK: Initializer
-    init() {
-        navigationController = UINavigationController()
+    init(navigationController: UINavigationController = .init()) {
+        self.navigationController = navigationController
     }
 
-    func start() {
-        instanceListViewController()
+    func start(with viewController: UIViewController = ListViewController()) {
+        if let viewController = viewController as? ListViewController {
+            viewController.handleSelection = { [weak self] crypto in
+                self?.navigateToDetails(with: crypto)
+            }
+
+            rootViewController = viewController
+            navigationController.pushViewController(viewController, animated: false)
+        }
     }
 
     // MARK: Navigation Methods
-    func instanceListViewController() {
-        let viewController = ListViewController()
-
-        viewController.handleSelection = { [weak self] crypto in
-            self?.navigateToDetails(with: crypto)
-        }
-
-        rootViewController = viewController
-        navigationController.pushViewController(viewController, animated: false)
-    }
-
     func navigateToDetails(with crypto: Crypto) {
         let viewController = DetailsViewController(viewModel: .init(crypto: crypto))
-        self.navigationController.pushViewController(viewController, animated: true)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
