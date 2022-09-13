@@ -53,6 +53,51 @@ class ListViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 5)
     }
 
+    func testTableViewSectionCount() {
+        sut = makeSut()
+
+        XCTAssertEqual(sut.tableView.numberOfSections, 1)
+    }
+
+    func testTableViewHandleSelection() throws {
+        sut = makeSut()
+        var handleSelection: [(() -> Void)?] = []
+
+        sut.handleSelection = { _ in
+            handleSelection.append({})
+        }
+
+        let indexPath = IndexPath(row: 0, section: 0)
+        sut.tableView(sut.tableView, didSelectRowAt: indexPath)
+
+        XCTAssertEqual(handleSelection.count, 1)
+    }
+
+    func testTableViewRegisteringCell() throws {
+        sut = makeSut()
+
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = sut.tableView.cellForRow(at: indexPath)
+
+        XCTAssertTrue(cell is ListCell)
+    }
+
+    func testTableViewReloadingDataWhenSearchLetter() throws {
+        sut = makeSut()
+
+        sut.searchController.searchBar.text = "H"
+
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 3)
+    }
+
+    func testTableViewReloadingDataWhenSearchName() throws {
+        sut = makeSut()
+
+        sut.searchController.searchBar.text = "Ethereum"
+
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+    }
+
     func testSearchEmptyWhenScreenAppears() throws {
         sut = makeSut()
 
