@@ -22,6 +22,30 @@ struct Ticker: Decodable {
     let dailyLow: Float
 
     // MARK: Initializer
+    init(symbol: String,
+         bid: Float,
+         bidSize: Float,
+         ask: Float,
+         askSize: Float,
+         dailyChange: Float,
+         dailyChangeRelative: Float,
+         lastPrice: Float,
+         dailyVolume: Float,
+         dailyHigh: Float,
+         dailyLow: Float) {
+        self.symbol = symbol
+        self.bid = bid
+        self.bidSize = bidSize
+        self.ask = ask
+        self.askSize = askSize
+        self.dailyChange = dailyChange
+        self.dailyChangeRelative = dailyChangeRelative
+        self.lastPrice = lastPrice
+        self.dailyVolume = dailyVolume
+        self.dailyHigh = dailyHigh
+        self.dailyLow = dailyLow
+    }
+
     init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
 
