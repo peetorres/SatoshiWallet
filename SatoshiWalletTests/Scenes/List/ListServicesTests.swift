@@ -9,15 +9,19 @@ import XCTest
 @testable import Moya
 @testable import SatoshiWallet
 
+// swiflint: disable: next line_length
 /*
 Those tests are disabled because is responsibility of backend to test their services.
-However, was needed to implement in entire crucial flow that the real API could change types and crash the app, so was needed manually handle toggle on server to disable the feature until the manual fix and force update of the app;
+However, was needed to implement in entire crucial flow that the real API could change types
+ and crash the app, so was needed manually handle toggle on server to disable the feature
+ until the manual fix and force update of the app;
 Could not be fully ignored this scenario, even it's async and could be Flaky in a codebase.
 
 IMPORTANT NOTE: THOSE TESTS COULD FAIL BASED ON NETWORK SERVICE!
 EXAMPLE: TOO MUCH REQUESTS IN SHORT TIME.
 
-TECHNICAL DEBT: Could be improved in the future running server that mock real APIs, or inject provider into Service mocking the expected result.
+TECHNICAL DEBT: Could be improved in the future running server that mock real APIs
+ or inject provider into Service mocking the expected result.
 Not sure, but could be injected StubClosure into Provider?
 */
 

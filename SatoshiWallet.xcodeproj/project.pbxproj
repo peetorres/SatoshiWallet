@@ -49,6 +49,7 @@
 		A24E73CC28D120B000464112 /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73CB28D120B000464112 /* NavigationControllerSpy.swift */; };
 		A24E73CE28D1225800464112 /* ListServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73CD28D1225800464112 /* ListServicesTests.swift */; };
 		A24E73D028D12ABB00464112 /* ListServiceProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73CF28D12ABB00464112 /* ListServiceProtocolTests.swift */; };
+		A24E73D528D1348C00464112 /* ListCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73D428D1348C00464112 /* ListCellViewModelTests.swift */; };
 		A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */; };
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
@@ -127,6 +128,7 @@
 		A24E73CB28D120B000464112 /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
 		A24E73CD28D1225800464112 /* ListServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicesTests.swift; sourceTree = "<group>"; };
 		A24E73CF28D12ABB00464112 /* ListServiceProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceProtocolTests.swift; sourceTree = "<group>"; };
+		A24E73D428D1348C00464112 /* ListCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
@@ -427,10 +429,19 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		A24E73D128D131B200464112 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A24E73D428D1348C00464112 /* ListCellViewModelTests.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		A270A53228CF87D6006AA6CF /* List */ = {
 			isa = PBXGroup;
 			children = (
 				A24E73BA28D08F1E00464112 /* Stubs */,
+				A24E73D128D131B200464112 /* Cell */,
 				A24E73CF28D12ABB00464112 /* ListServiceProtocolTests.swift */,
 				A24E73CD28D1225800464112 /* ListServicesTests.swift */,
 				A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */,
@@ -734,6 +745,7 @@
 			files = (
 				A24E73CC28D120B000464112 /* NavigationControllerSpy.swift in Sources */,
 				A24E73BC28D08F9700464112 /* Factories.swift in Sources */,
+				A24E73D528D1348C00464112 /* ListCellViewModelTests.swift in Sources */,
 				A24E73CE28D1225800464112 /* ListServicesTests.swift in Sources */,
 				A24E73CA28D1174B00464112 /* MainCoordinatorTests.swift in Sources */,
 				A28C254428D012460032380A /* String+ExtensionsTests.swift in Sources */,
