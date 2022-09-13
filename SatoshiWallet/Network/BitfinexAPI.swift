@@ -29,10 +29,6 @@ extension BitfinexAPI: TargetType {
         }
     }
 
-    public var sampleData: Data {
-        return Data()
-    }
-
     public var task: Task {
         switch self {
         case .tickers(let symbols):

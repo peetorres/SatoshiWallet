@@ -11,17 +11,14 @@ import Moya
 public enum NetworkError: Error {
     case parse(Data?)
     case client(_ data: Data?, _ error: Error?, _ statusCode: Int)
-    case server(_ data: Data?, _ error: Error?, _ statusCode: Int)
     case unknown
 
     init(data: Data?, response: HTTPURLResponse?, error: Error?) {
         self = .unknown
         if let httpResponse = response {
             switch httpResponse.statusCode {
-            case 400...499:
+            case 400...600:
                 self = .client(data, error, httpResponse.statusCode)
-            case 500...599:
-                self = .server(data, error, httpResponse.statusCode)
             default:
                 self = .unknown
             }

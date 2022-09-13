@@ -11,10 +11,6 @@ extension UIButton {
     private enum ButtonState {
         case highlighted
         case normal
-
-        var alpha: CGFloat {
-            return self == .normal ? 1 : 0.4
-        }
     }
 
     public func setupTouchEventsHandler() {

@@ -35,10 +35,6 @@ extension CoinCapAPI: TargetType {
         }
     }
 
-    public var sampleData: Data {
-        return Data()
-    }
-
     public var task: Task {
         switch self {
         case .assets(let limit):
