@@ -131,6 +131,29 @@ class ListViewControllerTests: XCTestCase {
 
         XCTAssertTrue(sut.viewBackgroundFetchError.isHidden)
     }
+
+    func testUISwitchIsEnabled() {
+        sut = makeSut()
+
+        XCTAssertTrue(sut.switchControl.isUserInteractionEnabled)
+    }
+
+    func testUISwitchChangingUserInterface() {
+        sut = makeSut()
+        var didChangeInterfaceStyleHandlers: [(() -> Void)?] = []
+
+        sut.didChangeInterfaceStyle = {
+            didChangeInterfaceStyleHandlers.append({})
+        }
+
+        sut.switchControl.setOn(true, animated: false)
+        sut.switchControl.sendActions(for: .valueChanged)
+
+        sut.switchControl.setOn(false, animated: false)
+        sut.switchControl.sendActions(for: .valueChanged)
+
+        XCTAssertEqual(didChangeInterfaceStyleHandlers.count, 2)
+    }
 }
 
 extension ListViewControllerTests {
