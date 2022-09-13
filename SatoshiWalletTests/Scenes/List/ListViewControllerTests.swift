@@ -53,6 +53,18 @@ class ListViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 5)
     }
 
+    func testTableViewCountEmpty() {
+        sut = makeSut(with: ListServicesEmptySuccessStub())
+
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
+    }
+
+    func testTableViewCountEmptyNotShowingError() {
+        sut = makeSut(with: ListServicesEmptySuccessStub())
+
+        XCTAssertFalse(sut.view.subviews.last is NetworkErrorView)
+    }
+
     func testTableViewSectionCount() {
         sut = makeSut()
 
