@@ -9,11 +9,11 @@ import XCTest
 @testable import SatoshiWallet
 
 class ListViewModelTests: XCTestCase {
-    var sut: ListViewModel!
+//    var sut: ListViewModel!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = ListViewModel(service: ListServicesSuccessStub())
+//        sut = ListViewModel(service: ListServicesSuccessStub())
     }
 
     func testServiceSuccessHandler() {}
