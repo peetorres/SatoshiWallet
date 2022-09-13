@@ -10,16 +10,16 @@ import Foundation
 
 #if DEBUG
 extension Crypto {
-    static func makeCrypto(symbol: String) -> Crypto {
-        Crypto(asset: makeAsset(symbol: symbol),
+    static func makeCrypto(symbol: String, name: String) -> Crypto {
+        Crypto(asset: makeAsset(symbol: symbol, name: name),
                ticker: makeTicker(symbol: CryptoMapper.formattedTicker(of: symbol)))
     }
 
-    static func makeAsset(symbol: String) -> Asset {
+    static func makeAsset(symbol: String, name: String = "") -> Asset {
        .init(id: "",
              rank: "",
              symbol: symbol,
-             name: "",
+             name: name,
              supply: "",
              maxSupply: nil,
              marketCapUsd: nil,

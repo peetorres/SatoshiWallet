@@ -11,10 +11,11 @@ import Foundation
 class ListServicesSuccessStub: ListServicesProtocol {
     func getCryptoList(limit: Int,
                        completion: @escaping ((Result<[Crypto], NetworkError>) -> Void)) {
-        let cryptos: [Crypto] = [Crypto.makeCrypto(symbol: "BTC"),
-                                 Crypto.makeCrypto(symbol: "ETH"),
-                                 Crypto.makeCrypto(symbol: "CHSB"),
-                                 Crypto.makeCrypto(symbol: "LINK")]
+        let cryptos: [Crypto] = [Crypto.makeCrypto(symbol: "BTC", name: "Bitcoin"),
+                                 Crypto.makeCrypto(symbol: "ETH", name: "Ethereum"),
+                                 Crypto.makeCrypto(symbol: "CHSB", name: "SwissBorg"),
+                                 Crypto.makeCrypto(symbol: "LINK", name: "Chainlink"),
+                                 Crypto.makeCrypto(symbol: "BSV", name: "Bitcoin SV")]
         completion(.success(cryptos))
     }
 }
