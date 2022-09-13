@@ -21,20 +21,82 @@ class ListViewControllerTests: XCTestCase {
     // MARK: Properties
     var sut: ListViewController!
 
-    // MARK: Setup
-    override func setUpWithError() throws {
-        try? super.setUpWithError()
-        sut = ListViewController()
-        _ = sut.view
+    // Setup
+    override func tearDownWithError() throws {
+        try? super.tearDownWithError()
+        sut = nil
     }
 
     // MARK: Test Controller Behaviors
     func testInitWithCoder() {
+        sut = makeSut()
+
         testInitWithCoder(of: sut)
     }
 
     // MARK: Test Screen Elements
     func testNavigationTitle() {
+        sut = makeSut()
+
         XCTAssertEqual(sut.title, "Satoshi Wallet")
+    }
+
+    func testHasRightBarButtonItem() {
+        sut = makeSut()
+
+        XCTAssertNotNil(sut.navigationItem.rightBarButtonItem)
+    }
+
+    func testTableViewCount() {
+        sut = makeSut()
+
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 5)
+    }
+
+    func testSearchEmptyWhenScreenAppears() throws {
+        sut = makeSut()
+
+        let searchText = try XCTUnwrap(sut.searchController.searchBar.text)
+        XCTAssertTrue(searchText.isEmpty)
+    }
+
+    func testHandlingNetworkErrorViewFirstRequest() {
+        sut = makeSut(with: ListServicesFailureStub())
+
+        XCTAssertTrue(sut.view.subviews.last is NetworkErrorView)
+    }
+
+    func testSuccessNotHandlingNetworkErrorViewFirstRequest() {
+        sut = makeSut()
+
+        XCTAssertFalse(sut.view.subviews.last is NetworkErrorView)
+    }
+
+    func testINeworkErrorViewButtonIsEnabled() throws {
+        sut = makeSut(with: ListServicesFailureStub())
+
+        let networkErrorView = try XCTUnwrap(sut.view.subviews.last) as? NetworkErrorView
+        let buttonTryAgain = try XCTUnwrap(networkErrorView?.tryAgainButton.button)
+
+        XCTAssertTrue(buttonTryAgain.isEnabled)
+    }
+
+    func testSuccessNotShowingNetworkErrorToast() {
+        sut = makeSut()
+
+        XCTAssertTrue(sut.viewBackgroundFetchError.isHidden)
+    }
+}
+
+extension ListViewControllerTests {
+    func makeSut(with service: ListServicesProtocol = ListServicesSuccessStub(),
+                 file: StaticString = #filePath,
+                 line: UInt = #line) -> ListViewController {
+        let viewModel = ListViewModel(service: service)
+        let sut = ListViewController(viewModel: viewModel)
+
+        _ = sut.view
+
+        return sut
     }
 }

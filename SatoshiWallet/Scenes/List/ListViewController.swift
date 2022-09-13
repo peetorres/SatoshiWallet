@@ -16,7 +16,7 @@ final class ListViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewBackgroundFetchError: UIView!
 
-    private lazy var searchController: UISearchController = {
+    private(set) lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.delegate = self
         searchController.searchResultsUpdater = self
