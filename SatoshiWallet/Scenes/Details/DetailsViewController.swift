@@ -9,7 +9,9 @@ import UIKit
 
 final class DetailsViewController: UIViewController {
     // MARK: Properties
-    private let viewModel: DetailsViewModel
+    let viewModel: DetailsViewModel
+    var explorerPressed: ((String) -> Void)?
+    var learnMorePressed: ((String) -> Void)?
 
     // MARK: Outlets
     @IBOutlet weak var assetImageView: UIImageView!
@@ -60,12 +62,12 @@ final class DetailsViewController: UIViewController {
     }
 
     func bindEvents() {
-        explorerButton.handlerButton = {
-            print("Do some exploration!")
+        explorerButton.handlerButton = { [weak self] in
+            self?.explorerPressed?("Do some exploration!")
         }
 
-        learnMoreButton.handlerButton = {
-            print("Have a good learn!")
+        learnMoreButton.handlerButton = { [weak self] in
+            self?.learnMorePressed?("Have a good learn!")
         }
     }
 }
