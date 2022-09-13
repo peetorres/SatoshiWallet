@@ -65,6 +65,19 @@ class DetailsViewControllerTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
+    func testJumpBearMarketButtonPressedHandler() {
+        let exp = expectation(description: "waiting")
+        sut = makeSut()
+
+        sut.jumpBearMarketPressed = { _ in
+            exp.fulfill()
+        }
+
+        sut.jumpBearMarketButton.button.sendActions(for: .touchUpInside)
+
+        wait(for: [exp], timeout: 1)
+    }
+
     func testNotShowingLabelsDummyCrypto() {
         sut = makeSut(with: .makeDUMMY())
 

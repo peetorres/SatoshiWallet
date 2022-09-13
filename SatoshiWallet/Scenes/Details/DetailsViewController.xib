@@ -15,6 +15,7 @@
                 <outlet property="circulatingSupplyLabel" destination="bEv-AX-G1L" id="cyH-Nm-8Xr"/>
                 <outlet property="explorerButton" destination="2Wg-ly-T2j" id="qXV-Kq-fJA"/>
                 <outlet property="explorerLabel" destination="MHh-xR-Jfb" id="kea-7a-cDy"/>
+                <outlet property="jumpBearMarketButton" destination="ZFN-aF-cla" id="h9o-fF-qgZ"/>
                 <outlet property="learnMoreButton" destination="4h2-Zf-tln" id="WLD-IF-SJ2"/>
                 <outlet property="maxSupplyLabel" destination="f61-hh-zbI" id="dMG-9X-hOA"/>
                 <outlet property="nameLabel" destination="VCB-eo-wDP" id="HTI-Vv-nZF"/>
@@ -123,7 +124,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="v4M-hK-Mbw">
-                            <rect key="frame" x="16" y="464.5" width="382" height="112"/>
+                            <rect key="frame" x="16" y="464.5" width="382" height="174"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-ly-T2j" customClass="PrimaryButton" customModule="SatoshiWallet" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
@@ -143,6 +144,16 @@
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="Learn more"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFN-aF-cla" customClass="PrimaryButton" customModule="SatoshiWallet" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="124" width="382" height="50"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="uLf-K1-Q2E"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Jump Bear Market!"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>

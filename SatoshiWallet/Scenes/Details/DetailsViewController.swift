@@ -12,6 +12,7 @@ final class DetailsViewController: UIViewController {
     let viewModel: DetailsViewModel
     var explorerPressed: ((String) -> Void)?
     var learnMorePressed: ((String) -> Void)?
+    var jumpBearMarketPressed: ((String) -> Void)?
 
     // MARK: Outlets
     @IBOutlet weak var assetImageView: UIImageView!
@@ -27,6 +28,7 @@ final class DetailsViewController: UIViewController {
 
     @IBOutlet weak var explorerButton: PrimaryButton!
     @IBOutlet weak var learnMoreButton: SecondaryButton!
+    @IBOutlet weak var jumpBearMarketButton: PrimaryButton!
 
     // MARK: Overrides
     init(viewModel: DetailsViewModel) {
@@ -59,6 +61,8 @@ final class DetailsViewController: UIViewController {
         maxSupplyLabel.text = viewModel.maxSupply()
         circulatingSupplyLabel.text = viewModel.circulatingSupply()
         explorerLabel.text = viewModel.explorer()
+
+        jumpBearMarketButton.buttonStyle = .destructive
     }
 
     func bindEvents() {
@@ -68,6 +72,10 @@ final class DetailsViewController: UIViewController {
 
         learnMoreButton.handlerButton = { [weak self] in
             self?.learnMorePressed?("Have a good learn!")
+        }
+
+        jumpBearMarketButton.handlerButton = { [weak self] in
+            self?.jumpBearMarketPressed?("Skip 5 years from now.")
         }
     }
 }
