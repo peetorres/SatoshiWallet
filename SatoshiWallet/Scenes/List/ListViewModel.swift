@@ -18,7 +18,7 @@ class ListViewModel {
     private(set) var refreshTimer: Timer?
     private let service: ListServicesProtocol
 
-    var cryptos: [Crypto]?
+    private(set) var cryptos: [Crypto]?
     var mutableCryptos: [Crypto]? {
         guard !searchText.isEmpty else { return cryptos }
         return cryptos?.filter { crypto in
