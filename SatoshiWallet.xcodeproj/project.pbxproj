@@ -55,7 +55,6 @@
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
 		A270A53A28CFB27E006AA6CF /* Tickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53928CFB27E006AA6CF /* Tickers.swift */; };
-		A270A53C28CFBED7006AA6CF /* VerbosePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */; };
 		A270A53F28CFD5D4006AA6CF /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53E28CFD5D4006AA6CF /* Crypto.swift */; };
 		A270A54228CFD7EE006AA6CF /* CryptoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A54128CFD7EE006AA6CF /* CryptoMapper.swift */; };
 		A28C254028D007FC0032380A /* CryptoMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28C253F28D007FB0032380A /* CryptoMapperTests.swift */; };
@@ -135,7 +134,6 @@
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
 		A270A53928CFB27E006AA6CF /* Tickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickers.swift; sourceTree = "<group>"; };
-		A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbosePlugin.swift; sourceTree = "<group>"; };
 		A270A53E28CFD5D4006AA6CF /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		A270A54128CFD7EE006AA6CF /* CryptoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMapper.swift; sourceTree = "<group>"; };
 		A28C253F28D007FB0032380A /* CryptoMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMapperTests.swift; sourceTree = "<group>"; };
@@ -334,7 +332,6 @@
 				A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */,
 				A209D49B28C95D1900B43711 /* CoinCapAPI.swift */,
 				A24E73C128D0904E00464112 /* NetworkError.swift */,
-				A270A53B28CFBED7006AA6CF /* VerbosePlugin.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -728,7 +725,6 @@
 				A207164628CDE3B3008C34DF /* CustomButton.swift in Sources */,
 				A270A53A28CFB27E006AA6CF /* Tickers.swift in Sources */,
 				A207164F28CE8904008C34DF /* ListCellViewModel.swift in Sources */,
-				A270A53C28CFBED7006AA6CF /* VerbosePlugin.swift in Sources */,
 				A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */,
 				A209D49C28C95D1900B43711 /* CoinCapAPI.swift in Sources */,
 				A270A53F28CFD5D4006AA6CF /* Crypto.swift in Sources */,
