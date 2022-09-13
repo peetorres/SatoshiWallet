@@ -12,6 +12,12 @@ public enum CoinCapAPI {
     case assets(limit: Int = 100)
 }
 
+extension CoinCapAPI {
+    static func imageUrl(of symbol: String) -> URL? {
+        return URL(string: "https://assets.coincap.io/assets/icons/\(symbol.lowercased())@2x.png")
+    }
+}
+
 extension CoinCapAPI: TargetType {
     public var baseURL: URL {
         return URL(string: "https://api.coincap.io/v2")!

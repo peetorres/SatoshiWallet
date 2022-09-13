@@ -47,8 +47,7 @@ extension Crypto {
 
 extension Crypto {
     func imageUrl() -> URL? {
-        let symbol = symbol.lowercased()
-        return URL(string: "https://assets.coincap.io/assets/icons/\(symbol)@2x.png")
+        CoinCapAPI.imageUrl(of: symbol)
     }
 
     func priceFormatted() -> String? {
