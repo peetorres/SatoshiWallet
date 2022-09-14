@@ -1,9 +1,156 @@
-default_platform(:ios)
+fastlane_version "2.28.3"
+
+default_platform :ios
 
 platform :ios do
-  desc "Description of what the lane does"
 
-  lane :testing do
-    puts "Hello SatoshiWallet, setup fastlane worked as expected"
-  end
+    lane :getTeamNames do
+        require "spaceship" 
+        clientTunes = Spaceship::Tunes.login(ENV["APPLE_ID"], ENV["FASTLANE_PASSWORD"])
+        client = Spaceship::Portal.login(ENV["APPLE_ID"] ,ENV["FASTLANE_PASSWORD"])
+      
+        UI.message "* Developer Portal Team ID:"
+        strDevPortal = "" 
+        client.teams.each do |team|
+            UI.message "#{team['name']} (#{team['teamId']})"
+            strDevPortal << "#{team['name']} (#{team['teamId']})||"
+        end
+
+        UI.message "* App Store Connect Team ID:"
+        strClientTunes = "" 
+        clientTunes.teams.each do |team|
+            UI.message "#{team['contentProvider']['name']} (#{team['contentProvider']['contentProviderId']})"
+            strClientTunes << "#{team['contentProvider']['name']} (#{team['contentProvider']['contentProviderId']})||"
+        end 
+    end
+    
+    lane :create_keys do
+      match(type: "development", force_for_new_devices: true)
+      match(type: "adhoc", force_for_new_devices: true)
+      match(type: "appstore")
+    end
+
+    desc "Download keys"
+    lane :download_keys do
+      match(type: "development", readonly: true)
+      match(type: "adhoc", readonly: true)
+      match(type: "appstore", readonly: true)
+    end
+
+    desc "Build Ad Hoc"
+    lane :buildAdHoc do
+
+        #match(type: "adhoc", readonly: true)
+
+        cocoapods
+
+        build_app(
+            workspace: ENV["WORKSPACE"],
+            scheme: ENV["SCHEME"],
+            configuration: ENV["CONFIGURATION"],
+            export_options: {
+                method: "ad-hoc",
+                provisioningProfiles: {
+                    ENV["APP_IDENTIFIER"] => ENV["PROFILE_AD_HOC"]
+                }
+            }
+        )
+    end
+
+    desc "Build"
+    lane :build do
+
+        #match(type: "appstore", readonly: true)
+
+        cocoapods
+        
+        build_app(
+            workspace: ENV["WORKSPACE"],
+            scheme: ENV["SCHEME"],
+            export_options: {
+                method: "app-store",
+                provisioningProfiles: {
+                    ENV["APP_IDENTIFIER"] => ENV["PROFILE_APP_STORE"]
+                }
+            }
+        )
+    end
+
+    desc "App Center"
+    lane :app_center do
+
+       buildAdHoc
+
+       # https://github.com/microsoft/fastlane-plugin-appcenter
+       # bundle exec fastlane add_plugin appcenter
+       appcenter_upload(
+          api_token: ENV["APP_CENTER_API_TOKEN"],
+          owner_name: ENV["APP_CENTER_OWNER_NAME"],
+          owner_type: ENV["APP_CENTER_OWNER_TYPE"],
+          app_name: ENV["APP_CENTER_APP_NAME"],
+          notify_testers: true,
+          destinations: ENV["APP_CENTER_DESTINATIONS"],
+          release_notes: "appcenter!",
+          file: lane_context[SharedValues::IPA_OUTPUT_PATH]
+        )
+    end
+    
+    desc "Deploy to Firebase Distribution"
+    lane :firebase do
+
+        buildAdHoc
+
+        # https://firebase.google.com/docs/app-distribution/ios/distribute-fastlane
+        # bundle exec fastlane add_plugin firebase_app_distribution
+        firebase_app_distribution(
+            app: ENV["FIREBASE_APP_ID"],
+            testers: ENV["FIREBASE_TESTERS"],
+            groups: ENV["FIREBASE_TEST_GROUP"],
+            ipa_path: lane_context[SharedValues::IPA_OUTPUT_PATH],
+            release_notes_file: "fastlane/release_notes.txt",
+            service_credentials_file: ENV["FIREBASE_DIST_SERVICE_ACCOUNT_FILE"]
+        )
+    end
+
+    desc "Upload to Test Flight"
+    lane :tf do
+    
+        build
+
+        # https://docs.fastlane.tools/actions/upload_to_testflight
+        upload_to_testflight(
+            skip_waiting_for_build_processing: true,
+            apple_id: ENV["APP_STORE_CONNECT_APPLE_ID"]
+        )
+    end
+
+    desc "Upload to Test Flight - External"
+    lane :tf_external do
+
+        build
+
+        # https://docs.fastlane.tools/actions/upload_to_testflight
+        upload_to_testflight(
+            changelog: "external!",
+            distribute_external: true,
+            notify_external_testers: true,
+            groups: [
+                "External"
+            ],
+        )
+    end
+    
+    desc "Increment Build Number"
+    lane :inc do
+    
+        increment_build_number({
+          build_number: latest_testflight_build_number + 1
+        })
+        build
+        commit_version_bump(
+            message: "Fastlane Build Bump",
+            force: true,
+        )
+        #push_to_git_remote
+    end
 end
