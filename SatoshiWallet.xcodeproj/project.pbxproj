@@ -41,6 +41,8 @@
 		A21ABDD228D06A2600D3E4A7 /* CryptoFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21ABDD128D06A2600D3E4A7 /* CryptoFormattingTests.swift */; };
 		A23F6FBE28D21F2100EB3DD9 /* Metaverse.json in Resources */ = {isa = PBXBuildFile; fileRef = A23F6FBC28D21F2100EB3DD9 /* Metaverse.json */; };
 		A23F6FBF28D21F2100EB3DD9 /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A23F6FBD28D21F2100EB3DD9 /* Loading.json */; };
+		A23F6FC628D27A9400EB3DD9 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = A23F6FC428D27A9400EB3DD9 /* Appfile */; };
+		A23F6FC728D27A9400EB3DD9 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A23F6FC528D27A9400EB3DD9 /* Fastfile */; };
 		A24E73BC28D08F9700464112 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73BB28D08F9700464112 /* Factories.swift */; };
 		A24E73BE28D08FC400464112 /* ListServicesSuccessStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73BD28D08FC400464112 /* ListServicesSuccessStub.swift */; };
 		A24E73C228D0904E00464112 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73C128D0904E00464112 /* NetworkError.swift */; };
@@ -139,6 +141,8 @@
 		A21ABDD128D06A2600D3E4A7 /* CryptoFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoFormattingTests.swift; sourceTree = "<group>"; };
 		A23F6FBC28D21F2100EB3DD9 /* Metaverse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Metaverse.json; sourceTree = "<group>"; };
 		A23F6FBD28D21F2100EB3DD9 /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
+		A23F6FC428D27A9400EB3DD9 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
+		A23F6FC528D27A9400EB3DD9 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		A24E73BB28D08F9700464112 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		A24E73BD28D08FC400464112 /* ListServicesSuccessStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicesSuccessStub.swift; sourceTree = "<group>"; };
 		A24E73C128D0904E00464112 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 		A209D44C28C950A800B43711 = {
 			isa = PBXGroup;
 			children = (
+				A23F6FC328D27A9400EB3DD9 /* fastlane */,
 				A209D45728C950A800B43711 /* SatoshiWallet */,
 				A209D46E28C950AA00B43711 /* SatoshiWalletTests */,
 				A24E73F528D1593000464112 /* SatoshiWalletSnapshotTests */,
@@ -456,6 +461,15 @@
 				A21ABDD128D06A2600D3E4A7 /* CryptoFormattingTests.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A23F6FC328D27A9400EB3DD9 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				A23F6FC428D27A9400EB3DD9 /* Appfile */,
+				A23F6FC528D27A9400EB3DD9 /* Fastfile */,
+			);
+			path = fastlane;
 			sourceTree = "<group>";
 		};
 		A24E73BA28D08F1E00464112 /* Stubs */ = {
@@ -752,6 +766,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23F6FC728D27A9400EB3DD9 /* Fastfile in Resources */,
+				A23F6FC628D27A9400EB3DD9 /* Appfile in Resources */,
 				A209D46528C950AA00B43711 /* LaunchScreen.storyboard in Resources */,
 				A2FBDBF728C9CF8C00AD9FE8 /* ListCell.xib in Resources */,
 				A207165728CE8BCE008C34DF /* PrimaryButton.xib in Resources */,
