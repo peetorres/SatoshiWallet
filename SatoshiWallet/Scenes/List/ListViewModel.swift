@@ -15,7 +15,7 @@ class ListViewModel {
     }
 
     // MARK: Properties
-    private(set) var refreshTimer: Timer?
+    private(set) weak var refreshTimer: Timer?
     private let service: ListServicesProtocol
 
     private(set) var cryptos: [Crypto]?
