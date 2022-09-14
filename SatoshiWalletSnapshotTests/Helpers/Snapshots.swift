@@ -18,7 +18,9 @@ extension XCTestCase {
     }
 
     func verifyViewController(_ viewController: UIViewController, named: String) {
-        let devices: [String: ViewImageConfig] = ["iPhoneX": .iPhoneX]
+        let devices: [String: ViewImageConfig] = ["iPhoneX": .iPhoneX,
+                                                  "iPhone8": .iPhone8,
+                                                  "iPhoneSe": .iPhoneSe]
 
         let results = devices.map { device in
             verifySnapshot(matching: viewController,
