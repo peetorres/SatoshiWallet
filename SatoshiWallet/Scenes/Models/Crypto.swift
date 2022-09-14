@@ -32,20 +32,6 @@ struct Crypto: Equatable {
 }
 
 extension Crypto {
-    static func == (lhs: Crypto, rhs: Crypto) -> Bool {
-        return  lhs.id == rhs.id
-                && lhs.name == rhs.name
-                && lhs.rank == rhs.rank
-                && lhs.symbol == rhs.symbol
-                && lhs.supply == rhs.supply
-                && lhs.maxSupply == rhs.maxSupply
-                && lhs.price == rhs.price
-                && lhs.changePercentDaily == rhs.changePercentDaily
-                && lhs.explorer == rhs.explorer
-    }
-}
-
-extension Crypto {
     func imageUrl() -> URL? {
         CoinCapAPI.imageUrl(of: symbol)
     }
