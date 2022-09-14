@@ -13,12 +13,12 @@ import SnapshotTesting
 class ListViewControllerSnapshotTests: XCTestCase {
     func testListViewControllerWithSuccessRequestAndTableView() {
         let sut = makeSut(with: ListServicesSuccessStub())
-        verifyViewController(sut, named: "testListViewControllerWithSuccessRequestAndTableView")
+        assert(sut, named: "testListViewControllerWithSuccessRequestAndTableView")
     }
 
     func testListViewControllerWithFailureRequest() {
         let sut = makeSut(with: ListServicesFailureStub())
-        verifyViewController(sut, named: "testListViewControllerWithFailureRequest")
+        assert(sut, named: "testListViewControllerWithFailureRequest")
     }
 }
 

@@ -9,6 +9,14 @@ import XCTest
 import SnapshotTesting
 
 extension XCTestCase {
+    func assert(_ viewController: UIViewController, named: String) {
+        viewController.overrideUserInterfaceStyle = .dark
+        verifyViewController(viewController, named: named + "+Darkmode")
+
+        viewController.overrideUserInterfaceStyle = .light
+        verifyViewController(viewController, named: named + "+Lightmode")
+    }
+
     func verifyViewController(_ viewController: UIViewController, named: String) {
         let devices: [String: ViewImageConfig] = ["iPhoneX": .iPhoneX]
 
