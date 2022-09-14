@@ -9,28 +9,25 @@ import XCTest
 @testable import SatoshiWallet
 
 class MainCoordinatorTests: XCTestCase {
-    // MARK: Properties
-    var sut: MainCoordinator!
-
-    // MARK: Setup
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-    }
-
     // MARK: Test Methods
     func testApplicationInitializatingInList() {
-        sut = MainCoordinator()
+        let sut = MainCoordinator()
         sut.start()
         _ = sut.navigationController.view
+
+        checkMemoryLeak(for: sut)
 
         XCTAssertTrue(sut.rootViewController is ListViewController)
     }
 
     func testHandleSelectionOfListNavigateToDetail() throws {
-        sut = MainCoordinator(navigationController: NavigationControllerSpy())
+        let sut = MainCoordinator(navigationController: NavigationControllerSpy())
         let viewModel = ListViewModel(service: ListServicesSuccessStub())
         let viewController = ListViewController(viewModel: viewModel)
         sut.start(with: viewController)
+
+        checkMemoryLeak(for: sut)
+
         _ = sut.navigationController.view
         _ = viewController.view
 

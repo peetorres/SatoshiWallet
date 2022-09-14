@@ -9,17 +9,11 @@ import XCTest
 @testable import SatoshiWallet
 
 class DetailsViewModelTests: XCTestCase {
-    // MARK: Properties
-    var sut: DetailsViewModel!
-
-    // MARK: Setup
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-    }
-
     // MARK: Test Methods
     func testViewFormattingWithBTC() {
-        sut = .init(crypto: .makeBTC())
+        let sut: DetailsViewModel = .init(crypto: .makeBTC())
+
+        checkMemoryLeak(for: sut)
 
         XCTAssertEqual(sut.imageUrl(), URL(string: "https://assets.coincap.io/assets/icons/btc@2x.png"))
         XCTAssertEqual(sut.rank(), "#1")
@@ -34,7 +28,9 @@ class DetailsViewModelTests: XCTestCase {
     }
 
     func testViewFormattingWithETH() {
-        sut = .init(crypto: .makeETH())
+        let sut: DetailsViewModel = .init(crypto: .makeETH())
+
+        checkMemoryLeak(for: sut)
 
         XCTAssertEqual(sut.imageUrl(), URL(string: "https://assets.coincap.io/assets/icons/eth@2x.png"))
         XCTAssertEqual(sut.rank(), "#2")
@@ -49,7 +45,9 @@ class DetailsViewModelTests: XCTestCase {
     }
 
     func testViewFormattingWithCHSB() {
-        sut = .init(crypto: .makeCHSB())
+        let sut: DetailsViewModel = .init(crypto: .makeCHSB())
+
+        checkMemoryLeak(for: sut)
 
         XCTAssertEqual(sut.imageUrl(), URL(string: "https://assets.coincap.io/assets/icons/chsb@2x.png"))
         XCTAssertEqual(sut.rank(), "#100")
@@ -65,7 +63,9 @@ class DetailsViewModelTests: XCTestCase {
     }
 
     func testViewFormattingWithDUMMY() {
-        sut = .init(crypto: .makeDUMMY())
+        let sut: DetailsViewModel = .init(crypto: .makeDUMMY())
+
+        checkMemoryLeak(for: sut)
 
         XCTAssertEqual(sut.imageUrl(), URL(string: "https://assets.coincap.io/assets/icons/dummy@2x.png"))
         XCTAssertEqual(sut.rank(), "#100000")

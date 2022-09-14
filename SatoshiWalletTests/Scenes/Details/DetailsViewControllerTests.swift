@@ -9,31 +9,22 @@ import XCTest
 @testable import SatoshiWallet
 
 class DetailsViewControllerTests: XCTestCase {
-    // MARK: Properties
-    var sut: DetailsViewController!
-
-    // Setup
-    override func tearDownWithError() throws {
-        try? super.tearDownWithError()
-        sut = nil
-    }
-
     // MARK: Test Controller Behaviors
     func testInitWithCoder() {
-        sut = makeSut()
+        let sut: DetailsViewController = makeSut()
 
         testInitWithCoder(of: sut)
     }
 
     // MARK: Test Screen Elements
     func testNavigationTitle() {
-        sut = makeSut()
+        let sut: DetailsViewController = makeSut()
 
         XCTAssertEqual(sut.title, sut.viewModel.name())
     }
 
     func testButtonsEnabled() {
-        sut = makeSut()
+        let sut: DetailsViewController = makeSut()
 
         XCTAssertTrue(sut.explorerButton.button.isEnabled)
         XCTAssertTrue(sut.learnMoreButton.button.isEnabled)
@@ -41,7 +32,7 @@ class DetailsViewControllerTests: XCTestCase {
 
     func testExploreButtonPressedHandler() {
         let exp = expectation(description: "waiting")
-        sut = makeSut()
+        let sut: DetailsViewController = makeSut()
 
         sut.explorerPressed = { _ in
             exp.fulfill()
@@ -54,7 +45,7 @@ class DetailsViewControllerTests: XCTestCase {
 
     func testLearnMoreButtonPressedHandler() {
         let exp = expectation(description: "waiting")
-        sut = makeSut()
+        let sut: DetailsViewController = makeSut()
 
         sut.learnMorePressed = { _ in
             exp.fulfill()
@@ -67,7 +58,7 @@ class DetailsViewControllerTests: XCTestCase {
 
     func testJumpBearMarketButtonPressedHandler() {
         let exp = expectation(description: "waiting")
-        sut = makeSut()
+        let sut: DetailsViewController = makeSut()
 
         sut.jumpBearMarketPressed = { _ in
             exp.fulfill()
@@ -79,7 +70,7 @@ class DetailsViewControllerTests: XCTestCase {
     }
 
     func testNotShowingLabelsDummyCrypto() {
-        sut = makeSut(with: .makeDUMMY())
+        let sut: DetailsViewController = makeSut(with: .makeDUMMY())
 
         XCTAssertEqual(sut.maxSupplyLabel.text, nil)
         XCTAssertEqual(sut.explorerLabel.text, nil)
@@ -94,6 +85,8 @@ extension DetailsViewControllerTests {
         let sut = DetailsViewController(viewModel: viewModel)
 
         _ = sut.view
+
+        checkMemoryLeak(for: sut)
 
         return sut
     }

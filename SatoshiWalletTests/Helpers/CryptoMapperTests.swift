@@ -9,13 +9,6 @@ import XCTest
 @testable import SatoshiWallet
 
 class CryptoMapperTests: XCTestCase {
-    var sut: CryptoMapper!
-
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        sut = CryptoMapper()
-    }
-
     func testTicketFormatter() {
         XCTAssertEqual(CryptoMapper.formattedTicker(of: "BTC"), "tBTCUSD")
         XCTAssertEqual(CryptoMapper.formattedTicker(of: "ETH"), "tETHUSD")

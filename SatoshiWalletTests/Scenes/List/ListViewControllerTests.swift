@@ -9,61 +9,52 @@ import XCTest
 @testable import SatoshiWallet
 
 class ListViewControllerTests: XCTestCase {
-    // MARK: Properties
-    var sut: ListViewController!
-
-    // Setup
-    override func tearDownWithError() throws {
-        try? super.tearDownWithError()
-        sut = nil
-    }
-
     // MARK: Test Controller Behaviors
     func testInitWithCoder() {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         testInitWithCoder(of: sut)
     }
 
     // MARK: Test Screen Elements
     func testNavigationTitle() {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         XCTAssertEqual(sut.title, "Satoshi Wallet")
     }
 
     func testHasRightBarButtonItem() {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         XCTAssertNotNil(sut.navigationItem.rightBarButtonItem)
     }
 
     func testTableViewCount() {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 5)
     }
 
     func testTableViewCountEmpty() {
-        sut = makeSut(with: ListServicesEmptySuccessStub())
+        let sut: ListViewController = makeSut(with: ListServicesEmptySuccessStub())
 
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
 
     func testTableViewCountEmptyNotShowingError() {
-        sut = makeSut(with: ListServicesEmptySuccessStub())
+        let sut: ListViewController = makeSut(with: ListServicesEmptySuccessStub())
 
         XCTAssertFalse(sut.view.subviews.last is NetworkErrorView)
     }
 
     func testTableViewSectionCount() {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         XCTAssertEqual(sut.tableView.numberOfSections, 1)
     }
 
     func testTableViewHandleSelection() throws {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
         var handleSelection: [(() -> Void)?] = []
 
         sut.handleSelection = { _ in
@@ -77,7 +68,7 @@ class ListViewControllerTests: XCTestCase {
     }
 
     func testTableViewRegisteringCell() throws {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         let indexPath = IndexPath(row: 0, section: 0)
         let cell = sut.tableView.cellForRow(at: indexPath)
@@ -86,7 +77,7 @@ class ListViewControllerTests: XCTestCase {
     }
 
     func testTableViewReloadingDataWhenSearchLetter() throws {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         sut.searchController.searchBar.text = "H"
 
@@ -94,7 +85,7 @@ class ListViewControllerTests: XCTestCase {
     }
 
     func testTableViewReloadingDataWhenSearchName() throws {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         sut.searchController.searchBar.text = "Ethereum"
 
@@ -102,26 +93,26 @@ class ListViewControllerTests: XCTestCase {
     }
 
     func testSearchEmptyWhenScreenAppears() throws {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         let searchText = try XCTUnwrap(sut.searchController.searchBar.text)
         XCTAssertTrue(searchText.isEmpty)
     }
 
     func testHandlingNetworkErrorViewFirstRequest() {
-        sut = makeSut(with: ListServicesFailureStub())
+        let sut: ListViewController = makeSut(with: ListServicesFailureStub())
 
         XCTAssertTrue(sut.view.subviews.last is NetworkErrorView)
     }
 
     func testSuccessNotHandlingNetworkErrorViewFirstRequest() {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         XCTAssertFalse(sut.view.subviews.last is NetworkErrorView)
     }
 
     func testNeworkErrorViewButtonIsEnabled() throws {
-        sut = makeSut(with: ListServicesFailureStub())
+        let sut: ListViewController = makeSut(with: ListServicesFailureStub())
 
         let networkErrorView = try XCTUnwrap(sut.view.subviews.last) as? NetworkErrorView
         let buttonTryAgain = try XCTUnwrap(networkErrorView?.tryAgainButton.button)
@@ -130,19 +121,19 @@ class ListViewControllerTests: XCTestCase {
     }
 
     func testSuccessNotShowingNetworkErrorToast() {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         XCTAssertTrue(sut.viewBackgroundFetchError.isHidden)
     }
 
     func testUISwitchIsEnabled() {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
 
         XCTAssertTrue(sut.switchControl.isUserInteractionEnabled)
     }
 
     func testUISwitchChangingUserInterface() {
-        sut = makeSut()
+        let sut: ListViewController = makeSut()
         var didChangeInterfaceStyleHandlers: [(() -> Void)?] = []
 
         sut.didChangeInterfaceStyle = {
@@ -159,7 +150,7 @@ class ListViewControllerTests: XCTestCase {
     }
 
     func testNeworkErrorTryAgainAction() throws {
-        sut = makeSut(with: ListServicesFailureStub())
+        let sut: ListViewController = makeSut(with: ListServicesFailureStub())
 
         var shouldProgressShow: [(() -> Void)?] = []
         sut.viewModel.shouldProgressShow = { _ in
@@ -182,6 +173,8 @@ extension ListViewControllerTests {
         let sut = ListViewController(viewModel: viewModel)
 
         _ = sut.view
+
+        checkMemoryLeak(for: sut)
 
         return sut
     }

@@ -11,7 +11,7 @@ import XCTest
 
 // swiflint: disable: next line_length
 /*
-Those tests are disabled because is responsibility of backend to test their services.
+Those tests could be disabled because is responsibility of backend to test their services.
 However, was needed to implement in entire crucial flow that the real API could change types
  and crash the app, so was needed manually handle toggle on server to disable the feature
  until the manual fix and force update of the app;
@@ -26,17 +26,9 @@ Not sure, but could be injected StubClosure into Provider?
 */
 
 class ListServicesIntegrationTests: XCTestCase {
-    // MARK: Properties
-    var sut: ListServices!
-
-    // MARK: Setup
-    override func setUpWithError() throws {
-        try? super.setUpWithError()
-        sut = .init()
-    }
-
     // MARK: Test Methods
     func testIntegrationCryptoListSuccess() {
+        let sut: ListServices = makeSut()
         let exp = expectation(description: "waiting")
         sut.getCryptoList(limit: 10) { result in
             switch result {
@@ -51,6 +43,7 @@ class ListServicesIntegrationTests: XCTestCase {
     }
 
     func testIntegrationAssetListSuccess() {
+        let sut: ListServices = makeSut()
         let exp = expectation(description: "waiting")
         sut.getAssetList(limit: 10) { result in
             switch result {
@@ -65,6 +58,7 @@ class ListServicesIntegrationTests: XCTestCase {
     }
 
     func testIntegrationTickerAssetFailLimitNegative() {
+        let sut: ListServices = makeSut()
         let exp = expectation(description: "waiting")
         sut.getAssetList(limit: -10) { result in
             switch result {
@@ -79,6 +73,7 @@ class ListServicesIntegrationTests: XCTestCase {
     }
 
     func testIntegrationTickerListSuccess() {
+        let sut: ListServices = makeSut()
         let searchTickers = ["tBTCUSD", "tETHUSD", "tCHSB:USD"]
         let exp = expectation(description: "waiting")
         sut.getTickerList(tickers: searchTickers) { result in
@@ -91,5 +86,13 @@ class ListServicesIntegrationTests: XCTestCase {
             exp.fulfill()
         }
         wait(for: [exp], timeout: 3)
+    }
+}
+
+extension ListServicesIntegrationTests {
+    func makeSut() -> ListServices {
+        let sut = ListServices()
+        checkMemoryLeak(for: sut)
+        return sut
     }
 }
