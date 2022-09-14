@@ -55,7 +55,8 @@
 		A24E740028D15AC300464112 /* ListViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73FF28D15AC300464112 /* ListViewControllerSnapshotTests.swift */; };
 		A24E740228D15BC000464112 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E740128D15BC000464112 /* Factories.swift */; };
 		A24E740428D15BF900464112 /* ListServicesSuccessStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E740328D15BF900464112 /* ListServicesSuccessStub.swift */; };
-		A24E740628D15C4700464112 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E740528D15C4700464112 /* Helpers.swift */; };
+		A24E740628D15C4700464112 /* Snapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E740528D15C4700464112 /* Snapshots.swift */; };
+		A24E740828D15F7F00464112 /* ListServicesFailureStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E740728D15F7F00464112 /* ListServicesFailureStub.swift */; };
 		A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */; };
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
@@ -147,7 +148,8 @@
 		A24E73FF28D15AC300464112 /* ListViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
 		A24E740128D15BC000464112 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		A24E740328D15BF900464112 /* ListServicesSuccessStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicesSuccessStub.swift; sourceTree = "<group>"; };
-		A24E740528D15C4700464112 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		A24E740528D15C4700464112 /* Snapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshots.swift; sourceTree = "<group>"; };
+		A24E740728D15F7F00464112 /* ListServicesFailureStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicesFailureStub.swift; sourceTree = "<group>"; };
 		A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
@@ -482,12 +484,37 @@
 		A24E73F528D1593000464112 /* SatoshiWalletSnapshotTests */ = {
 			isa = PBXGroup;
 			children = (
-				A24E740528D15C4700464112 /* Helpers.swift */,
-				A24E740128D15BC000464112 /* Factories.swift */,
-				A24E740328D15BF900464112 /* ListServicesSuccessStub.swift */,
-				A24E73FF28D15AC300464112 /* ListViewControllerSnapshotTests.swift */,
+				A24E740A28D160D100464112 /* Helpers */,
+				A24E740928D160C900464112 /* Stubs */,
+				A24E740B28D160DD00464112 /* Scenes */,
 			);
 			path = SatoshiWalletSnapshotTests;
+			sourceTree = "<group>";
+		};
+		A24E740928D160C900464112 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				A24E740328D15BF900464112 /* ListServicesSuccessStub.swift */,
+				A24E740728D15F7F00464112 /* ListServicesFailureStub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		A24E740A28D160D100464112 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A24E740528D15C4700464112 /* Snapshots.swift */,
+				A24E740128D15BC000464112 /* Factories.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A24E740B28D160DD00464112 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A24E73FF28D15AC300464112 /* ListViewControllerSnapshotTests.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		A270A53228CF87D6006AA6CF /* List */ = {
@@ -891,8 +918,9 @@
 			files = (
 				A24E740428D15BF900464112 /* ListServicesSuccessStub.swift in Sources */,
 				A24E740228D15BC000464112 /* Factories.swift in Sources */,
+				A24E740828D15F7F00464112 /* ListServicesFailureStub.swift in Sources */,
 				A24E740028D15AC300464112 /* ListViewControllerSnapshotTests.swift in Sources */,
-				A24E740628D15C4700464112 /* Helpers.swift in Sources */,
+				A24E740628D15C4700464112 /* Snapshots.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
