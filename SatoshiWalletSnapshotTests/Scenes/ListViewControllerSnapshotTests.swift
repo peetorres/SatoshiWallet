@@ -16,6 +16,11 @@ class ListViewControllerSnapshotTests: XCTestCase {
         assert(sut, named: "testListViewControllerWithSuccessRequestAndTableView")
     }
 
+    func testListViewControllerWithSuccessRequestEmptyTableView() {
+        let sut = makeSut(with: ListServicesEmptySuccessStub())
+        assert(sut, named: "testListViewControllerWithSuccessRequestEmptyTableView")
+    }
+
     func testListViewControllerWithFailureRequest() {
         let sut = makeSut(with: ListServicesFailureStub())
         assert(sut, named: "testListViewControllerWithFailureRequest")
