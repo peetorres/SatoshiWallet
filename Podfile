@@ -16,4 +16,9 @@ target 'SatoshiWallet' do
     # Pods for testing
   end
 
+  target 'SatoshiWalletSnapshotTests' do
+    inherit! :search_paths
+    pod 'SnapshotTesting', '~> 1.9.0'
+  end
+
 end

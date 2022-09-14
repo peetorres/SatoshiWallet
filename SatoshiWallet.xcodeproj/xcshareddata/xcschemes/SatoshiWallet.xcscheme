@@ -57,6 +57,16 @@
                ReferencedContainer = "container:SatoshiWallet.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A24E73F328D1593000464112"
+               BuildableName = "SatoshiWalletSnapshotTests.xctest"
+               BlueprintName = "SatoshiWalletSnapshotTests"
+               ReferencedContainer = "container:SatoshiWallet.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

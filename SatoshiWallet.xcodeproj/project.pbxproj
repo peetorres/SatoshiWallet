@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F268A742B50E9550465A2B2 /* Pods_SatoshiWalletSnapshotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FBD94B495B2A467F27DE7D /* Pods_SatoshiWalletSnapshotTests.framework */; };
 		70E75521A471B49C4C704339 /* Pods_SatoshiWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B27E9FC0DC936D343DCE24 /* Pods_SatoshiWallet.framework */; };
 		A207164628CDE3B3008C34DF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164528CDE3B3008C34DF /* CustomButton.swift */; };
 		A207164828CDE3F2008C34DF /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207164728CDE3F2008C34DF /* UIButton+Extensions.swift */; };
@@ -51,6 +52,10 @@
 		A24E73D528D1348C00464112 /* ListCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73D428D1348C00464112 /* ListCellViewModelTests.swift */; };
 		A24E73D828D13B9D00464112 /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73D728D13B9D00464112 /* DetailsViewModelTests.swift */; };
 		A24E73DA28D141E100464112 /* DetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73D928D141E100464112 /* DetailsViewControllerTests.swift */; };
+		A24E740028D15AC300464112 /* ListViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E73FF28D15AC300464112 /* ListViewControllerSnapshotTests.swift */; };
+		A24E740228D15BC000464112 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E740128D15BC000464112 /* Factories.swift */; };
+		A24E740428D15BF900464112 /* ListServicesSuccessStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E740328D15BF900464112 /* ListServicesSuccessStub.swift */; };
+		A24E740628D15C4700464112 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E740528D15C4700464112 /* Helpers.swift */; };
 		A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */; };
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
@@ -74,10 +79,18 @@
 			remoteGlobalIDString = A209D45428C950A800B43711;
 			remoteInfo = SatoshiWallet;
 		};
+		A24E73F828D1593000464112 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A209D44D28C950A800B43711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A209D45428C950A800B43711;
+			remoteInfo = SatoshiWallet;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0775C958EC3F00637C14F36E /* Pods-SatoshiWallet-SatoshiWalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWallet-SatoshiWalletUITests.release.xcconfig"; path = "Target Support Files/Pods-SatoshiWallet-SatoshiWalletUITests/Pods-SatoshiWallet-SatoshiWalletUITests.release.xcconfig"; sourceTree = "<group>"; };
+		12FBD94B495B2A467F27DE7D /* Pods_SatoshiWalletSnapshotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SatoshiWalletSnapshotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B18D21A707CADBDD4EC1C5 /* Pods_SatoshiWallet_SatoshiWalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SatoshiWallet_SatoshiWalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59336A50D08B9D8CB9E2D98C /* Pods-SatoshiWalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWalletTests.debug.xcconfig"; path = "Target Support Files/Pods-SatoshiWalletTests/Pods-SatoshiWalletTests.debug.xcconfig"; sourceTree = "<group>"; };
 		64E57EB28DC8650C53178749 /* Pods-SatoshiWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWallet.release.xcconfig"; path = "Target Support Files/Pods-SatoshiWallet/Pods-SatoshiWallet.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +143,11 @@
 		A24E73D428D1348C00464112 /* ListCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModelTests.swift; sourceTree = "<group>"; };
 		A24E73D728D13B9D00464112 /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
 		A24E73D928D141E100464112 /* DetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerTests.swift; sourceTree = "<group>"; };
+		A24E73F428D1593000464112 /* SatoshiWalletSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SatoshiWalletSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A24E73FF28D15AC300464112 /* ListViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
+		A24E740128D15BC000464112 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		A24E740328D15BF900464112 /* ListServicesSuccessStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicesSuccessStub.swift; sourceTree = "<group>"; };
+		A24E740528D15C4700464112 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
@@ -142,6 +160,8 @@
 		A2FB550728C9E293004DC74E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A2FBDBF428C9CF8C00AD9FE8 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		A2FBDBF528C9CF8C00AD9FE8 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		B19553203479816E6627F6D4 /* Pods-SatoshiWalletSnapshotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWalletSnapshotTests.release.xcconfig"; path = "Target Support Files/Pods-SatoshiWalletSnapshotTests/Pods-SatoshiWalletSnapshotTests.release.xcconfig"; sourceTree = "<group>"; };
+		B5770439D4BD586F0ED98B27 /* Pods-SatoshiWalletSnapshotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWalletSnapshotTests.debug.xcconfig"; path = "Target Support Files/Pods-SatoshiWalletSnapshotTests/Pods-SatoshiWalletSnapshotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F108202F4E068CDEA6ADA899 /* Pods-SatoshiWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWalletTests.release.xcconfig"; path = "Target Support Files/Pods-SatoshiWalletTests/Pods-SatoshiWalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF1B38197EFBE07251C057F3 /* Pods-SatoshiWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatoshiWallet.debug.xcconfig"; path = "Target Support Files/Pods-SatoshiWallet/Pods-SatoshiWallet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +183,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A24E73F128D1593000464112 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F268A742B50E9550465A2B2 /* Pods_SatoshiWalletSnapshotTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -175,6 +203,8 @@
 				0775C958EC3F00637C14F36E /* Pods-SatoshiWallet-SatoshiWalletUITests.release.xcconfig */,
 				59336A50D08B9D8CB9E2D98C /* Pods-SatoshiWalletTests.debug.xcconfig */,
 				F108202F4E068CDEA6ADA899 /* Pods-SatoshiWalletTests.release.xcconfig */,
+				B5770439D4BD586F0ED98B27 /* Pods-SatoshiWalletSnapshotTests.debug.xcconfig */,
+				B19553203479816E6627F6D4 /* Pods-SatoshiWalletSnapshotTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -185,6 +215,7 @@
 				72B27E9FC0DC936D343DCE24 /* Pods_SatoshiWallet.framework */,
 				35B18D21A707CADBDD4EC1C5 /* Pods_SatoshiWallet_SatoshiWalletUITests.framework */,
 				75478356CD869106A1428847 /* Pods_SatoshiWalletTests.framework */,
+				12FBD94B495B2A467F27DE7D /* Pods_SatoshiWalletSnapshotTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -230,6 +261,7 @@
 			children = (
 				A209D45728C950A800B43711 /* SatoshiWallet */,
 				A209D46E28C950AA00B43711 /* SatoshiWalletTests */,
+				A24E73F528D1593000464112 /* SatoshiWalletSnapshotTests */,
 				A209D45628C950A800B43711 /* Products */,
 				3C5CE8BD9C25B8F940A4E557 /* Pods */,
 				6701A327C49CF043856AD23C /* Frameworks */,
@@ -241,6 +273,7 @@
 			children = (
 				A209D45528C950A800B43711 /* SatoshiWallet.app */,
 				A209D46B28C950AA00B43711 /* SatoshiWalletTests.xctest */,
+				A24E73F428D1593000464112 /* SatoshiWalletSnapshotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -446,6 +479,17 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		A24E73F528D1593000464112 /* SatoshiWalletSnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				A24E740528D15C4700464112 /* Helpers.swift */,
+				A24E740128D15BC000464112 /* Factories.swift */,
+				A24E740328D15BF900464112 /* ListServicesSuccessStub.swift */,
+				A24E73FF28D15AC300464112 /* ListViewControllerSnapshotTests.swift */,
+			);
+			path = SatoshiWalletSnapshotTests;
+			sourceTree = "<group>";
+		};
 		A270A53228CF87D6006AA6CF /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,6 +605,26 @@
 			productReference = A209D46B28C950AA00B43711 /* SatoshiWalletTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A24E73F328D1593000464112 /* SatoshiWalletSnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A24E73FC28D1593000464112 /* Build configuration list for PBXNativeTarget "SatoshiWalletSnapshotTests" */;
+			buildPhases = (
+				86A4EFEB437109A36AF61FAF /* [CP] Check Pods Manifest.lock */,
+				A24E73F028D1593000464112 /* Sources */,
+				A24E73F128D1593000464112 /* Frameworks */,
+				A24E73F228D1593000464112 /* Resources */,
+				4F6346CC4EECCF86A039B77A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A24E73F928D1593000464112 /* PBXTargetDependency */,
+			);
+			name = SatoshiWalletSnapshotTests;
+			productName = SatoshiWalletSnapshotTests;
+			productReference = A24E73F428D1593000464112 /* SatoshiWalletSnapshotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -575,6 +639,11 @@
 						CreatedOnToolsVersion = 13.4.1;
 					};
 					A209D46A28C950AA00B43711 = {
+						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
+						TestTargetID = A209D45428C950A800B43711;
+					};
+					A24E73F328D1593000464112 = {
 						CreatedOnToolsVersion = 13.4.1;
 						LastSwiftMigration = 1340;
 						TestTargetID = A209D45428C950A800B43711;
@@ -596,6 +665,7 @@
 			targets = (
 				A209D45428C950A800B43711 /* SatoshiWallet */,
 				A209D46A28C950AA00B43711 /* SatoshiWalletTests */,
+				A24E73F328D1593000464112 /* SatoshiWalletSnapshotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -626,9 +696,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A24E73F228D1593000464112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4F6346CC4EECCF86A039B77A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SatoshiWalletSnapshotTests/Pods-SatoshiWalletSnapshotTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SatoshiWalletSnapshotTests/Pods-SatoshiWalletSnapshotTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SatoshiWalletSnapshotTests/Pods-SatoshiWalletSnapshotTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5769C802C6158F21EE794166 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -645,6 +739,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SatoshiWallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86A4EFEB437109A36AF61FAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SatoshiWalletSnapshotTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -769,6 +885,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A24E73F028D1593000464112 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24E740428D15BF900464112 /* ListServicesSuccessStub.swift in Sources */,
+				A24E740228D15BC000464112 /* Factories.swift in Sources */,
+				A24E740028D15AC300464112 /* ListViewControllerSnapshotTests.swift in Sources */,
+				A24E740628D15C4700464112 /* Helpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -776,6 +903,11 @@
 			isa = PBXTargetDependency;
 			target = A209D45428C950A800B43711 /* SatoshiWallet */;
 			targetProxy = A209D46C28C950AA00B43711 /* PBXContainerItemProxy */;
+		};
+		A24E73F928D1593000464112 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A209D45428C950A800B43711 /* SatoshiWallet */;
+			targetProxy = A24E73F828D1593000464112 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1018,6 +1150,59 @@
 			};
 			name = Release;
 		};
+		A24E73FA28D1593000464112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5770439D4BD586F0ED98B27 /* Pods-SatoshiWalletSnapshotTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QYTBFAGYUA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = imagine.dev.SatoshiWalletSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SatoshiWallet.app/SatoshiWallet";
+			};
+			name = Debug;
+		};
+		A24E73FB28D1593000464112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B19553203479816E6627F6D4 /* Pods-SatoshiWalletSnapshotTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QYTBFAGYUA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = imagine.dev.SatoshiWalletSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SatoshiWallet.app/SatoshiWallet";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1044,6 +1229,15 @@
 			buildConfigurations = (
 				A209D48328C950AA00B43711 /* Debug */,
 				A209D48428C950AA00B43711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A24E73FC28D1593000464112 /* Build configuration list for PBXNativeTarget "SatoshiWalletSnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A24E73FA28D1593000464112 /* Debug */,
+				A24E73FB28D1593000464112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
