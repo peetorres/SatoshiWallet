@@ -61,6 +61,7 @@
 		A24E740F28D1654F00464112 /* DetailViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E740E28D1654F00464112 /* DetailViewControllerSnapshotTests.swift */; };
 		A24E741228D1664800464112 /* ProgressViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E741128D1664800464112 /* ProgressViewSnapshotTests.swift */; };
 		A24E741428D1675700464112 /* NetworkErrorViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E741328D1675700464112 /* NetworkErrorViewSnapshotTests.swift */; };
+		A24E741928D1688300464112 /* PrimaryButtonSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E741828D1688300464112 /* PrimaryButtonSnapshotTests.swift */; };
 		A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */; };
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
@@ -158,6 +159,7 @@
 		A24E740E28D1654F00464112 /* DetailViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
 		A24E741128D1664800464112 /* ProgressViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewSnapshotTests.swift; sourceTree = "<group>"; };
 		A24E741328D1675700464112 /* NetworkErrorViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorViewSnapshotTests.swift; sourceTree = "<group>"; };
+		A24E741828D1688300464112 /* PrimaryButtonSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonSnapshotTests.swift; sourceTree = "<group>"; };
 		A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				A24E740928D160C900464112 /* Stubs */,
 				A24E741028D1662D00464112 /* Base */,
 				A24E740B28D160DD00464112 /* Scenes */,
+				A24E741528D1681F00464112 /* DSComponents */,
 			);
 			path = SatoshiWalletSnapshotTests;
 			sourceTree = "<group>";
@@ -535,6 +538,30 @@
 				A24E741328D1675700464112 /* NetworkErrorViewSnapshotTests.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		A24E741528D1681F00464112 /* DSComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A24E741628D1682700464112 /* Buttons */,
+			);
+			path = DSComponents;
+			sourceTree = "<group>";
+		};
+		A24E741628D1682700464112 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A24E741728D1683000464112 /* PrimaryButton */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		A24E741728D1683000464112 /* PrimaryButton */ = {
+			isa = PBXGroup;
+			children = (
+				A24E741828D1688300464112 /* PrimaryButtonSnapshotTests.swift */,
+			);
+			path = PrimaryButton;
 			sourceTree = "<group>";
 		};
 		A270A53228CF87D6006AA6CF /* List */ = {
@@ -942,6 +969,7 @@
 				A24E740828D15F7F00464112 /* ListServicesFailureStub.swift in Sources */,
 				A24E740028D15AC300464112 /* ListViewControllerSnapshotTests.swift in Sources */,
 				A24E741228D1664800464112 /* ProgressViewSnapshotTests.swift in Sources */,
+				A24E741928D1688300464112 /* PrimaryButtonSnapshotTests.swift in Sources */,
 				A24E740628D15C4700464112 /* Snapshots.swift in Sources */,
 				A24E740D28D164D800464112 /* ListServiceEmptySuccessStub.swift in Sources */,
 				A24E741428D1675700464112 /* NetworkErrorViewSnapshotTests.swift in Sources */,
