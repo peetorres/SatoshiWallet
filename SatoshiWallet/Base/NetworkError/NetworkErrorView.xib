@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -12,36 +12,47 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NetworkErrorView" customModule="SatoshiWallet" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="UhO-Aa-DWE">
-                    <rect key="frame" x="52" y="69" width="310.5" height="563"/>
+                    <rect key="frame" x="47" y="90.5" width="281" height="486"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0B-gO-RQq">
-                            <rect key="frame" x="0.0" y="0.0" width="310.5" height="26.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="281" height="26.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                             <color key="textColor" name="AppLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96q-Tf-URC" customClass="AnimationView" customModule="Lottie">
-                            <rect key="frame" x="0.0" y="71.5" width="310.5" height="310.5"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLD-gE-iGf">
+                            <rect key="frame" x="0.0" y="71.5" width="281" height="233.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96q-Tf-URC" customClass="AnimationView" customModule="Lottie">
+                                    <rect key="frame" x="24" y="0.0" width="233" height="233.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="96q-Tf-URC" secondAttribute="height" id="sNf-7G-Isp"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Metaverse"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="96q-Tf-URC" secondAttribute="height" multiplier="24:24" id="sNf-7G-Isp"/>
+                                <constraint firstItem="96q-Tf-URC" firstAttribute="centerX" secondItem="FLD-gE-iGf" secondAttribute="centerX" id="7vg-C3-gFA"/>
+                                <constraint firstItem="96q-Tf-URC" firstAttribute="top" secondItem="FLD-gE-iGf" secondAttribute="top" id="Cu3-WA-i4L"/>
+                                <constraint firstAttribute="bottom" secondItem="96q-Tf-URC" secondAttribute="bottom" id="d7h-ny-bfX"/>
                             </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Metaverse"/>
-                            </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep calm! Your request is comming from another metaverse." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJh-C7-Z4z">
-                            <rect key="frame" x="0.0" y="427" width="310.5" height="41"/>
+                            <rect key="frame" x="0.0" y="350" width="281" height="41"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="AppLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wV4-wi-6xz" customClass="PrimaryButton" customModule="SatoshiWallet" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="513" width="310.5" height="50"/>
+                            <rect key="frame" x="0.0" y="436" width="281" height="50"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="HLB-IR-T8U"/>
@@ -56,9 +67,10 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="AppBackgroundColor"/>
             <constraints>
-                <constraint firstItem="UhO-Aa-DWE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="R9F-hg-T2e"/>
                 <constraint firstItem="UhO-Aa-DWE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aAJ-jl-UTt"/>
+                <constraint firstItem="UhO-Aa-DWE" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="iSZ-9P-4hX"/>
                 <constraint firstItem="UhO-Aa-DWE" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="pFi-y7-uCR"/>
+                <constraint firstItem="96q-Tf-URC" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.35" id="yvY-mP-G5t"/>
             </constraints>
             <connections>
                 <outlet property="animationView" destination="96q-Tf-URC" id="mss-WI-GkW"/>
@@ -72,7 +84,7 @@
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppLabelColor">
-            <color red="0.047058823529411764" green="0.062745098039215685" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.046999998390674591" green="0.063000001013278961" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
