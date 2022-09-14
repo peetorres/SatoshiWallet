@@ -4,6 +4,14 @@ default_platform :ios
 
 platform :ios do
 
+    desc "Base CI Tests"
+    lane :tests do
+
+        run_tests(workspace: ENV["WORKSPACE"],
+            devices: ["iPhone 13 Pro"],
+            scheme: ENV["SCHEME_TESTS"])
+    end
+
     desc "Build Ad Hoc"
     lane :buildAdHoc do
 
