@@ -62,6 +62,7 @@
 		A24E741228D1664800464112 /* ProgressViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E741128D1664800464112 /* ProgressViewSnapshotTests.swift */; };
 		A24E741428D1675700464112 /* NetworkErrorViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E741328D1675700464112 /* NetworkErrorViewSnapshotTests.swift */; };
 		A24E741928D1688300464112 /* PrimaryButtonSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E741828D1688300464112 /* PrimaryButtonSnapshotTests.swift */; };
+		A24E741B28D16A6300464112 /* SecondaryButtonSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E741A28D16A6300464112 /* SecondaryButtonSnapshotTests.swift */; };
 		A270A53428CF87F0006AA6CF /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */; };
 		A270A53628CF92D7006AA6CF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53528CF92D7006AA6CF /* MainCoordinator.swift */; };
 		A270A53828CFB23F006AA6CF /* BitfinexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */; };
@@ -160,6 +161,7 @@
 		A24E741128D1664800464112 /* ProgressViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewSnapshotTests.swift; sourceTree = "<group>"; };
 		A24E741328D1675700464112 /* NetworkErrorViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorViewSnapshotTests.swift; sourceTree = "<group>"; };
 		A24E741828D1688300464112 /* PrimaryButtonSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonSnapshotTests.swift; sourceTree = "<group>"; };
+		A24E741A28D16A6300464112 /* SecondaryButtonSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonSnapshotTests.swift; sourceTree = "<group>"; };
 		A270A53328CF87F0006AA6CF /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		A270A53528CF92D7006AA6CF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A270A53728CFB23F006AA6CF /* BitfinexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitfinexAPI.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				A24E741828D1688300464112 /* PrimaryButtonSnapshotTests.swift */,
+				A24E741A28D16A6300464112 /* SecondaryButtonSnapshotTests.swift */,
 			);
 			path = PrimaryButton;
 			sourceTree = "<group>";
@@ -973,6 +976,7 @@
 				A24E740628D15C4700464112 /* Snapshots.swift in Sources */,
 				A24E740D28D164D800464112 /* ListServiceEmptySuccessStub.swift in Sources */,
 				A24E741428D1675700464112 /* NetworkErrorViewSnapshotTests.swift in Sources */,
+				A24E741B28D16A6300464112 /* SecondaryButtonSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
