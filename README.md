@@ -34,7 +34,7 @@ Explaining with few words usage decision of each Pod:
 - SnapshotTesting: To create Snapshot tests of UI.
 
 ## How does the app look?
-![List dark mode](/Images/AppImages/IMG_3015.png)
+![List dark mode](Images/AppImages/IMG_3015.png)
 
 - - - 
 
