@@ -76,6 +76,25 @@ Explaining with few words usage decision of each Pod:
 
 - - - 
 
+### About testing and folder organization
+
+- It was built to be clean and easy to understand where are located, and where which file is contained. A kind of modularization by folders.
+
+![Folder organization](https://user-images.githubusercontent.com/28540263/190357063-b252fc0b-7c5a-4a0c-9843-53314ceaf057.png)
+
+- Was made several unit tests of the application, reaching the coverage of all important core classes up to 100%.
+- Each test files and folders were mirrored to the main app, so it's easy to reach them.
+
+![Test Coverage](https://user-images.githubusercontent.com/28540263/190356730-e8ce10d7-8cc0-470d-ab42-f263ca2533fe.png)
+
+About Snapshot testing, was made tests in Light and Dark mode of every view to check the layout elements using stubs to inject values;
+
+![Tests](https://user-images.githubusercontent.com/28540263/190357521-ab424397-72ac-4e72-8f8d-188e30096162.png)
+
+OBS: I'm not sure why, the `DetailViewControllerSnapshotTests` sometimes fail, some times succeed even I've cleaned and update the images several times.
+
+- - - 
+
 # What was provided?
 ## App main description: 
     - You will use the Bitfinex API (https://docs.bitfinex.com/reference#rest-public-tickers) to retrieve the data. 
