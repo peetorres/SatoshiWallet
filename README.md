@@ -12,7 +12,43 @@
 
 - - - 
 
-## Explaining some key points
+## Description of app behaviors
+This is a simple app that you can see a list of cryptos.
+
+The applcation is getting top 200 cryptos of marketcap information `(such as image, name, ranking, supply, max supply and explorer value)` based on CoinCapApi Assets `(https://docs.coincap.io/)`, then getting the price with pair USD and daily relative variation of those that Bitfinex API Tickers `https://docs.bitfinex.com/reference/rest-public-tickers` returns.
+
+Obs: Not showing all top 200 because Bitfinex API don't send some values with ticker SYMBOLUSD or SYMBOL:USD.
+
+You can see more information about each crypto listed clicking on the table, and search for some crypto by the name or symbol.
+
+#### Fetch data
+
+- The first time that the apple is handled, it will get assets and tickers of bitfinex api to map the values into a complete Crypto information;
+- If it fails `(ex: network error)` user will see a full screen error.
+- If it succeed, a list of cryptos will be shown and the values will be updated each 5 seconds, showing a visual feedback to user when it occours.
+- If the update fails `(ex: network error)` user will see a visual information showing that the list is not updated and the values could be wrong.
+
+#### Search for Crypto
+
+- You can search for crypto that comes in list by ticker or name.
+- If the API returns Bitcoin, Bitcoin SV, Bitcoin Gold and Dogecoin:
+- Searching for BI, you will be shown Bitcoin, Bitcoin SV, Bitcoin;
+- Searching for coin, you will see all of them;
+- Searching for SV, you will see only Bitcoin SV;
+
+#### Light and Dark mode
+
+- The app handle light and dark mode, based on design system adaptative colors used, dark mode is my favorite, you should try! ;) 
+
+- - - 
+
+## How does the app look?
+
+![ImageScreens](https://user-images.githubusercontent.com/28540263/190286052-ed6e6706-4209-409a-9faa-6edce2d22bbc.png)
+
+- - - 
+
+## Explaining some development key points
 
 ### About architecture
 Since it's a small challenge, there's made a decision of no needed decoupled repos to main create external Pods neither SPMs.
@@ -37,10 +73,6 @@ Explaining with few words usage decision of each Pod:
 - Lottie: Just to make the application more fun to develop :).
 - SwiftLint: Just to make sure that I'll not make my code a cake when I'm doing this challenge at 3 a.m.
 - SnapshotTesting: To create Snapshot tests of UI.
-
-## How does the app look?
-
-![ImageScreens](https://user-images.githubusercontent.com/28540263/190286052-ed6e6706-4209-409a-9faa-6edce2d22bbc.png)
 
 - - - 
 
