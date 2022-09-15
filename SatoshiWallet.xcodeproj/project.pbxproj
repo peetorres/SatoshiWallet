@@ -553,18 +553,10 @@
 		A24E741628D1682700464112 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				A24E741728D1683000464112 /* PrimaryButton */,
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
-		A24E741728D1683000464112 /* PrimaryButton */ = {
-			isa = PBXGroup;
-			children = (
 				A24E741828D1688300464112 /* PrimaryButtonSnapshotTests.swift */,
 				A24E741A28D16A6300464112 /* SecondaryButtonSnapshotTests.swift */,
 			);
-			path = PrimaryButton;
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		A270A53228CF87D6006AA6CF /* List */ = {
