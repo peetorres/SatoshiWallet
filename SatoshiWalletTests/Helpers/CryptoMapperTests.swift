@@ -14,6 +14,8 @@ class CryptoMapperTests: XCTestCase {
         XCTAssertEqual(CryptoMapper.formattedTicker(of: "ETH"), "tETHUSD")
         XCTAssertEqual(CryptoMapper.formattedTicker(of: "CHSB"), "tCHSB:USD")
         XCTAssertEqual(CryptoMapper.formattedTicker(of: "LINK"), "tLINK:USD")
+        XCTAssertEqual(CryptoMapper.formattedTicker(of: "DOGE"), "tDOGE:USD")
+        XCTAssertEqual(CryptoMapper.formattedTicker(of: "SHIBA"), "tSHIBA:USD")
     }
 
     func testTickerArrayFromAssets() {

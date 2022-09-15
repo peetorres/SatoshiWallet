@@ -14,7 +14,8 @@ final class CryptoMapper {
     // MARK: Methods
     static func formattedTicker(of symbol: String) -> String {
         var ticker = "t\(symbol.uppercased())"
-        if twoDotsTickerList.contains(symbol) {
+        let shouldAddTwoDots = twoDotsTickerList.contains(symbol) || symbol.count >= 4
+        if shouldAddTwoDots {
             ticker += ":"
         }
         ticker += "USD"
