@@ -3,7 +3,12 @@
 ## Executing the App
 - Execute `pod install`
 - Open `SatoshiWallet.xcworkspace` 
-- Run the `SatoshiWallet` target 
+- Run the `SatoshiWallet` scheme 
+
+## Testing the App
+- Execute `pod install`
+- Open `SatoshiWallet.xcworkspace` 
+- Run the `CI` scheme in iPhone 13 Pro;
 
 - - - 
 
@@ -26,9 +31,10 @@ Explaining with few words usage decision of each Pod:
 - Kingfisher: Just to quick tasks and memory management when doing async fetch of URL into Views.
 - Lottie: Just to make the application more fun to develop :).
 - SwiftLint: Just to make sure that I'll not make my code a cake when I'm doing this challenge at 3 a.m.
+- SnapshotTesting: To create Snapshot tests of UI.
 
 ## How does the app look?
-- Screenshots will be taken when app is finished.
+![List dark mode](/Images/AppImages/IMG_3015.png)
 
 - - - 
 
