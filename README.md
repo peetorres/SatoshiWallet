@@ -22,6 +22,11 @@ Was used MVVM as Visual Architecture Pattern to decouple resposabilities and imp
 
 Was created an additional context to exemplify interaction between Scenes and making an usage of Coordinator Pattern to reduce navigation responsability of each scene.
 
+Some decision made just for fun, was fetch an crypto asset list of `https://docs.coincap.io/`, then get the symbols and try to fetch the Bitfinex API with them. Some error was that the tickers don't respect the SYMBOLUSD as query param, so I've cached some values to force show.
+
+Position, Names, Assets and Symbol are informations of CoinCapAPI, prices and variations are informations of Bitfinex API.
+Details Scene informations such as Supply or explorer value are from CoinCapAPI as well.
+
 ### Pods
 The usage of some pods was only to improve coding speed, taking care of some points.
 
@@ -34,7 +39,8 @@ Explaining with few words usage decision of each Pod:
 - SnapshotTesting: To create Snapshot tests of UI.
 
 ## How does the app look?
-![List dark mode](Images/AppImages/IMG_3015.png)
+
+![ImageScreens](https://user-images.githubusercontent.com/28540263/190286052-ed6e6706-4209-409a-9faa-6edce2d22bbc.png)
 
 - - - 
 
@@ -55,21 +61,21 @@ Explaining with few words usage decision of each Pod:
 - - - 
 
 # What's the minimum viable product of challenge?
- - iOS Application written in Swift, using UIKit framework, and running;
- - Basic layout (at least need show all data, and be responsible in iPhones);
+ - iOS Application written in Swift, using UIKit framework, and running; ✅
+ - Basic layout (at least need show all data, and be responsible in iPhones); ✅
 
 ### What can be done into MVP:
-  - iOS Application using UIKit and InterfaceBuilders responsible with componentization;
-  - Clean layout following suggestion;
-  - MVVM Pattern;
-  - Unit tests;
-  - Integration tests;
-  - Usage of Light/Dark mode into iOS application;
+  - iOS Application using UIKit and InterfaceBuilders responsible with componentization; ✅
+  - Clean layout following suggestion; ✅
+  - MVVM Pattern; ✅
+  - Unit tests; ✅
+  - Integration tests; ✅
+  - Usage of Light/Dark mode into iOS application; ✅
   
 ### What can be done v.2 after MVP delivery:
-  - Implementation of Design System into app;
-  - Component Snapshot Tests;
-  - Layout improvement, created using some UI/UX concepts;
+  - Implementation of Design System into app; ✅
+  - Component Snapshot Tests; ✅
+  - Layout improvement, created using some UI/UX concepts; ✅
   - CI Implementation + AppDistribution Delivery;
   
 ### What can be done v.3:
@@ -91,15 +97,15 @@ Explaining with few words usage decision of each Pod:
 - - - 
 
 # Challenge Roadmap for MVP:
-  - Create project;
-  - Configure base project;
-  - Create main access point;
-  - Create List Scene;
-  - Integrate List Scene with provided API;
-  - Search Feature into List Scene;
-  - Create Detail Scene;
-  - Do the entire base code;
-  - Make code-review;
-  - Run all tests, after clean, build an reinstall the app;
-  - Update Readme;
+  - Create project; ✅
+  - Configure base project; ✅
+  - Create main access point; ✅
+  - Create List Scene; ✅
+  - Integrate List Scene with provided API; ✅
+  - Search Feature into List Scene; ✅
+  - Create Detail Scene; ✅
+  - Do the entire base code; ✅
+  - Make code-review; ✅
+  - Run all tests, after clean, build an reinstall the app; ✅
+  - Update Readme; ✅
   - Share for Review.
