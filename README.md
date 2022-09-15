@@ -82,7 +82,7 @@ Explaining with few words usage decision of each Pod:
 
 ![Folder organization](https://user-images.githubusercontent.com/28540263/190357063-b252fc0b-7c5a-4a0c-9843-53314ceaf057.png)
 
-- Was made several unit tests of the application, reaching the coverage of all important core classes up to 100%.
+- Was made several unit tests of the application, reaching the coverage of all important core classes up to 95%.
 - Each test files and folders were mirrored to the main app, so it's easy to reach them.
 
 ![Test Coverage](https://user-images.githubusercontent.com/28540263/190356730-e8ce10d7-8cc0-470d-ab42-f263ca2533fe.png)
@@ -159,4 +159,4 @@ OBS: I'm not sure why, the `DetailViewControllerSnapshotTests` sometimes fail, s
   - Make code-review; ✅
   - Run all tests, after clean, build an reinstall the app; ✅
   - Update Readme; ✅
-  - Share for Review.
+  - Share for Review. ✅
