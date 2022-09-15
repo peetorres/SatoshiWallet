@@ -48,6 +48,12 @@ You can see more information about each crypto listed clicking on the table, and
 
 - - - 
 
+## App Architecture and Relationships
+
+![App Architecture](https://user-images.githubusercontent.com/28540263/190398869-4fa21f76-dd5e-4578-a4b3-81d20d1b42b4.png)
+
+- - - 
+
 ## Explaining some development key points
 
 ### About architecture
