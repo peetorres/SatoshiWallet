@@ -11,10 +11,10 @@ import SnapshotTesting
 extension XCTestCase {
     func assert(_ viewController: UIViewController, named: String) {
         viewController.overrideUserInterfaceStyle = .dark
-        verifyViewController(viewController, named: named + "+Darkmode")
+        verifyViewController(viewController, named: named + "-dark")
 
         viewController.overrideUserInterfaceStyle = .light
-        verifyViewController(viewController, named: named + "+Lightmode")
+        verifyViewController(viewController, named: named + "-light")
     }
 
     func verifyViewController(_ viewController: UIViewController, named: String) {
