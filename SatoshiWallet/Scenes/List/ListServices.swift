@@ -7,11 +7,10 @@
 
 import Foundation
 import Moya
+import RxSwift
 
 protocol ListServicesProtocol {
     func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkError>) -> Void))
-    func getAssetList(limit: Int, completion: @escaping ((Result<ListResponse, NetworkError>) -> Void))
-    func getTickerList(tickers: [String], completion: @escaping ((Result<[Ticker], NetworkError>) -> Void))
 }
 
 final class ListServices: ListServicesProtocol {
@@ -19,70 +18,60 @@ final class ListServices: ListServicesProtocol {
     private let coinCapProvider = MoyaProvider<CoinCapAPI>()
     private let bitfinexProvider = MoyaProvider<BitfinexAPI>()
 
+    let bag = DisposeBag()
+
     // MARK: Services
     func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkError>) -> Void)) {
-        getAssetList(limit: limit) { [weak self] response in
-            guard let self = self else { return }
+        getAssetList(limit: limit)
+            .flatMap { [weak self] assetList in
+                guard let self = self else { return .error(NetworkError.unknown) }
+                return self.getTickerList(assets: assetList)
+            }
+            .map { CryptoMapper.cryptoArray(assets: $0, tickers: $1) }
+            .subscribe(onSuccess: { cryptos in
+                completion(.success(cryptos))
+            }, onFailure: { _ in
+                completion(.failure(.unknown))
+            })
+            .disposed(by: bag)
+    }
 
-            switch response {
-            case .success(let assetList):
-
+    func request(response: Response) -> Single<[Asset]> {
+        Single.create { single in
+            do {
+                let assetList = try response.map(ListResponse.self, using: JSONDecoder())
                 let assets = assetList.data
-                let searchTickers = CryptoMapper.tickerArray(from: assets)
-
-                self.getTickerList(tickers: searchTickers) { [weak self] response in
-                    guard self != nil else { return }
-
-                    switch response {
-                    case .success(let tickers):
-
-                        let cryptoList = CryptoMapper.cryptoArray(assets: assets, tickers: tickers)
-                        completion(.success(cryptoList))
-
-                    case .failure(let error):
-                        completion(.failure(error))
-                    }
-                }
-
-            case .failure(let error):
-                    completion(.failure(error))
+                single(.success(assets))
+            } catch let error {
+                single(.failure(error))
             }
+
+            return Disposables.create()
         }
     }
 
-    func getAssetList(limit: Int, completion: @escaping ((Result<ListResponse, NetworkError>) -> Void)) {
-        coinCapProvider.request(.assets(limit: limit)) { [weak self] result in
-            guard self != nil else { return }
+    func getAssetList(limit: Int) -> Single<[Asset]> {
+        coinCapProvider.rx.request(.assets(limit: limit))
+            .flatMap { [unowned self] in self.request(response: $0) }
+    }
 
-            switch result {
-            case .success(let response):
-                do {
-                    let model = try response.map(ListResponse.self)
-                    completion(.success(model))
-                } catch {
-                    completion(.failure(error.mapToNetworkError(with: response.data)))
-                }
-            case .failure(let error):
-                completion(.failure(error.mapToNetworkError()))
+    func map(tickerResponse: Response) -> Single<[Ticker]> {
+        Single.create { single in
+            do {
+                let tickers = try tickerResponse.map([Ticker].self, using: JSONDecoder())
+                single(.success(tickers))
+            } catch let error {
+                single(.failure(error))
             }
+
+            return Disposables.create()
         }
     }
 
-    func getTickerList(tickers: [String], completion: @escaping ((Result<[Ticker], NetworkError>) -> Void)) {
-        bitfinexProvider.request(.tickers(symbols: tickers)) { [weak self] result in
-            guard self != nil else { return }
-
-            switch result {
-            case .success(let response):
-                do {
-                    let model = try response.map([Ticker].self)
-                    completion(.success(model))
-                } catch {
-                    completion(.failure(error.mapToNetworkError(with: response.data)))
-                }
-            case .failure(let error):
-                completion(.failure(error.mapToNetworkError()))
-            }
-        }
+    func getTickerList(assets: [Asset]) -> Single<([Asset], [Ticker])> {
+        let searchTickers = CryptoMapper.tickerArray(from: assets)
+        return bitfinexProvider.rx.request(.tickers(symbols: searchTickers))
+            .flatMap { [unowned self] in self.map(tickerResponse: $0) }
+            .map { (assets, $0) }
     }
 }
