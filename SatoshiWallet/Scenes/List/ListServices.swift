@@ -17,8 +17,7 @@ final class ListServices: ListServicesProtocol {
     // MARK: Properties
     private let coinCapProvider = MoyaProvider<CoinCapAPI>()
     private let bitfinexProvider = MoyaProvider<BitfinexAPI>()
-
-    let bag = DisposeBag()
+    private let bag = DisposeBag()
 
     // MARK: Services
     func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkError>) -> Void)) {
@@ -36,26 +35,38 @@ final class ListServices: ListServicesProtocol {
             .disposed(by: bag)
     }
 
-    func request(response: Response) -> Single<[Asset]> {
+    private func getAssetList(limit: Int) -> Single<[Asset]> {
+        coinCapProvider.rx.request(.assets(limit: limit))
+            .flatMap { [weak self] in
+                guard let self = self else { return .error(NetworkError.unknown) }
+                return self.map(assetListResponse: $0)
+            }
+    }
+
+    private func map(assetListResponse: Response) -> Single<[Asset]> {
         Single.create { single in
             do {
-                let assetList = try response.map(ListResponse.self, using: JSONDecoder())
+                let assetList = try assetListResponse.map(ListResponse.self, using: JSONDecoder())
                 let assets = assetList.data
                 single(.success(assets))
             } catch let error {
                 single(.failure(error))
             }
-
             return Disposables.create()
         }
     }
 
-    func getAssetList(limit: Int) -> Single<[Asset]> {
-        coinCapProvider.rx.request(.assets(limit: limit))
-            .flatMap { [unowned self] in self.request(response: $0) }
+    private func getTickerList(assets: [Asset]) -> Single<([Asset], [Ticker])> {
+        let searchTickers = CryptoMapper.tickerArray(from: assets)
+        return bitfinexProvider.rx.request(.tickers(symbols: searchTickers))
+            .flatMap { [weak self] in
+                guard let self = self else { return .error(NetworkError.unknown) }
+                return self.map(tickerResponse: $0)
+            }
+            .map { (assets, $0) }
     }
 
-    func map(tickerResponse: Response) -> Single<[Ticker]> {
+    private func map(tickerResponse: Response) -> Single<[Ticker]> {
         Single.create { single in
             do {
                 let tickers = try tickerResponse.map([Ticker].self, using: JSONDecoder())
@@ -63,15 +74,7 @@ final class ListServices: ListServicesProtocol {
             } catch let error {
                 single(.failure(error))
             }
-
             return Disposables.create()
         }
-    }
-
-    func getTickerList(assets: [Asset]) -> Single<([Asset], [Ticker])> {
-        let searchTickers = CryptoMapper.tickerArray(from: assets)
-        return bitfinexProvider.rx.request(.tickers(symbols: searchTickers))
-            .flatMap { [unowned self] in self.map(tickerResponse: $0) }
-            .map { (assets, $0) }
     }
 }
