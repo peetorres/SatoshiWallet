@@ -81,11 +81,17 @@ final class ListViewController: BaseViewController {
             }.disposed(by: bag)
 
         viewModel.isShowingError
-            .subscribe { [weak self] _ in
-                self?.showNetworkError { [weak self] in
-                    self?.viewModel.getCryptoList()
+            .subscribe(onNext: { [weak self] error in
+                switch error {
+                case .firstFetch:
+                    self?.showNetworkError { [weak self] in
+                        self?.viewModel.getCryptoList()
+                    }
+                case .backgroundFetch, .none:
+                    self?.viewBackgroundFetchError.isHidden = error == .none
                 }
-            }.disposed(by: bag)
+            })
+            .disposed(by: bag)
 
         searchController.searchBar.rx.text.orEmpty
             .bind(to: viewModel.searchText)
