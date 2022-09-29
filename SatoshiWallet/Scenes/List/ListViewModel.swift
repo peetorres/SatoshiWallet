@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class ListViewModel {
+final class ListViewModel {
     // MARK: Constants and Enums
     enum ErrorTypes {
         case firstFetch
@@ -26,28 +26,32 @@ class ListViewModel {
     private let service: ListServicesProtocol
 
     var cryptos: BehaviorSubject<[Crypto]> = .init(value: [])
-    var bag = DisposeBag()
-
+    var mutableCryptos: BehaviorSubject<[Crypto]> = .init(value: [])
+    var searchText: BehaviorSubject<String> = BehaviorSubject(value: "")
     var isLoading: PublishSubject<Bool> = .init()
     var isShowingError: PublishSubject<ErrorTypes> = .init()
-    var searchText: BehaviorSubject<String> = BehaviorSubject(value: "")
-
-    var mutableCryptos: Observable<[Crypto]> {
-        guard let searchText = try? searchText.value(),
-              !searchText.isEmpty else { return cryptos.map { $0 } }
-
-        return cryptos.map { cryptos in
-            cryptos.filter { crypto in
-                let nameHasText = crypto.name.lowercased().contains(searchText.lowercased())
-                let symbolHasText = crypto.symbol.lowercased().contains(searchText.lowercased())
-                return nameHasText || symbolHasText
-            }
-        }
-    }
+    var bag = DisposeBag()
 
     // MARK: Initializer
     init(service: ListServicesProtocol = ListServices()) {
         self.service = service
+        bindEvents()
+    }
+
+    // MARK: Methods
+    private func bindEvents() {
+        Observable.combineLatest(cryptos, searchText)
+            .map { cryptos, searchText in
+                guard !searchText.isEmpty else { return cryptos.map { $0 } }
+
+                return cryptos.filter { crypto in
+                    let nameHasText = crypto.name.lowercased().contains(searchText.lowercased())
+                    let symbolHasText = crypto.symbol.lowercased().contains(searchText.lowercased())
+                    return nameHasText || symbolHasText
+                }
+            }
+            .bind(to: mutableCryptos)
+            .disposed(by: bag)
     }
 
     // MARK: Services

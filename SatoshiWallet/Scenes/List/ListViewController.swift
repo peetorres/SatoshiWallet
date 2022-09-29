@@ -62,7 +62,7 @@ final class ListViewController: BaseViewController {
     private func bindEvents() {
         tableView.rx.setDelegate(self).disposed(by: bag)
 
-        viewModel.cryptos
+        viewModel.mutableCryptos
             .bind(to: tableView.rx.items(cellIdentifier: ListCell.identifier,
                                          cellType: ListCell.self)) { [weak self] _, item, cell in
                 let shouldAnimateLabels = self?.searchController.isActive == false
@@ -71,7 +71,7 @@ final class ListViewController: BaseViewController {
 
         tableView.rx.itemSelected
             .subscribe(onNext: { indexPath in
-                guard let cryptos = try? self.viewModel.cryptos.value() else { return }
+                guard let cryptos = try? self.viewModel.mutableCryptos.value() else { return }
                 self.selectedCrypto.onNext(cryptos[indexPath.row])
             }).disposed(by: bag)
 
