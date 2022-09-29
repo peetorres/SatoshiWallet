@@ -6,33 +6,34 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol Coordinator {
     var navigationController: UINavigationController { get set }
     var rootViewController: UIViewController? { get set }
 
-    func start(with viewController: UIViewController)
+    func start()
 }
 
 final class MainCoordinator: Coordinator {
     // MARK: Properties
     var navigationController: UINavigationController
     var rootViewController: UIViewController?
+    let bag = DisposeBag()
 
     // MARK: Initializer
     init(navigationController: UINavigationController = .init()) {
         self.navigationController = navigationController
     }
 
-    func start(with viewController: UIViewController = ListViewController()) {
-        if let viewController = viewController as? ListViewController {
-            viewController.handleSelection = { [weak self] crypto in
-                self?.navigateToDetails(with: crypto)
-            }
+    func start() {
+        let viewController = ListViewController()
+        viewController.selectedCrypto
+            .subscribe { [weak self] in self?.navigateToDetails(with: $0) }
+            .disposed(by: bag)
 
-            rootViewController = viewController
-            navigationController.pushViewController(viewController, animated: false)
-        }
+        rootViewController = viewController
+        navigationController.pushViewController(viewController, animated: false)
     }
 
     // MARK: Navigation Methods

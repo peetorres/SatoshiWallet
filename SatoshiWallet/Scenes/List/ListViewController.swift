@@ -12,8 +12,8 @@ import RxCocoa
 final class ListViewController: BaseViewController {
     // MARK: Properties
     let viewModel: ListViewModel
-    var handleSelection: ((Crypto) -> Void)?
-    var didChangeInterfaceStyle: (() -> Void)?
+    var selectedCrypto: PublishSubject<Crypto> = .init()
+    private let bag = DisposeBag()
 
     // MARK: Outlets
     let switchControl = UISwitch()
@@ -32,7 +32,6 @@ final class ListViewController: BaseViewController {
     func switchDidChange(sender: UISwitch!) {
         let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
         keyWindow?.overrideUserInterfaceStyle = sender.isOn ? .dark : .light
-        didChangeInterfaceStyle?()
     }
 
     // MARK: Initializers
@@ -60,8 +59,6 @@ final class ListViewController: BaseViewController {
         setupNavigationBar()
     }
 
-    private let bag = DisposeBag()
-
     private func bindEvents() {
         tableView.rx.setDelegate(self).disposed(by: bag)
 
@@ -75,7 +72,7 @@ final class ListViewController: BaseViewController {
         tableView.rx.itemSelected
             .subscribe(onNext: { indexPath in
                 guard let cryptos = try? self.viewModel.cryptos.value() else { return }
-                self.handleSelection?(cryptos[indexPath.row])
+                self.selectedCrypto.onNext(cryptos[indexPath.row])
             }).disposed(by: bag)
 
         viewModel.isLoading
@@ -89,6 +86,14 @@ final class ListViewController: BaseViewController {
                     self?.viewModel.getCryptoList()
                 }
             }.disposed(by: bag)
+
+        searchController.searchBar.rx.text.orEmpty
+            .bind(to: viewModel.searchText)
+            .disposed(by: bag)
+
+        viewModel.searchText
+            .subscribe(onNext: { print("searchText: \($0)") })
+            .disposed(by: bag)
     }
 
     private func setupTableView() {
