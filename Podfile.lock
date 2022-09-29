@@ -7,6 +7,11 @@ PODS:
   - Moya/RxSwift (15.0.0):
     - Moya/Core
     - RxSwift (~> 6.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
   - SnapshotTesting (1.9.0)
   - SwiftLint (0.46.1)
@@ -15,6 +20,7 @@ DEPENDENCIES:
   - Kingfisher
   - lottie-ios
   - Moya/RxSwift
+  - RxCocoa
   - SnapshotTesting (~> 1.9.0)
   - SwiftLint
 
@@ -24,6 +30,8 @@ SPEC REPOS:
     - Kingfisher
     - lottie-ios
     - Moya
+    - RxCocoa
+    - RxRelay
     - RxSwift
     - SnapshotTesting
     - SwiftLint
@@ -33,10 +41,12 @@ SPEC CHECKSUMS:
   Kingfisher: 2457be2121734e69e54a2312ecc0150eb9ae70b3
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
   SwiftLint: aaa29a9f649316095a9079595cb60906bd899353
 
-PODFILE CHECKSUM: 96be6f23e5d7dc7f326a4349c61ff30f7aabc20a
+PODFILE CHECKSUM: 7868049b785dbfd3b0eff2a7a69d4da41e5cf182
 
 COCOAPODS: 1.11.3

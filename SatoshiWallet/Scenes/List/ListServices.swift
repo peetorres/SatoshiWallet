@@ -10,7 +10,7 @@ import Moya
 import RxSwift
 
 protocol ListServicesProtocol {
-    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkError>) -> Void))
+    func getCryptoList(limit: Int) -> Single<[Crypto]>
 }
 
 final class ListServices: ListServicesProtocol {
@@ -20,19 +20,13 @@ final class ListServices: ListServicesProtocol {
     private let bag = DisposeBag()
 
     // MARK: Services
-    func getCryptoList(limit: Int, completion: @escaping ((Result<[Crypto], NetworkError>) -> Void)) {
+    func getCryptoList(limit: Int) -> Single<[Crypto]> {
         getAssetList(limit: limit)
             .flatMap { [weak self] assetList in
                 guard let self = self else { return .error(NetworkError.unknown) }
                 return self.getTickerList(assets: assetList)
             }
             .map { CryptoMapper.cryptoArray(assets: $0, tickers: $1) }
-            .subscribe(onSuccess: { cryptos in
-                completion(.success(cryptos))
-            }, onFailure: { _ in
-                completion(.failure(.unknown))
-            })
-            .disposed(by: bag)
     }
 
     private func getAssetList(limit: Int) -> Single<[Asset]> {

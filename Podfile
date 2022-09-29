@@ -7,6 +7,7 @@ target 'SatoshiWallet' do
 
   # Pods for SatoshiWallet
   pod 'Moya/RxSwift'
+  pod 'RxCocoa'
   pod 'Kingfisher'
   pod 'lottie-ios'
   pod 'SwiftLint'

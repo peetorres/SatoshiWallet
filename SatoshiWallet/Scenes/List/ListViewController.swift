@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class ListViewController: BaseViewController {
     // MARK: Properties
@@ -20,8 +22,6 @@ final class ListViewController: BaseViewController {
 
     private(set) lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
-        searchController.delegate = self
-        searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search for Crypto"
         searchController.hidesNavigationBarDuringPresentation = false
         return searchController
@@ -36,10 +36,6 @@ final class ListViewController: BaseViewController {
     }
 
     // MARK: Initializers
-    deinit {
-        self.viewModel.stopServerCryptoList()
-    }
-
     init(viewModel: ListViewModel = .init()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -54,7 +50,7 @@ final class ListViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         bindEvents()
-        viewModel.getCryptoList(isBackgroundFetch: false)
+        viewModel.getCryptoList()
     }
 
     // MARK: Methods
@@ -64,37 +60,40 @@ final class ListViewController: BaseViewController {
         setupNavigationBar()
     }
 
+    private let bag = DisposeBag()
+
     private func bindEvents() {
-        viewModel.handleSuccess = { [weak self] in
-            self?.tableView.reloadData()
-            self?.viewBackgroundFetchError.isHidden = true
-        }
+        tableView.rx.setDelegate(self).disposed(by: bag)
 
-        viewModel.handleError = { [weak self] isBackgroundFetch, _ in
-            if isBackgroundFetch {
-                self?.viewBackgroundFetchError.isHidden = false
-            } else {
-                self?.showNetworkError {
-                    self?.viewModel.getCryptoList(isBackgroundFetch: isBackgroundFetch)
+        viewModel.cryptos
+            .bind(to: tableView.rx.items(cellIdentifier: ListCell.identifier,
+                                         cellType: ListCell.self)) { [weak self] _, item, cell in
+                let shouldAnimateLabels = self?.searchController.isActive == false
+                cell.configure(with: item, shouldAnimateLabels: shouldAnimateLabels)
+            }.disposed(by: bag)
+
+        tableView.rx.itemSelected
+            .subscribe(onNext: { indexPath in
+                guard let cryptos = try? self.viewModel.cryptos.value() else { return }
+                self.handleSelection?(cryptos[indexPath.row])
+            }).disposed(by: bag)
+
+        viewModel.isLoading
+            .subscribe { [weak self] isLoading in
+                isLoading ? self?.showProgress() : self?.dismissProgress()
+            }.disposed(by: bag)
+
+        viewModel.isShowingError
+            .subscribe { [weak self] _ in
+                self?.showNetworkError { [weak self] in
+                    self?.viewModel.getCryptoList()
                 }
-            }
-        }
-
-        viewModel.shouldReloadData = { [weak self] in
-            self?.tableView.reloadData()
-        }
-
-        viewModel.shouldProgressShow = { [weak self] isShowing in
-            isShowing ? self?.showProgress() : self?.dismissProgress()
-        }
+            }.disposed(by: bag)
     }
 
     private func setupTableView() {
         let nib = UINib(nibName: ListCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ListCell.identifier)
-
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.rowHeight = ListCell.rowHeight
     }
 
@@ -112,42 +111,7 @@ final class ListViewController: BaseViewController {
         switchControl.addTarget(self, action: #selector(switchDidChange(sender:)), for: .valueChanged)
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: switchControl)
     }
-
-    private func search(for text: String) {
-        viewModel.searchText = text
-    }
 }
 
 // MARK: Extensions
-extension ListViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.mutableCryptos?.count ?? 0
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: ListCell.identifier) as? ListCell,
-              let crypto = viewModel.mutableCryptos?[indexPath.row] else {
-            return .init(frame: .zero)
-        }
-
-        let shouldAnimateLabels = searchController.isActive == false
-        cell.configure(with: crypto, shouldAnimateLabels: shouldAnimateLabels)
-
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let crypto = viewModel.mutableCryptos?[indexPath.row] {
-            handleSelection?(crypto)
-        }
-    }
-}
-
-extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
-    func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text {
-            search(for: searchText)
-        }
-    }
-}
+extension ListViewController: UITableViewDelegate {}
